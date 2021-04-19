@@ -14,7 +14,7 @@ class CreatePengaduansTable extends Migration
     public function up()
     {
         Schema::create('pengaduans', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('no_tiket');
             $table->date('tanggal_pengaduan');
             $table->string('email');
             $table->text('laporan_pengaduan');

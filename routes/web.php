@@ -15,10 +15,13 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/pengaduan',  'PengaduanController@index');
+
 //all
 Route::get('/login',  'LoginController@index')->name('login');
 Route::post('/login',  'LoginController@login');
 Route::get('/logout',  'LoginController@logout');
+// Route::get('/pengaduan',  'PengaduanController@index');
 
 
 Route::group(['middleware' => ['auth']], function() {
