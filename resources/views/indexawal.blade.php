@@ -84,8 +84,8 @@
             <div class="card card=body border-0">
                 <div class="card-body">
                     <div class="mt-4 text-center">
-                    <h1 class="text-uppercese font-weight-bold" style="color:#0e5c7d">Apa kata mereka ?</h1>
-                    <hr style="border-color:#0e5c7d;border-width:2px:">
+                        <h1 class="text-uppercese font-weight-bold" style="color:#0e5c7d">Apa kata mereka ?</h1>
+                        <hr style="border-color:#0e5c7d;border-width:2px:">
                     </div>
                 </div>
                 <div class="row mt-4 text-center">
@@ -98,20 +98,22 @@
                         proses pengaduan saya jadi lebih mudah dan tidak perlu datang ke lokasi"</i></p>
                     </div>
                     <div class="col-md-4">
-                    <span class="fas fa-user-secret fa-6x p-3 rounded bg-white" style="
-                    bacground-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
-                    color:#0e5c7d;color:white"></span>
-                    <h2 class="" style="color:#0e5c7d">Fulan secret</h2>
-                    <p class="" style="color:#0e5c7d"><i>"sangat bermanfaat dimasa pandemi seperti ini ,sehingga kita tidak perlu berkerumun kesana"</i></p>
-                </div>
-                <div class="col-md-4">
-                <span class="fas fa-user-ninja fa-6x p-3 rounded bg-white" style="
-                background-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
-                color:#0e5c7d;color:white"></span>
-                <h2 class="" style="color:#0e5c7d">Fulan ninja</h2>
-                <p class="" style="color:#0e5c7d"><i>" Petugasnya cepat merespon,
-                tanggapannya mudah dimengerti dan dalam beberapa hari aduan 
-                saya terealisasi, terimakasih appems"</i></p>
+                        <span class="fas fa-user-secret fa-6x p-3 rounded bg-white" style="
+                            bacground-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
+                            color:#0e5c7d;color:white"></span>
+                            <h2 class="" style="color:#0e5c7d">Fulan secret</h2>
+                             <p class="" style="color:#0e5c7d"><i>"sangat bermanfaat dimasa pandemi seperti ini ,sehingga kita tidak perlu berkerumun kesana"</i></p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fas fa-user-ninja fa-6x p-3 rounded bg-white" style="
+                            background-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
+                            color:#0e5c7d;color:white"></span>
+                            <h2 class="" style="color:#0e5c7d">Fulan ninja</h2>
+                            <p class="" style="color:#0e5c7d"><i>" Petugasnya cepat merespon,
+                                tanggapannya mudah dimengerti dan dalam beberapa hari aduan 
+                                saya terealisasi, terimakasih appems"</i></p>
+                    </div>
+                </div>    
             </div>
     </section>
 </main>
