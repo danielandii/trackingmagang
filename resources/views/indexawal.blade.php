@@ -38,18 +38,9 @@
                     merespon laporan kamu</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fas fa-clock fa-6x fa-6x p-3 rounded" style="background-image:
-                    linier-gradient(to righ,#1890c8,#1aa6e1,#1890c8);color:white"></span>
-                    <h2 class=""style="color:#1890c8">Layanan 12 jam</h2>
-                    <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai jam 7 pagi 
-                    sampai jam 7 malam</p>
-                </div>
-                <div class="col-md-4">
-                <span class="fas fa-volume-mute fa-6x fa-6x p-3 rounded" style="background-image:
-                    linier-gradient(to righ,#1890c8,#1aa6e1,#1890c8);color:white"></span>
-                     <h2 class=""style="color:#1890c8">Aduanmu aman</h2>
-                    <p style="color:#1890c8">Kami tidak akan mengadukan tentang pengaduan permasalahanmu
-                    selain kepada pihak yang berwajib </p>
+                    <span class="fas">
+
+                    </span>
                 </div>
             </div>
         </div>
