@@ -22,8 +22,7 @@
     </div>
     </div>
     <!-- fiturfitur -->
-    <section class="page-section mb-4 mt-4
-    " id="fiturfitur">
+    <section class="page-section mb-4 mt-4" id="fiturfitur">
         <div class="container">
             <div class="mt-4 text-center">
                 <h1 class="text-uppercase font-weight-bold  "  style="color:#1890c8">Keunggulan</h1>
@@ -38,9 +37,18 @@
                     merespon laporan kamu</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fas">
-
-                    </span>
+                    <span class="fas fa-clock fa-6x p-3 rounded" style="background-image:
+                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:white"></span>
+                    <h2 class=""style="color:#1890c8">Layanan 12 jam</h2>
+                    <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai jam 7 pagi 
+                    sampai jam 7 malam</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fas fa-volume-mute fa-6x p-3 rounded" style="background-image:
+                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:white"></span>
+                    <h2 class=""style="color:#1890c8">Aduanmu aman</h2>
+                    <p style="color:#1890c8">Kami tidak akan megadu tentang pwngaduan permasalahanmu 
+                    selain kepada pihak yang berwajib</p>
                 </div>
             </div>
         </div>
