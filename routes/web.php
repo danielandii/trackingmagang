@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('indexawal');
+    return view('components.index');
 });
 
 Route::get('/pengaduan',  'PengaduanController@index');
