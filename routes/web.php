@@ -12,10 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('indexawal');
 });
 
 Route::get('/pengaduan',  'PengaduanController@index');
+Route::get('/form-pengaduan',  'PengaduanController@formPengaduan');
+Route::post('/pengaduan/simpan',  'PengaduanController@simpanPengaduan')->name('pengaduan');
+
 
 //all
 Route::get('/login',  'LoginController@index')->name('login');
