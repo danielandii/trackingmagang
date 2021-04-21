@@ -17,8 +17,8 @@
                         <strong>mengadukan keluhan ataupun memberikan saran</strong>untuk kami
                         lebih baik</h5>
                     </div>
-                    <a href="#fiturfitur" style="background-image:linear-gradient(to right,gold,#
-                    fff700"class=btn mt-4 text-dark font-weight-bold p-3>Yuk Pelajari !</a>
+                    <a href="#fiturfitur" style="background-image:linear-gradient(to right,gold,#FFFF00"
+                        class=btn mt-4 text-dark font-weight-bold p-3>Yuk Pelajari !</a>
                 </div>
             </div>
         </div>
@@ -34,21 +34,21 @@
             <div class="row mt-4 text-center">
                 <div class="col-md-4">
                     <span class="fas fa-comments fa-6x p-3 rounded" style="background-image:
-                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:white"></span>
+                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Respon Cepat</h2>
                     <p style="color:#1890c8">Petugas siap standby di depan layar akan 
                     merespon laporan kamu</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fas fa-clock fa-6x p-3 rounded" style="background-image:
-                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:white"></span>
+                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Layanan 12 jam</h2>
                     <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai jam 7 pagi 
                     sampai jam 7 malam</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fas fa-volume-mute fa-6x p-3 rounded" style="background-image:
-                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:white"></span>
+                    linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Aduanmu aman</h2>
                     <p style="color:#1890c8">Kami tidak akan megadu tentang pwngaduan permasalahanmu 
                     selain kepada pihak yang berwajib</p>
@@ -61,21 +61,21 @@
         <div class="card card-body border" style="background-image:linier-gradient(to right,#0b4761,#0e5c7d,#0b4761);">
                 <div class="card-body">
                     <div class="mt-4 text-center">
-                    <h1 class="text-uppercase font-weight-bold text-white">Tahapan proses laporan</h1>
+                    <h1 class="text-uppercase font-weight-bold text-red">Tahapan proses laporan</h1>
                     <hr style="border-color:white:border-width:2px:">
                     </div>
                     <div class="row mt-4 text-center">
                         <div class="col-md-4">
                             <span class="fas fa-pencil-alt fa-5x p-3 rounded bg-white" style="color:#0e5c7d"></span>
-                            <h3 class="" style="color:white">1. Anda menulis laporan</h3>
+                            <h3 class="" style="color:#0e5c7d">1. Anda menulis laporan</h3>
                         </div>
                         <div class="col-md-4">
                             <span class="fas fa-check fa-5x p-3 rounded bg-white" style="color:#0e5c7d"></span>
-                            <h3 class="" style="color:white">2. Petugas akan melakukan validasi</h3>
+                            <h3 class="" style="color:#0e5c7d">2. Petugas akan melakukan validasi</h3>
                         </div>
                         <div class="col-md-4">
                             <span class="fas fa-comments fa-5x p-3 rounded bg-white" style="color:#0e5c7d"></span>
-                            <h3 class="" style="color:white">3. Petugas akan memberikan tanggapan yang artinya laporan sudah di verivikasi</h3>
+                            <h3 class="" style="color:#0e5c7d">3. Petugas akan memberikan tanggapan yang artinya laporan sudah di verivikasi</h3>
                         </div>
                     </div>
                 </div>
@@ -100,9 +100,9 @@
                         proses pengaduan saya jadi lebih mudah dan tidak perlu datang ke lokasi"</i></p>
                     </div>
                     <div class="col-md-4">
-                        <span class="fas fa-user-secret fa-6x p-3 rounded bg-white" style="
-                            bacground-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
-                            color:#0e5c7d;color:white"></span>
+                        <span class="fas fa-user-secret fa-6x p-3 rounded bg-white" style=";
+                        background-image:linear-gradient(to right,#0b4761,#0e5c7d,#064761);
+                        color:#oe5c7d;color:white"></span>
                             <h2 class="" style="color:#0e5c7d">Fulan secret</h2>
                              <p class="" style="color:#0e5c7d"><i>"sangat bermanfaat dimasa pandemi seperti ini ,sehingga kita tidak perlu berkerumun kesana"</i></p>
                     </div>
@@ -121,7 +121,7 @@
 </main>
 <footer class="text-center text-white p-2 sticky-footer" style="background-image:linear-gradient(to
     right,#0b4761,#0e5c7d,#0b4761);color:#0e5c7d">
-    <h5 class="text-uppercase">2021></h5>
+    <h5 class="text-uppercase">2021</h5>
     <p class="text-uppercase">find me </p>
     <div class="form-inline justify-content-center--">
         <a target=" blank" herf="http//github.com">
