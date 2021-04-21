@@ -48,14 +48,31 @@
 
                                                 <div class="form-group">
                                                     <label for="file">Input File</label>
+<<<<<<< HEAD
+                                                    <label for="formFileSm" class="form-label">Small file input example</label>
+                                                    <input class="form-control form-control-sm" id="formFileSm" type="file" />
+=======
                                                     <input type="file" name="file" id="alpaca25" class="alpaca-control @error('file') is-invalid @enderror" name="" autocomplete="off">
 													@error('file')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+<<<<<<< HEAD
+=======
+                                                    <div class="file-caption form-control kv-fileinput-caption icon-visible" tabindex="500">
+                                                        <span class="file-caption-icon"><i class="glyphicon glyphicon-file"></i></span>
+                                                        <input class="file-caption-name" onkeydown="return false;" onpaste="return false;" placeholder="Select file..." title="No file selected">
+                                                    </div>
+                                                    <div class="input-group-btn input-group-append">
+                                                        <div tabindex="500" class="btn btn-primary btn-file"><i class="icon-file-plus mr-2"></i>  
+                                                            <span class="hidden-xs">Browse</span><input type="file" class="file-input" data-show-preview="false" data-fouc="" id="1618976309910_56">
+                                                        </div>
+                                                    </div>
+>>>>>>> f385f3d8c42574f73d0ea17dfda617047c0b7fe5
+>>>>>>> 8a0e9dfc0e2a6d50fb4201881bc9ef7421fbba5c
                                                 </div>
-
+    
                                                 <div class="text-right">
                                                     <button type="submit" class="btn btn-primary submitBtn">Submit form <i class="icon-paperplane ml-2"></i></button>
                                                 </div>
