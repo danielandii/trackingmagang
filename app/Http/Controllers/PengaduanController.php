@@ -15,15 +15,27 @@ class PengaduanController extends Controller
 
     public function store(Request $request)
     {
-            $file = $request->file;
-            $namaFile = $file->getClientOriginalName();
+        $request->validate([
+           'tanggal_pengaduan'=>'required',
+           'email'=>'required|email:rfc,dns',
+           'laporan_pengaduan'=>'required',
+           'file' => 'required|mimes:png,jpg,jpeg,xlx,xlxs,doc,docx,pdf,zip,rar',
+        ],
+        [
+                'required'          => 'wajib diisi.',
+                'email.email'       => 'Email tidak valid.',
+                'file.mimes'        => 'Format File Tidak Valid',
+                
+        ]);
+        
+        $file = $request->file;
+        $namaFile = $file->getClientOriginalName();
 
                 $data = new Pengaduan;
                 $data->tanggal_pengaduan = $request->tanggal_pengaduan;
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
-                $data->file = $request->file;
-
+                $data->file = $namaFile;
                 $file->move(public_path().'/file_Laporan', $namaFile);
                 $data->save();
 

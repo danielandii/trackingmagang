@@ -28,7 +28,13 @@
 							<td>{{ $item->tanggal_pengaduan }}</td>
 							<td>{{ $item->email }}</td>
                             <td>{{ $item->laporan_pengaduan }}</td>
-                            <td>{{ $item->file }}</td>
+                            <td>
+                            {{ $item->file }}
+                                <!-- <a href="{{ asset('file_Laporan/'. $item->file) }}" target="_blank" rel="noopener noreferrer">Lihat File</a> -->
+                            </td>
+                            <td>
+                                <!-- <a href=""></a> -->
+                            </td>
 						</tr>
                         @endforeach
                         

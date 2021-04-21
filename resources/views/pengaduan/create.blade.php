@@ -17,23 +17,43 @@
 
                                                 <div class="form-group">
                                                     <label for="tanggal_pengaduan">Tanggal Pengaduan</label>
-                                                    <input type="date" name ="tanggal_pengaduan" class="form-control">
+                                                    <input type="date" name ="tanggal_pengaduan" class="form-control @error('tanggal_pengaduan') is-invalid @enderror">
+													@error('tanggal_pengaduan')
+														<span class="invalid-feedback" role="alert">
+															<strong>{{ $message }}</strong>
+														</span>
+													@enderror
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="email">email</label>
-                                                    <input type="text" name="email" class="form-control">
+                                                    <input type="text" name="email" class="form-control @error('email') is-invalid @enderror">
+													@error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                                                 </div>
 
 
                                                 <div class="form-group">
                                                     <label for="laporan_pengaduan">Laporan Pengaduan</label>
-                                                    <textarea name="laporan_pengaduan" rows="10" cols="4" class="form-control" placeholder="Default textarea"></textarea>
+                                                    <textarea name="laporan_pengaduan" rows="10" cols="4" class="form-control @error('laporan_pengaduan') is-invalid @enderror" placeholder="Default textarea"></textarea>
+													@error('laporan_pengaduan')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="file">Input File</label>
-                                                    <input type="file" name="file" id="alpaca25" class="alpaca-control" name="" autocomplete="off">
+                                                    <input type="file" name="file" id="alpaca25" class="alpaca-control @error('file') is-invalid @enderror" name="" autocomplete="off">
+													@error('file')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                                                 </div>
 
                                                 <div class="text-right">
