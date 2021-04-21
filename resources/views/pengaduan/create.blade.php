@@ -54,15 +54,6 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                                                    <div class="file-caption form-control kv-fileinput-caption icon-visible" tabindex="500">
-                                                        <span class="file-caption-icon"><i class="glyphicon glyphicon-file"></i></span>
-                                                        <input class="file-caption-name" onkeydown="return false;" onpaste="return false;" placeholder="Select file..." title="No file selected">
-                                                    </div>
-                                                    <div class="input-group-btn input-group-append">
-                                                        <div tabindex="500" class="btn btn-primary btn-file"><i class="icon-file-plus mr-2"></i>  
-                                                            <span class="hidden-xs">Browse</span><input type="file" class="file-input" data-show-preview="false" data-fouc="" id="1618976309910_56">
-                                                        </div>
-                                                    </div>
                                                 </div>
 
                                                 <div class="text-right">
