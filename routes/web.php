@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/pengaduan',  'PengaduanController@index');
 Route::get('/form-pengaduan',  'PengaduanController@formPengaduan');
 Route::post('/pengaduan/simpan',  'PengaduanController@simpanPengaduan')->name('pengaduan');
+Route::get('/laporan-pengaduan', 'PengaduanController@indexLaporanPengaduan');
 
 
 //all
