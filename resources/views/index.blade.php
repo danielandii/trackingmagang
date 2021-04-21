@@ -15,6 +15,148 @@
 
 	<!-- Content area -->
 	<div class="content">
+	<div class="content">
+	
+	<!-- Quick stats boxes -->
+	<div class="row">
+		<h3><span class="font-weight">info laporan</span></h3>
+	</div>
+	<div class="row">
+		<h4><span class="font-weight-semibold">Total Pelapor</span></h4>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-stack-plus icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">0</h3>
+						</div>
+						<div>
+							Laporan Baru
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-forward icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">0</h3>
+						</div>
+						<div>
+							 Laporan Sedang di proses
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-clipboard2 icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">0</h3>
+						</div>
+						<div>
+							Laporan Selesai
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	<!-- /quick stats boxes -->
+	 <!-- TODAY -->
+	<!-- Quick stats boxes -->
+	<div class="row">
+		<hr><hr>
+	</div>
+	<div class="row">
+		<hr><hr>
+	</div>
+	<div class="row">
+		<h4><span class="font-weight-semibold">Laporan hari ini</span></h4>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-stack-plus icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">0</h3>
+						</div>
+						<div>
+							Laporan Baru Hari Ini
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-forward icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">0</h3>
+						</div>
+						<div>
+							Laporan Sedang Di Proses Hari Ini
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-clipboard2 icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">0</h3>
+						</div>
+						<div>
+							Laporan Selesai Hari Ini
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+	<blockquote class="blockquote">
+	<!-- /quick stats boxes -->
+	<!-- TODAY -->
+	<!-- Quick stats boxes -->
+	<div class="row">
+		<hr><hr>
+	</div>
+	<!-- /quick stats boxes -->
+</div>
 
 		<!-- Quick stats boxes -->
 		<div class="row">
@@ -40,3 +182,5 @@
 <!-- /theme JS files -->
 
 @endsection
+
+

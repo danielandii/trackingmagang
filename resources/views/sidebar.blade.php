@@ -33,7 +33,14 @@
 						</span>
 					</a>
 				</li>
-
+				<li class="nav-item">
+					<a href="{{ url('/Tanggapan') }}" class="nav-link {{ (request()->is('Tanggapan*')) ? 'active' : '' }}">
+						<i class="icon-pencil3"></i>
+						<span>
+							Tanggapan
+						</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 		<!-- /main navigation -->
