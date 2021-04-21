@@ -81,8 +81,5 @@ class TanggapanController extends Controller
     {
         //
     }
-    public function tanggapan()
-    {
-        return view("index");
-    }
+    
 }
