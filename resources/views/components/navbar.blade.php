@@ -34,7 +34,7 @@
             aria-expanded="false">Namaku
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a href="/laporanku"class="dropdown-item">
+            <a href="/laporan-pengaduan"class="dropdown-item">
                 <i class="fas fa-clipboard fa-sm fa-fw mr-2"></i>
                 LaporanKu
             </a>
