@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('components.index');
 });
 
-Route::get('/pengaduan',  'PengaduanController@index');
-Route::get('/form-pengaduan',  'PengaduanController@formPengaduan');
-Route::post('/pengaduan/simpan',  'PengaduanController@simpanPengaduan')->name('pengaduan');
-Route::get('/laporan-pengaduan', 'PengaduanController@indexLaporanPengaduan');
+// Route::get('/pengaduan',  'PengaduanController@index');
+Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengaduan');
+Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');
+Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
 
 
 //all

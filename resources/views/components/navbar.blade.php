@@ -29,14 +29,14 @@
         border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/form-pengaduan">Buat Pengaduan</a>
 
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link text-white dropdown-toggle active" id="
+            <a href="" class="nav-link text-white dropdown-toggle active" id="
             navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Namaku
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a href="/laporan-pengaduan"class="dropdown-item">
                 <i class="fas fa-clipboard fa-sm fa-fw mr-2"></i>
-                LaporanKu
+                Laporan Pengaduan
             </a>
             <!-- <a href="">
             
