@@ -9,7 +9,7 @@
                                     <div class="card shadow">
                                     
                                         <div class="card-body">
-                                            <form action="{{route('pengaduan')}}" method="POST">
+                                            <form class="form-validate-jquery" action="{{route('pengaduan-simpan')}}" method="POST" enctype="multipart/form-data">
 											@csrf
                                             <div class="card header">
                                                 <H3 class="text-center">Tambah Pengaduan</H3>
