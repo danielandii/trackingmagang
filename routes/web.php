@@ -20,7 +20,6 @@ Route::get('/form-pengaduan',  'PengaduanController@formPengaduan');
 Route::post('/pengaduan/simpan',  'PengaduanController@simpanPengaduan')->name('pengaduan');
 Route::get('/laporan-pengaduan', 'PengaduanController@indexLaporanPengaduan');
 
-
 //all
 Route::get('/login',  'LoginController@index')->name('login');
 Route::post('/login',  'LoginController@login');
