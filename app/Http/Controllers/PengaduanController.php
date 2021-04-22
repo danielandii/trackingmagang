@@ -39,7 +39,7 @@ class PengaduanController extends Controller
                 $file->move(public_path().'/file_Laporan', $namaFile);
                 $data->save();
 
-                return redirect('/laporan-pengaduan');
+                return redirect('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',

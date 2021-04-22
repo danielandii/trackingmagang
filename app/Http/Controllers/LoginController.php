@@ -39,7 +39,7 @@ class LoginController extends Controller
 	        \Auth::logout();
 	        $request->session()->invalidate();
 	    }
-	    return  redirect('/login');
+	    return  redirect('/');
 	}
 
     public function home()
