@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('components.index');
 });
 
+//Pengaduan
 // Route::get('/pengaduan',  'PengaduanController@index');
 Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengaduan');
 Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');

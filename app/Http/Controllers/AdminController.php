@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use Illuminate\Http\Request;
 
-class TanggapanController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class TanggapanController extends Controller
      */
     public function index()
     {
-        return view('tanggapan.index');
+        //
     }
 
     /**
@@ -40,10 +41,10 @@ class TanggapanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Admin $admin)
     {
         //
     }
@@ -51,10 +52,10 @@ class TanggapanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Admin $admin)
     {
         //
     }
@@ -63,10 +64,10 @@ class TanggapanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Admin $admin)
     {
         //
     }
@@ -74,12 +75,11 @@ class TanggapanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Admin $admin)
     {
         //
     }
-    
 }
