@@ -94,4 +94,9 @@ class PengaduanController extends Controller
             $laporanPengaduan = Pengaduan::latest()->get();
             return view('laporan.data-laporan',compact('laporanPengaduan'));
     }
+
+    public function tampilPengaduan(Request $request)
+    {
+        return view('pengaduan.index');
+    }
 }
