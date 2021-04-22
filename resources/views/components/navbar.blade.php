@@ -26,18 +26,22 @@
         border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/">
         Home</a>
         <a class="nav-link text-white @if(request()->segment(1) == "lapor") disabled border
-        border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/form-pengaduan">Buat Pengaduan</a>
-
-        <li class="nav-item dropdown">
-            <a href="" class="nav-link text-white dropdown-toggle active" id="
-            navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Namaku
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/form-pengaduan">
+        Buat Pengaduan</a>
+        <a class="nav-link text-white @if(request()->segment(1) == "lapor") disabled border
+        border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/laporan-pengaduan">
+        Laporan Pengaduan</a>
+        <!-- <li class="nav-item dropdown">
+         <div class="nav-link text-white dropdown-toggle active" id="navbarDropdownMenuLink">
             <a href="/laporan-pengaduan"class="dropdown-item">
                 <i class="fas fa-clipboard fa-sm fa-fw mr-2"></i>
                 Laporan Pengaduan
-            </a>
+            </a> -->
+            <!-- <a href="" class="nav-link text-white dropdown-toggle active" id="
+            navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Laporan Pengaduan
+            </a> -->
+           
             <!-- <a href="">
             
             
