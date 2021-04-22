@@ -34,10 +34,18 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="{{ url('/Tanggapan') }}" class="nav-link {{ (request()->is('Tanggapan*')) ? 'active' : '' }}">
+					<a href="{{ url('/tanggapan-pengaduan') }}" class="nav-link {{ (request()->is('tanggapan-pengaduan*')) ? 'active' : '' }}">
 						<i class="icon-pencil3"></i>
 						<span>
 							Tanggapan
+						</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="{{ url('/laporan-pengaduan') }}" class="nav-link {{ (request()->is('laporan-pengaduan*')) ? 'active' : '' }}">
+						<i class="icon-pencil3"></i>
+						<span>
+							Laporan Pengaduan
 						</span>
 					</a>
 				</li>
