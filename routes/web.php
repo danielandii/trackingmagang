@@ -35,7 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
 
 	//admin
     Route::group(['middleware' => ['role:1']], function() {
-        Route::get('/home/pengaduan','PengaduanController@tampilPengaduan');
+		Route::get('/home-tanggapan','TanggapanController@index');
+        Route::get('/home-pengaduan','PengaduanController@tampilPengaduan');
 	});
 
 
