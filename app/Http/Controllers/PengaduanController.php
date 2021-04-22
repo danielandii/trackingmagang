@@ -73,8 +73,8 @@ class PengaduanController extends Controller
         //             $data['file'] = time().'_'.Str::random(10).'.'.$request->gambar->extension();
         //             Image::make($file)->save('images/products/original/'.$data['file']);
         //         }
-                // $pengaduan = Pengaduan::create($data);
-                // return redirect('/')->with('success', 'Pengaduan saved!');
+        //         $pengaduan = Pengaduan::create($data);
+        //         return redirect('/')->with('success', 'Pengaduan saved!');
         }
 
     public function create()
@@ -86,7 +86,7 @@ class PengaduanController extends Controller
     {
         //     $data_pengaduan = Pengaduan::create();
         //     return redirect('/')->with('success', 'Pengaduan saved!');
-        return view('pengaduan.create');
+        // return view('pengaduan.create');
     }
 
     public function laporanPengaduan()

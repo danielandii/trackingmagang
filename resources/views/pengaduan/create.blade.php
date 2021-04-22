@@ -50,6 +50,11 @@
                                                     <label for="file">Input File</label>
                                                 <input class="form-control form-control-sm" id="formFileSm" type="file" />
                                                 </div>
+                                                @error('file')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
     
                                                 <div class="text-right">
                                                     <button type="submit" class="btn btn-primary submitBtn">Submit form <i class="icon-paperplane ml-2"></i></button>
