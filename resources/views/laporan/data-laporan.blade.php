@@ -11,8 +11,9 @@
 			<div class="card-header header-elements-inline">
 				<a href="{{ route('form-pengaduan') }}"><button type="button" class="btn btn-success rounded-round"><i class="icon-add mr-2"></i> Tambah Pengaduan</button></a>
 			</div>
+			<div class="table-responsive">
 
-			<table class="table datatable-basic table-hover">
+			<table class="table datatable-basic table-hover text-center">
 				<thead>
 						<tr>
 							<th>No</th>
@@ -36,14 +37,20 @@
                                 <!-- <a href="{{ asset('file_Laporan/'. $item->file) }}" target="_blank" rel="noopener noreferrer">Lihat File</a> -->
                             </td>
 							<td>{{ $item->status }}</td>
-                            <td>
-                                <!-- <a href=""></a> -->
+							<td>
+                                <a href="" class="btn btn-info">
+									<i class="fas fa-clipboard">Edit</i>
+								</a>
+                                <a href="" class="btn btn-danger">
+									<i class="fas fa-trash-alt">Hapus</i>
+								</a>
                             </td>
 						</tr>
                         @endforeach
                         
 					</thead>
 			</table>
+			</div>
 		</div>
 		<!-- /hover rows -->
 

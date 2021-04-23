@@ -40,7 +40,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/home-pengaduan','PengaduanController@tampilpengaduan');
 
 
-		Route::get('/home-pengaduan/{no_tiket}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
+		Route::get('/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
+		Route::get('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 	});
 
 

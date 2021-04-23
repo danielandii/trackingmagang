@@ -125,4 +125,11 @@ class PengaduanController extends Controller
         return view('pengaduan.edit', compact('detailPengaduan'));
     }
     
+
+    public function destroyPengaduan($id)
+    {
+            $destroyPengaduan = Pengaduan::find($id);
+            $destroyPengaduan->delete();
+        return redirect()->back()->with('success','Pengaduan Berhasil Dihapus');
+    }
 }
