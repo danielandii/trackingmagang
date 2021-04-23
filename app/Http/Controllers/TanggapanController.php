@@ -93,5 +93,10 @@ class TanggapanController extends Controller
     {
         return view('pengaduan.index');
     }
+    public function detailPengaduan($id)
+    {
+            $detailPengaduan = Pengaduan::find($id);
+        return view('pengaduan.edit', compact('detailPengaduan'));
+    }
     
 }

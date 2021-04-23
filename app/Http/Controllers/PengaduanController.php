@@ -124,4 +124,5 @@ class PengaduanController extends Controller
             $detailPengaduan = Pengaduan::find($id);
         return view('pengaduan.edit', compact('detailPengaduan'));
     }
+    
 }

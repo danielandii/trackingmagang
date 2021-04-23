@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
 	//admin
     Route::group(['middleware' => ['role:1']], function() {
 		Route::get('/home-tanggapan','TanggapanController@index');
-        Route::get('/home-pengaduan','PengaduanController@laporanPengaduan');
+        Route::get('/home-pengaduan','PengaduanController@tampilpengaduan');
 
 
 		Route::get('/home-pengaduan/{no_tiket}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
