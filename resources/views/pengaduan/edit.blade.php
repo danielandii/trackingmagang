@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        a
+        aa
     
     </div>
 @endsection
