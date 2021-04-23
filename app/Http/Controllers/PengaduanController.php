@@ -15,18 +15,21 @@ class PengaduanController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-           'tanggal_pengaduan'=>'required',
-           'email'=>'required|email:rfc,dns',
-           'laporan_pengaduan'=>'required',
-           'file' => 'required|mimes:png,jpg,jpeg,xlx,xlxs,doc,docx,pdf,zip,rar',
+        //     $data = $request->except('_token', '_method');
+        // dd($data);
+            $request->validate([
+                    'tanggal_pengaduan'=>'required',
+                    'email'=>'required|email:rfc,dns',
+                    'laporan_pengaduan'=>'required',
+                    'file' => 'required|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar',
         ],
         [
                 'required'          => 'wajib diisi.',
                 'email.email'       => 'Email tidak valid.',
-                'file.mimes'        => 'Format File Tidak Valid',
+                'file.mimes'        => 'Format File Tidak Valid'
                 
-        ]);
+                ]);
+                // dd($data);                
         
         $file = $request->file;
         $namaFile = $file->getClientOriginalName();
@@ -39,7 +42,7 @@ class PengaduanController extends Controller
                 $file->move(public_path().'/file_Laporan', $namaFile);
                 $data->save();
 
-                return redirect('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
+                return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',
@@ -95,8 +98,15 @@ class PengaduanController extends Controller
             return view('laporan.data-laporan',compact('laporanPengaduan'));
     }
 
-    public function tampilPengaduan(Request $request)
+    public function tampilPengaduan()
     {
-        return view('pengaduan.index');
+            $tampilPengaduan = Pengaduan::latest()->get();
+        return view('pengaduan.index', compact('tampilPengaduan'));
+    }
+
+    public function detailPengaduan($id)
+    {
+            $detailPengaduan = Pengaduan::find($id);
+        return view('pengaduan.edit', compact('detailPengaduan'));
     }
 }
