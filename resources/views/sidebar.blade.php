@@ -33,14 +33,7 @@
 						</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="{{ url('/home-tanggapan') }}" class="nav-link {{ (request()->is('home-tanggapan*')) ? 'active' : '' }}">
-						<i class="icon-pencil3"></i>
-						<span>
-							Tanggapan
-						</span>
-					</a>
-				</li>
+				
 				<li class="nav-item">
 					<a href="{{ url('/home-pengaduan') }}" class="nav-link {{ (request()->is('home-pengaduan*')) ? 'active' : '' }}">
 						<i class="icon-pencil3"></i>
@@ -49,6 +42,25 @@
 						</span>
 					</a>
 				</li>
+				
+				<li class="nav-item">
+					<a href="{{ url('/home-tanggapan') }}" class="nav-link {{ (request()->is('home-tanggapan*')) ? 'active' : '' }}">
+						<i class="icon-pencil3"></i>
+						<span>
+							Tanggapan
+						</span>
+					</a>
+				</li>
+				
+				<li class="nav-item">
+					<a href="{{ url('/home-tanggapan') }}" class="nav-link {{ (request()->is('home-tanggapan*')) ? 'active' : '' }}">
+						<i class="icon-pencil3"></i>
+						<span>
+							History Tanggapan
+						</span>
+					</a>
+				</li>
+
 			</ul>
 		</div>
 		<!-- /main navigation -->
