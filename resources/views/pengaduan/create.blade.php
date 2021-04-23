@@ -48,7 +48,7 @@
 
                                                 <div class="form-group">
                                                     <label for="file">Input File</label>
-                                                <input class="form-control form-control-sm" id="formFileSm" type="file" name="file" />
+                                                <input class="form-control form-control-sm" id="formFileSm" type="file" name="file"/>
                                                 </div>
                                                 @error('file')
                                                     <span class="invalid-feedback" role="alert">
