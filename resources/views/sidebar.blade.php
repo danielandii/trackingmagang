@@ -53,7 +53,7 @@
 				</li>
 				
 				<li class="nav-item">
-					<a href="{{ url('/home-tanggapan') }}" class="nav-link {{ (request()->is('home-tanggapan*')) ? 'active' : '' }}">
+					<a href="{{ url('/home-history') }}" class="nav-link {{ (request()->is('home-historySS*')) ? 'active' : '' }}">
 						<i class="icon-pencil3"></i>
 						<span>
 							History Tanggapan
