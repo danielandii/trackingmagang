@@ -16,7 +16,7 @@
 				<thead>
 						<tr>
 							<th>No</th>
-							<!-- <th>No Tiket</th> -->
+							<th>No Tiket</th>
 							<th>Tanggal Pengaduan</th>
 							<th>Email</th>
 							<th>laporan Pengaduan</th>
@@ -27,7 +27,7 @@
                         @foreach($laporanPengaduan as $item)
                         <tr>
 							<td>{{ $loop->iteration }}</td>
-							<!-- <td>{{ $item->no_tiket }}</td> -->
+							<td>{{ $item->no_tiket }}</td>
 							<td>{{ $item->tanggal_pengaduan }}</td>
 							<td>{{ $item->email }}</td>
                             <td>{{ $item->laporan_pengaduan }}</td>

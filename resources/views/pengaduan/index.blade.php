@@ -13,6 +13,7 @@
 				<thead>
 						<tr>
 							<th>No</th>
+							<th>No Tiket</th>
 							<th>Tanggal Pengaduan</th>
 							<th>Email</th>
 							<th>Status Laporan</th>
@@ -21,11 +22,13 @@
                         @foreach($tampilPengaduan as $pengaduan)
                         <tr>
 							<td>{{ $loop->iteration }}</td>
+							<td>{{ $pengaduan->no_tiket }}</td>
 							<td>{{ $pengaduan->tanggal_pengaduan }}</td>	
 							<td>{{ $pengaduan->email }}</td>
 							<td>{{ $pengaduan->status }}</td>
                             <td>
-                                <a href="{{ route('home-pengaduan.detail', $pengaduan->no_tiket)}}" class="btn btn-info">
+							<!-- {{ route('home-pengaduan.detail', $pengaduan->no_tiket)}} -->
+                                <a href="" class="btn btn-info">
 									<i class="fas fa-clipboard">Detail</i>
 								</a>
                                 <a href="#" class="btn btn-danger">

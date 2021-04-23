@@ -34,13 +34,28 @@ class PengaduanController extends Controller
         $file = $request->file;
         $namaFile = $file->getClientOriginalName();
 
+        $id = Pengaduan::getId();
+        foreach ($id as $value);
+        $idlm = $value->id;
+        $idbaru = $idlm + 1;
+        $blt = date('my');
+
+        $no_tiket = 'P-'.$idbaru.$blt;
+
                 $data = new Pengaduan;
+                $data->no_tiket = $no_tiket; 
                 $data->tanggal_pengaduan = $request->tanggal_pengaduan;
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
                 $data->file = $namaFile;
                 $file->move(public_path().'/file_Laporan', $namaFile);
                 $data->save();
+
+                // \Mail::raw('Terima Kasih'.$data->email.'sudah melakukan Pengaduan', function ($message) use ($data){
+                    
+                //     $message->to($data->email);
+                //     $message->subject('Pengaduan Anda Akan segera kami proses');
+                // });
 
                 return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
         // $request->validate([
