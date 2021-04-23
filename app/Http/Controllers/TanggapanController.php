@@ -24,6 +24,7 @@ class TanggapanController extends Controller
     public function create()
     {
         //
+        return view('tanggapan.create');
     }
 
     /**
@@ -35,6 +36,7 @@ class TanggapanController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -80,6 +82,16 @@ class TanggapanController extends Controller
     public function destroy($id)
     {
         //
+    }
+     public function laporanPengaduan()
+    {
+            $laporanPengaduan = Pengaduan::latest()->get();
+            return view('laporan.data-laporan',compact('laporanPengaduan'));
+    }
+
+    public function tampilPengaduan(Request $request)
+    {
+        return view('pengaduan.index');
     }
     
 }
