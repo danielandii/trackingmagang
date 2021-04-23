@@ -1,37 +1,67 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
-a
+	<!-- Content area -->
+	<div class="content">
+
+		<!-- Hover rows -->
+		<div class="rows">
+		<div class="col">
+		<div class="table-responsive">
+
+			<table class="table datatable-basic table-hover border">
+				<thead>
+						<tr>
+							<th>No</th>
+							<th>No Tiket</th>
+							<th>Tanggal Pengaduan</th>
+							<th>Email</th>
+							<th>Status Laporan</th>
+							<th class="text-center">Actions</th>
+						</tr>
+                        @foreach($tampilPengaduan as $pengaduan)
+                        <tr>
+							<td>{{ $loop->iteration }}</td>
+							<td>{{ $pengaduan->no_tiket }}</td>
+							<td>{{ $pengaduan->tanggal_pengaduan }}</td>	
+							<td>{{ $pengaduan->email }}</td>
+							<td>{{ $pengaduan->status }}</td>
+                            <td>
+							<!-- {{ route('home-pengaduan.detail', $pengaduan->no_tiket)}} -->
+                                <a href="" class="btn btn-info">
+									<i class="fas fa-clipboard">Detail</i>
+								</a>
+                                <a href="#" class="btn btn-danger">
+									<i class="fas fa-trash-alt">Hapus</i>
+								</a>
+                            </td>
+						</tr>
+                        @endforeach
+                        
+					</thead>
+			</table>
+			</div>
+			</div>
+		</div>
+		<!-- /hover rows -->
+
+	</div>
+	<!-- /content area -->
+
 @endsection
 
 @section('js')
-	<!-- Theme JS files -->
-	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 
-	<script src="{{asset('assets/js/app.js')}}"></script>
-	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
-	<script src="../../../../global_assets/js/demo_pages/content_cards_content.js"></script>
-	<script src="../../../../global_assets/js/plugins/media/fancybox.min.js"></script>
-	<script>
+<!-- Theme JS files -->
+<script src="{{asset('global_assets/js/plugins/visualization/d3/d3.min.js') }}"></script>
+<script src="{{asset('global_assets/js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
+<script src="{{asset('global_assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
+<script src="{{asset('global_assets/js/plugins/forms/selects/bootstrap_multiselect.js') }}"></script>
+<script src="{{asset('global_assets/js/plugins/ui/moment/moment.min.js') }}"></script>
 
-    // Setting datatable defaults
-    $.extend( $.fn.dataTable.defaults, {
-		            autoWidth: false,
-		            columnDefs: [{ 
-		                orderable: false,
-		                width: 100,
-		                targets: [ 5 ]
-		            }],
-		            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
-		            language: {
-		                search: '<span>Filter:</span> _INPUT_',
-		                searchPlaceholder: 'Type to filter...',
-		                lengthMenu: '<span>Show:</span> _MENU_',
-		                paginate: { 'first': 'First', 'last': 'Last', 'next': $('html').attr('dir') == 'rtl' ? '&larr;' : '&rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr;' : '&larr;' }
-		            }
-		        });
+<script src="{{asset('assets/js/app.js') }}"></script>
+<script src="{{asset('global_assets/js/demo_pages/dashboard.js') }}"></script>
+<!-- /theme JS files -->
+
+@endsection
+

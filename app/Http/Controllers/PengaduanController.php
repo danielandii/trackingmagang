@@ -15,23 +15,35 @@ class PengaduanController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-           'tanggal_pengaduan'=>'required',
-           'email'=>'required|email:rfc,dns',
-           'laporan_pengaduan'=>'required',
-           'file' => 'required|mimes:png,jpg,jpeg,xlx,xlxs,doc,docx,pdf,zip,rar',
+        //     $data = $request->except('_token', '_method');
+        // dd($data);
+            $request->validate([
+                    'tanggal_pengaduan'=>'required',
+                    'email'=>'required|email:rfc,dns',
+                    'laporan_pengaduan'=>'required',
+                    'file' => 'required|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar',
         ],
         [
                 'required'          => 'wajib diisi.',
                 'email.email'       => 'Email tidak valid.',
-                'file.mimes'        => 'Format File Tidak Valid',
+                'file.mimes'        => 'Format File Tidak Valid'
                 
-        ]);
+                ]);
+                // dd($data);                
         
         $file = $request->file;
         $namaFile = $file->getClientOriginalName();
 
+        $id = Pengaduan::getId();
+        foreach ($id as $value);
+        $idlm = $value->id;
+        $idbaru = $idlm + 1;
+        $blt = date('my');
+
+        $no_tiket = 'P-'.$idbaru.$blt;
+
                 $data = new Pengaduan;
+                $data->no_tiket = $no_tiket; 
                 $data->tanggal_pengaduan = $request->tanggal_pengaduan;
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
@@ -39,7 +51,13 @@ class PengaduanController extends Controller
                 $file->move(public_path().'/file_Laporan', $namaFile);
                 $data->save();
 
-                return redirect('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
+                // \Mail::raw('Terima Kasih'.$data->email.'sudah melakukan Pengaduan', function ($message) use ($data){
+                    
+                //     $message->to($data->email);
+                //     $message->subject('Pengaduan Anda Akan segera kami proses');
+                // });
+
+                return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',
@@ -95,8 +113,15 @@ class PengaduanController extends Controller
             return view('laporan.data-laporan',compact('laporanPengaduan'));
     }
 
-    public function tampilPengaduan(Request $request)
+    public function tampilPengaduan()
     {
-        return view('pengaduan.index');
+            $tampilPengaduan = Pengaduan::latest()->get();
+        return view('pengaduan.index', compact('tampilPengaduan'));
+    }
+
+    public function detailPengaduan($id)
+    {
+            $detailPengaduan = Pengaduan::find($id);
+        return view('pengaduan.edit', compact('detailPengaduan'));
     }
 }

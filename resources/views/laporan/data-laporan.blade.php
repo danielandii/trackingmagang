@@ -15,16 +15,19 @@
 			<table class="table datatable-basic table-hover">
 				<thead>
 						<tr>
+							<th>No</th>
 							<th>No Tiket</th>
 							<th>Tanggal Pengaduan</th>
 							<th>Email</th>
 							<th>laporan Pengaduan</th>
 							<th>File</th>
+							<th>Status</th>
 							<th class="text-center">Actions</th>
 						</tr>
                         @foreach($laporanPengaduan as $item)
                         <tr>
 							<td>{{ $loop->iteration }}</td>
+							<td>{{ $item->no_tiket }}</td>
 							<td>{{ $item->tanggal_pengaduan }}</td>
 							<td>{{ $item->email }}</td>
                             <td>{{ $item->laporan_pengaduan }}</td>
@@ -32,6 +35,7 @@
                             {{ $item->file }}
                                 <!-- <a href="{{ asset('file_Laporan/'. $item->file) }}" target="_blank" rel="noopener noreferrer">Lihat File</a> -->
                             </td>
+							<td>{{ $item->status }}</td>
                             <td>
                                 <!-- <a href=""></a> -->
                             </td>
