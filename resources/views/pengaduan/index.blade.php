@@ -7,6 +7,11 @@
 		<!-- Hover rows -->
 		<div class="rows">
 		<div class="col">
+		@if ($message = Session::get('success'))
+			<div class="alert alert-success">
+				{{$message}}
+				</div>
+		@endif
 		<div class="table-responsive">
 
 			<table class="table datatable-basic table-hover border">
@@ -28,10 +33,10 @@
 							<td>{{ $pengaduan->status }}</td>
                             <td>
 							<!-- {{ route('home-pengaduan.detail', $pengaduan->no_tiket)}} -->
-                                <a href="" class="btn btn-info">
+                                <a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="btn btn-info">
 									<i class="fas fa-clipboard">Detail</i>
 								</a>
-                                <a href="#" class="btn btn-danger">
+                                <a href="{{route('home-pengaduan.destroy', $pengaduan->id)}}" class="btn btn-danger">
 									<i class="fas fa-trash-alt">Hapus</i>
 								</a>
                             </td>
