@@ -22,7 +22,7 @@
 
                                       
                                             <div class="input-group custom-search-form">
-                                                <input type="text" rows="10" class="form-control" name="search" placeholder="search...">
+                                                <input type="text" rows="5" class="form-control" name="search" placeholder="search...">
                                                 <span class="input-group-btn">
                                                     <span class="input-group-btn">
                                                         <button class="btn btn-default" type="submit"><i class="fa fa-search"></i> cari </buton>
@@ -31,12 +31,23 @@
                                             </div>
                                        
                                         <div class="form-group">
-                                            <label for="email">Laporan</label>
-                                            <input type="text" name="email" class="form-control ">
+                                            <label for="no_ticket">Laporan</label>
+                                            <textarea name="laporan" rows="5" cols="4" class="form-control "></textarea>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="laporan_pengaduan">Tanggapan</label>
-                                            <textarea name="laporan_pengaduan" rows="10" cols="4" class="form-control " placeholder="Default textarea"></textarea>
+                                            <label for="tanggal_pengaduan">Tanggal Tanggapan</label>
+                                            <input type="date" name ="tanggal_tanggapan" class="form-control @error('tanggal_tanggapan') is-invalid @enderror">
+											@error('tanggal_tanggapan')
+												<span class="invalid-feedback" role="alert">
+													<strong>{{ $message }}</strong>
+												</span>
+											@enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="tanggapan">Tanggapan</label>
+                                            <textarea name="tanggapan" rows="7" cols="7" class="form-control "></textarea>
                                         </div>
                                             
                                         <div class="text-right">
