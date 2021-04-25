@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Model\Pengaduan;
+use App\Model\Tanggapan;
+use Carbon\Carbon;
 
 class TanggapanController extends Controller
 {
@@ -13,7 +16,8 @@ class TanggapanController extends Controller
      */
     public function index()
     {
-        return view('tanggapan.index');
+        // $detail_tanggapan = Pengaduan::find($id);
+        // return view('tanggapan.create',compact('detail_tanggapan'));
     }
 
     /**
@@ -21,10 +25,11 @@ class TanggapanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
-        return view('tanggapan.create');
+        $detailpengaduan = Pengaduan::find($id);
+        return view('tanggapan.create',compact('detailpengaduan'));
+        
     }
 
     /**
@@ -35,8 +40,14 @@ class TanggapanController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        
+        $data_tanggapan = new Tanggapan();
+        $data_tanggapan->tanggal_tanggapan = request()->get('tanggal_tanggapan');
+        $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
+        $data_tanggapan->tanggapan = request()->get('tanggapan');
+        $data_tanggapan->admin_id = Auth()->guard('admin')->user()->id;
+        $data_tanggapan->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -83,20 +94,20 @@ class TanggapanController extends Controller
     {
         //
     }
-     public function laporanPengaduan()
-    {
-            $laporanPengaduan = Pengaduan::latest()->get();
-            return view('laporan.data-laporan',compact('laporanPengaduan'));
-    }
+    //  public function laporanPengaduan()
+    // {
+    //         $laporanPengaduan = Pengaduan::latest()->get();
+    //         return view('laporan.data-laporan',compact('laporanPengaduan'));
+    // }
 
-    public function tampilPengaduan(Request $request)
-    {
-        return view('pengaduan.index');
-    }
-    public function detailPengaduan($id)
-    {
-            $detailPengaduan = Pengaduan::find($id);
-        return view('pengaduan.edit', compact('detailPengaduan'));
-    }
+    // public function tampilPengaduan(Request $request)
+    // {
+    //     return view('pengaduan.index');
+    // }
+    // public function detailPengaduan($id)
+    // {
+    //         $detailPengaduan = Pengaduan::find($id);
+    //     return view('pengaduan.edit', compact('detailPengaduan'));
+    // }
     
 }

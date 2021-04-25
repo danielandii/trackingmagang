@@ -34,10 +34,10 @@
                             <td>
 							<!-- {{ route('home-pengaduan.detail', $pengaduan->no_tiket)}} -->
                                 <a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="btn btn-info">
-									<i class="fas fa-clipboard">Detail</i>
+									<i class="fas fa-clipboard"> Detail</i>
 								</a>
                                 <a href="{{route('home-pengaduan.destroy', $pengaduan->id)}}" class="btn btn-danger">
-									<i class="fas fa-trash-alt">Hapus</i>
+									<i class="fas fa-trash-alt"> Hapus</i>
 								</a>
                             </td>
 						</tr>

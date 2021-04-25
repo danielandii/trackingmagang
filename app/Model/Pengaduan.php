@@ -13,4 +13,9 @@ class Pengaduan extends Model
     {
         return $getId = DB::table('pengaduans')->orderBy('no_tiket','DESC')->take(1)->get();
     }
+
+    public function tanggapan()
+    {
+        return $this->belongsTo('App\Model\Tanggapan');
+    }
 }
