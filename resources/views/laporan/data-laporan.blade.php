@@ -22,6 +22,7 @@
 							<th>Email</th>
 							<th>laporan Pengaduan</th>
 							<th>File</th>
+							<th>Url File</th>
 							<th>Status</th>
 							<th class="text-center">Actions</th>
 						</tr>
@@ -36,6 +37,11 @@
                             {{ $item->file }}
                                 <!-- <a href="{{ asset('file_Laporan/'. $item->file) }}" target="_blank" rel="noopener noreferrer">Lihat File</a> -->
                             </td>
+							<td>
+                                            <a href="{{ Storage::url($item->file) }}">
+                                                View
+                                            </a>
+                                        </td>
 							<td>{{ $item->status }}</td>
 							<td>
                                 <a href="" class="btn btn-info">

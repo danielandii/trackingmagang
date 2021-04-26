@@ -10,4 +10,5 @@ class Admin extends Model
     protected $hidden = [
         'password'
    ];
+   protected $guard = "admins";
 }

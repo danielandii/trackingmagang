@@ -34,16 +34,35 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('/changepass',  'UserController@changePass');
 	Route::post('/changepass/{id}',  'UserController@changePassSubmit')->name('changepass');
 
-	//admin
+	//superadmin
     Route::group(['middleware' => ['role:1']], function() {
-		Route::get('/home-tanggapan','TanggapanController@index');
-        Route::get('/home-pengaduan','PengaduanController@tampilpengaduan');
 
+		// *****************CRUD Superadmin********************
+		// Route::resource('super-admin', 'UserController');
+
+		// Route::resource('tanggapan', 'TanggapanController');
+		
+		Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');
+		Route::post('/home-tanggapan/{id}','TanggapanController@store')->name('home-tanggapi');
+
+
+        Route::get('/home-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
 
 		Route::get('/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
 		Route::get('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 	});
 
+	// //admin
+	// Route::group(['middleware' => ['role:10']], function() {
+	// 	Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');
+	// 	Route::post('/home-tanggapan/{id}','TanggapanController@store')->name('home-tanggapi');
+
+
+    //     Route::get('/home-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
+
+	// 	Route::get('/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
+	// 	Route::get('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
+	// });
 
 });
 
