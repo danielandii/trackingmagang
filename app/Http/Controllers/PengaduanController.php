@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Pengaduan;
+use App\Model\Tanggapan;
 use File;
 
 class PengaduanController extends Controller
 {
     public function index()
     {
-            return view('indexawal');
+            $dataPengaduan = Pengaduan::get();
+            return view('index',compact('dataPengaduan'));
     }
 
     public function store(Request $request)
@@ -109,27 +111,39 @@ class PengaduanController extends Controller
 
     public function laporanPengaduan()
     {
-            $laporanPengaduan = Pengaduan::latest()->get();
-            return view('laporan.data-laporan',compact('laporanPengaduan'));
+            $dataPengaduan = Pengaduan::latest()->get();
+            return view('laporan.data-laporan',compact('dataPengaduan'));
     }
 
     public function tampilPengaduan()
     {
-            $tampilPengaduan = Pengaduan::latest()->get();
-        return view('pengaduan.index', compact('tampilPengaduan'));
+            $dataPengaduan = Pengaduan::latest()->get();
+        return view('pengaduan.index', compact('dataPengaduan'));
     }
 
     public function detailPengaduan($id)
     {
-            $detailPengaduan = Pengaduan::find($id);
-        return view('pengaduan.edit', compact('detailPengaduan'));
+            $dataPengaduan = Pengaduan::find($id);
+            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+                    $query->where('pengaduan_id',request()->route('id'));
+            })->first();
+        return view('pengaduan.edit', compact('dataPengaduan','dataTanggapan'));
     }
     
 
     public function destroyPengaduan($id)
     {
-            $destroyPengaduan = Pengaduan::find($id);
-            $destroyPengaduan->delete();
+            $dataPengaduan = Pengaduan::find($id);
+            $dataPengaduan->delete();
         return redirect()->back()->with('success','Pengaduan Berhasil Dihapus');
+    }
+
+
+    public function statusOnchange($id)
+    {
+            $dataPengaduan = Pengaduan::find($id);
+            $dataPengaduan->status = request()->get('status');
+            $dataPengaduan->save();
+        return redirect()->back();
     }
 }

@@ -14,7 +14,7 @@ class AddColumsAdminIdToTanggapansTable extends Migration
     public function up()
     {
         Schema::table('tanggapans', function (Blueprint $table) {
-            $table->string('admin_id')->after('id');
+            $table->string('admin_id')->nullable()->after('id');
         });
     }
 

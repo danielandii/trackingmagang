@@ -26,7 +26,7 @@
 							<th>Status</th>
 							<th class="text-center">Actions</th>
 						</tr>
-                        @foreach($laporanPengaduan as $item)
+                        @foreach($dataPengaduan as $item)
                         <tr>
 							<td>{{ $loop->iteration }}</td>
 							<td>{{ $item->no_tiket }}</td>

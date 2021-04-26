@@ -30,7 +30,7 @@ Route::get('/logout',  'LoginController@logout');
 
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/home',  'LoginController@home');
+    Route::get('/home',  'PengaduanController@index');
 	Route::get('/changepass',  'UserController@changePass');
 	Route::post('/changepass/{id}',  'UserController@changePassSubmit')->name('changepass');
 
@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/home-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
 
 		Route::get('/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
+		Route::post('/home-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('home-pengaduan.onchange');
 		Route::get('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 	});
 
