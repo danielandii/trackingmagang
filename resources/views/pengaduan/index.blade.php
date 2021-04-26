@@ -32,7 +32,7 @@
 							<th>Status Laporan</th>
 							<th class="text-center">Actions</th>
 						</tr>
-                        @foreach($tampilPengaduan as $pengaduan)
+                        @foreach($dataPengaduan as $pengaduan)
                         <tr>
 							<td>{{ $loop->iteration }}</td>
 							<td>{{ $pengaduan->no_tiket }}</td>

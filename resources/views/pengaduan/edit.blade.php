@@ -19,24 +19,28 @@
                                 <a href="{{ route('home-pengaduan.tampil') }}">
                                 <i class="fas fa-arrow-circle-left fa-2x"></i>
                                 </a>
-                                <h4>Detail Pengaduan</h4>
+                                <h4>Status Detail Pengaduan : {{$dataPengaduan->status}} </h4>
                             </div>
                     </div>
                         <div>
-                            <p>{{ $detailPengaduan->tanggal_pengaduan }}</p>
-                            <h5>{{ $detailPengaduan->laporan_pengaduan }}</h5>
-                            <img src="{{ Storage::url($detailPengaduan->file) }}" title="{{ $detailPengaduan->file }}">
+                            <p>{{ $dataPengaduan->tanggal_pengaduan }}</p>
+                            <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
+                            <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}">
                         </div>
                         <div class="card-footer">
                             <div class="d-flex justify-content-between">
-                                <select name="status" class="form-control" w-25>
-                                <option value="baru">Baru</option>
-                                <option value="proses">Proses</option>
-                                <option value="sedang dikonfirmasi">Sedang dikonfirmasi</option>
-                                <option value="pengerjaan">Pengerjaan</option>
-                                <option value="selesai">Selesai</option>
-                                </select>
-                                <a href="/home-tanggapan/{{$detailPengaduan->id}}" class="btn btn-primary">Tanggapi</a>
+                                
+                                <form action="{{route('home-pengaduan.onchange',$dataPengaduan->id)}}" method="post" >
+                                    @csrf
+                                    <select name="status" class="form-control" onchange="javascript:this.form.submit()">
+                                    <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
+                                    <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
+                                    <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
+                                    <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
+                                    </select>
+                                </form>
+                                
+                                <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +49,7 @@
                             <h4>Tanggapan</h4>
                         </div>
                         <div class="card-body">
-                            ini tanggapan
+                            <p>{{ @$dataTanggapan->laporan_tanggapan }}</p>
                         </div>
                     </div>
                 </div>

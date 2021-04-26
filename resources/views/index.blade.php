@@ -22,7 +22,7 @@
 		<h3><span class="font-weight">info laporan</span></h3>
 	</div>
 	<div class="row">
-		<h4><span class="font-weight-semibold">Total Pelapor</span></h4>
+		<h4><span class="font-weight-semibold">Total Pengaduan : {{ $dataPengaduan->count('pengaduan')}}</span></h4>
 	</div>
 	<div class="row">
 		<div class="col-lg-4">
@@ -34,10 +34,28 @@
 					
 					<div>
 						<div class="d-flex">
-							<h3 class="font-weight-semibold mb-0">0</h3>
+							<h3 class="font-weight-semibold mb-0">{{ $dataPengaduan->where('status','Baru')->count()}}</h3>
 						</div>
 						<div>
 							Laporan Baru
+						</div>
+					</div>
+				</blockquote>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="card bg-blue-400">
+				<blockquote class="blockquote d-flex py-2 mb-0">
+					<div class="mr-4" style="padding-left: 1.875rem;">
+						<i class="icon-stack-plus icon-4x"></i>
+					</div>
+					
+					<div>
+						<div class="d-flex">
+							<h3 class="font-weight-semibold mb-0">{{ $dataPengaduan->where('status','Sedang di Cek')->count()}}</h3>
+						</div>
+						<div>
+							Laporan Sedang di Cek
 						</div>
 					</div>
 				</blockquote>
@@ -52,10 +70,10 @@
 					
 					<div>
 						<div class="d-flex">
-							<h3 class="font-weight-semibold mb-0">0</h3>
+							<h3 class="font-weight-semibold mb-0">{{ $dataPengaduan->where('status','Pengerjaan')->count()}}</h3>
 						</div>
 						<div>
-							 Laporan Sedang di proses
+							 Laporan Sedang Pengerjaan
 						</div>
 					</div>
 				</blockquote>
@@ -70,7 +88,7 @@
 					
 					<div>
 						<div class="d-flex">
-							<h3 class="font-weight-semibold mb-0">0</h3>
+							<h3 class="font-weight-semibold mb-0">{{ $dataPengaduan->where('status','Selesai')->count()}}</h3>
 						</div>
 						<div>
 							Laporan Selesai
