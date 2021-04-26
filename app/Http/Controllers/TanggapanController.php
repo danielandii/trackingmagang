@@ -17,7 +17,7 @@ class TanggapanController extends Controller
     public function index()
     {
         // $detail_tanggapan = Pengaduan::find($id);
-        // return view('tanggapan.create',compact('detail_tanggapan'));
+         return view('tanggapan.history');
     }
 
     /**
@@ -110,4 +110,9 @@ class TanggapanController extends Controller
     //     return view('pengaduan.edit', compact('detailPengaduan'));
     // }
     
+    public function historytanggapan()
+    {
+            $historytanggapan = tanggapan::latest()->get();
+        return view('tanggapan.history', compact('historytanggapan'));
+    }
 }

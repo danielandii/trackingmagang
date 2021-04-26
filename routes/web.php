@@ -21,6 +21,8 @@ Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengadu
 Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');
 Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
 
+// Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
+
 
 //all
 Route::get('/login',  'LoginController@index')->name('login');
@@ -44,7 +46,8 @@ Route::group(['middleware' => ['auth']], function() {
 		
 		Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');
 		Route::post('/home-tanggapan/{id}','TanggapanController@store')->name('home-tanggapi');
-
+		
+		 Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
 
         Route::get('/home-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
 
