@@ -45,10 +45,7 @@
 							<td>{{ $item->status }}</td>
 							<td>
                                 <a href="" class="btn btn-info">
-									<i class="fas fa-clipboard">Edit</i>
-								</a>
-                                <a href="" class="btn btn-danger">
-									<i class="fas fa-trash-alt">Hapus</i>
+									<i class="fas fa-clipboard">Detail</i>
 								</a>
                             </td>
 						</tr>

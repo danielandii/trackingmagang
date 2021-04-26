@@ -146,4 +146,10 @@ class PengaduanController extends Controller
             $dataPengaduan->save();
         return redirect()->back();
     }
+
+    public function tampilDetailPengaduan($id)
+    {
+            $detailPengaduan = Pengaduan::find($id);
+        return view('pengaduan.detail',compact('detailPengaduan'));
+    }
 }
