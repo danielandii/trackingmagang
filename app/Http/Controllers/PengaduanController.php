@@ -150,6 +150,9 @@ class PengaduanController extends Controller
     public function tampilDetailPengaduan($id)
     {
             $detailPengaduan = Pengaduan::find($id);
-        return view('pengaduan.detail',compact('detailPengaduan'));
+            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+                $query->where('pengaduan_id',request()->route('id'));
+        })->first();
+        return view('pengaduan.detail',compact('detailPengaduan','dataTanggapan'));
     }
 }
