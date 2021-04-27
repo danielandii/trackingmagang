@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('content')
-<div class="page-header page-header-light">
+	<div class="page-header page-header-light">
 		<div class="page-header-content header-elements-md-inline">
 			<div class="page-title d-flex">
-				<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Pengaduan</h4>
+				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Home</span> - Pengaduan</h4>
 				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 			</div>
 		</div>
@@ -14,16 +14,16 @@
 
 		<!-- Hover rows -->
 		<div class="rows">
-		<div class="col">
-		@if ($message = Session::get('success'))
-			<div class="alert alert-success">
-				{{$message}}
+			<div class="col">
+			@if ($message = Session::get('success'))
+				<div class="alert alert-success">
+					{{$message}}
 				</div>
-		@endif
-		<div class="table-responsive">
+			@endif
+			<div class="table-responsive">
 
-			<table class="table datatable-basic table-hover border">
-				<thead>
+				<table class="table datatable-basic table-hover border">
+					<thead>
 						<tr>
 							<th>No</th>
 							<th>No Tiket</th>
@@ -52,7 +52,7 @@
                         @endforeach
                         
 					</thead>
-			</table>
+				</table>
 			</div>
 			</div>
 		</div>
