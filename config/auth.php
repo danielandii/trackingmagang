@@ -75,6 +75,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\Model\User::class,
         ],
+
+        'petugas' => [
+            'driver' => 'eloquent',
+            'model' => App\Model\Petugas::class,
+        ],
+
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Model\Admin::class,

@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengaduan');
 Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');
 Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
+Route::get('/detail-pengaduan/{id}', 'PengaduanController@TampilDetailPengaduan')->name('detail-pengaduan');
 
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
 

@@ -14,7 +14,7 @@ class AddColumsAdminIdToTanggapansTable extends Migration
     public function up()
     {
         Schema::table('tanggapans', function (Blueprint $table) {
-            $table->string('admin_id')->nullable()->after('id');
+            $table->string('petugas_id')->nullable()->after('id');
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumsAdminIdToTanggapansTable extends Migration
     public function down()
     {
         Schema::table('tanggapans', function (Blueprint $table) {
-            $table->dropColumn('admin_id');
+            $table->dropColumn('petugas_id');
         });
     }
 }
