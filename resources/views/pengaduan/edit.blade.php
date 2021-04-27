@@ -1,4 +1,8 @@
 @extends('layout')
 
-@section('content')      
+@section('content')
+    <div class="container-fluid">
+        aa
+    
+    </div>
 @endsection
