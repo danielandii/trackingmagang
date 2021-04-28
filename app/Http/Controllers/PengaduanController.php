@@ -37,14 +37,14 @@ class PengaduanController extends Controller
         $file = $request->file;
         $namaFile = $file->getClientOriginalName();
 
-        $id = Pengaduan::getId();
-        foreach ($id as $value);
-        $idlm = $value->id;
-        $idbaru = $idlm + 1;
+        // $id = Pengaduan::getId();
+        // foreach ($id as $value);
+        // $idlm = $value->id;
+        // $idbaru = $idlm + 1;
         // $blt = date('my');
    
 
-        $no_tiket = 'P-'.date('my').$idbaru;
+        $no_tiket = 'P-'.uniqid().date('my');
 
                 $data = new Pengaduan;
                 $data->no_tiket = $no_tiket; 
