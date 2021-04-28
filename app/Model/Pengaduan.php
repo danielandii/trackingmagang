@@ -11,7 +11,7 @@ class Pengaduan extends Model
 
     public static function getId()
     {
-        return $getId = DB::table('pengaduans')->orderBy('no_tiket','DESC')->take(1)->get();
+        return $getId = DB::table('pengaduans')->orderBy('id','DESC')->take(1)->get();
     }
 
     public function tanggapan()

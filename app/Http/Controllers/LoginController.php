@@ -46,4 +46,21 @@ class LoginController extends Controller
     {
         return view("index");
     }
+
+	//petugas
+	public function FormLoginPetugas()
+	{
+		return view('petugas.login');
+	}
+
+	public function LoginPetugas()
+	{
+
+		$auth = request()->only('username', 'password');
+		if(Auth()->guard('petugas')->attempt($auth))
+		{
+			return redirect()->to('/');
+		}
+		return redirect('/petugas/login')->with('error', 'Invalid Email address or Password');
+	}
 }

@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('home-tanggapi',$datapengaduan->id)}}" method="POST" accept-charset="utf-8">
+                    <form action="{{route('home-tanggapi', $detailpengaduan->id)}}" method="POST" accept-charset="utf-8">
                     @csrf
                         <div class="form-group">
                         <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">

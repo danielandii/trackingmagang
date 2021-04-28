@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Pengaduan;
 use App\Model\Tanggapan;
+use App\Model\Petugas;
 use File;
 
 class PengaduanController extends Controller
@@ -40,9 +41,10 @@ class PengaduanController extends Controller
         foreach ($id as $value);
         $idlm = $value->id;
         $idbaru = $idlm + 1;
-        $blt = date('my');
+        // $blt = date('my');
+   
 
-        $no_tiket = 'P-'.$idbaru.$blt;
+        $no_tiket = 'P-'.date('my').$idbaru;
 
                 $data = new Pengaduan;
                 $data->no_tiket = $no_tiket; 

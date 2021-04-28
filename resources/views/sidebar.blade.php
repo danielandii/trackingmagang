@@ -35,13 +35,13 @@
 				</li>
 				
 				
-				<li class="nav-item nav-item-submenu {{ (request()->is('super-admin*') || request()->is('admin*')) ? 'nav-item-expanded nav-item-open' : '' }}">
+				<!-- <li class="nav-item nav-item-submenu {{ (request()->is('super-admin*') || request()->is('admin*')) ? 'nav-item-expanded nav-item-open' : '' }}">
 					<a href="data-employees" class="nav-link"><i class="icon-user"></i></i> <span>Users</span></a>
 					<ul class="nav nav-group-sub">
 						<li class="nav-item"><a href="{{ url('/super-admin') }}" class="nav-link {{ (request()->is('super-admin*')) ? 'active' : '' }}"><span>Super Admin</span></a></li>
 						<li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link {{ (request()->is('ukm*')) ? 'active' : '' }}"><span>Admin/Petugas</span></a></li>
 					</ul>
-				</li>
+				</li> -->
 
 				<li class="nav-item">
 					<a href="{{ url('/home-pengaduan') }}" class="nav-link {{ (request()->is('home-pengaduan*')) ? 'active' : '' }}">

@@ -37,13 +37,18 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver' => 'session',  
             'provider' => 'users',
         ],
 
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
+        'petugas' => [
+            'driver' => 'eloquent',
+            'model' => App\Model\Petugas::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Model\Admin::class,
         ],
 
         'api' => [
