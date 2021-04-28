@@ -33,21 +33,21 @@
             </div>
             <div class="row mt-4 text-center">
                 <div class="col-md-4">
-                    <span class="fas fa-comments fa-6x p-3 rounded" style="background-image:
+                    <span class="icon-phone mr-3 icon-3x fa-6x p-3 rounded" style="background-image:
                     linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Respon Cepat</h2>
                     <p style="color:#1890c8">Petugas siap standby di depan layar akan 
                     merespon laporan kamu</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fas fa-clock fa-6x p-3 rounded" style="background-image:
+                    <span class="icon-watch mr-3 icon-3x fa-6x p-3 rounded" style="background-image:
                     linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Layanan 12 jam</h2>
                     <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai jam 7 pagi 
                     sampai jam 7 malam</p>
                 </div>
                 <div class="col-md-4">
-                    <span class="fas fa-volume-mute fa-6x p-3 rounded" style="background-image:
+                    <span class="icon-mic-off2 icon-3x fa-6x p-3 rounded" style="background-image:
                     linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Aduanmu aman</h2>
                     <p style="color:#1890c8">Kami tidak akan megadu tentang pwngaduan permasalahanmu 
