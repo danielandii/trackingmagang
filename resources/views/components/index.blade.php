@@ -125,13 +125,13 @@
     <p class="text-uppercase">find me </p>
     <div class="form-inline justify-content-center--">
         <a target=" blank" herf="http//github.com">
-            <i class="fab fa-github-alt mx-3 fa-2x text-white"></i>
+            <i class="icon-chrome mx-3 fa-2x text-white"></i>
         </a>
-        <a target=" blank" herf="http//www.facebook.com">
-            <i class="fab fa-facebook mx-3 fa-2x text-white"></i>
+        <a href="https://www.facebook.com/norewebid" class="d-inline-block">
+           <i class="fab fa-facebook mx-3 fa-2x text-white"></i>
         </a>
-        <a target=" blank" herf="http//instagram.com">
-            <i class="fab fa-instagram mx-3 fa-2x text-white"></i>
+        <a href="https://www.instagram.com/nore.web.id/" class="d-inline-block">
+          <i class="fab fa-instagram mx-3 fa-2x text-white"></i>
         </a>
     </div>
 </footer>
