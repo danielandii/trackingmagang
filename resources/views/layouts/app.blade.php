@@ -46,8 +46,8 @@
 				</div>
 
 				<div class="navbar-collapse collapse" id="navbar-footer">
-					<span class="navbar-text">
-						&copy; 2021. Nore
+				<span class="navbar-text">
+					&copy; 2021. <a href="http://nore.web.id" target="_blank">NORE</a>
 					</span>
 
 				</div>
