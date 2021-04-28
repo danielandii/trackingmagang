@@ -183,23 +183,6 @@
 			</div>
 		</div>
 	</div>
-	<blockquote class="blockquote">
-	<!-- /quick stats boxes -->
-	<!-- TODAY -->
-	<!-- Quick stats boxes -->
-	<div class="row">
-		<hr><hr>
-	</div>
-	<!-- /quick stats boxes -->
-</div>
-
-		<!-- Quick stats boxes -->
-		<div class="row">
-			
-		</div>
-		<!-- /quick stats boxes -->
-
-	</div>
 
 </div>
 @endsection
