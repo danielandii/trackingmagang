@@ -38,13 +38,23 @@
 
 			<!-- Footer -->
 			<div class="navbar navbar-expand-lg navbar-light">
-				<div class="text-center d-lg-none w-100">
+				<div class="text-center d-lg-none w-400">
 					<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
 						<i class="icon-unfold mr-2"></i>
 						Footer
 					</button>
 				</div>
-
+				<div class="form-inline justify-content-center--">
+        			<a target=" blank" herf="http//github.com">
+            			<i class="icon-chrome mx-3 fa-2x text-red"></i>
+        			</a>
+        			<a href="https://www.facebook.com/norewebid" class="d-inline-block">
+          				<i class="fab fa-facebook mx-3 fa-2x text-red"></i>
+        			</a>
+        			<a href="https://www.instagram.com/nore.web.id/" class="d-inline-block">
+          				<i class="fab fa-instagram mx-3 fa-2x text-red"></i>
+        			</a>
+   				</div>
 				<div class="navbar-collapse collapse" id="navbar-footer">
 				<span class="navbar-text">
 					&copy; 2021. <a href="http://nore.web.id" target="_blank">NORE</a>

@@ -6,15 +6,15 @@
     cover">
     <div class="card card-body border-0" style="background-color:rgba(24,145,201,0.7);">
         <div class="masthead" >
-            <div class="text-center" style="margin-bottom:300px;margin-top 120px">
+            <div class="text-center" style="margin-bottom:400px;margin-top 120px">
                 <div class="masthead-subheading">
                     <h1 class="text-uppercase font-weight-bold" style="color:gold;;">Aplikasi 
                     Pengaduan</h1>
                     <div class="container">
                         <h5 class="text-white text-center "><strong>Aplikasi 
-                        Pengaduan</strong>Aplikasi yang diuntukan untuk menyampaikan keluhan 
+                        Pengaduan</strong> Aplikasi yang diuntukan untuk menyampaikan keluhan 
                         keluhan yang dirasakan oleh pelanggan tentang apapun yang diberikan oleh kami
-                        <strong>mengadukan keluhan ataupun memberikan saran</strong>untuk kami
+                        <strong>mengadukan keluhan ataupun memberikan saran</strong> untuk kami
                         lebih baik</h5>
                     </div>
                     <a href="#fiturfitur" style="background-image:linear-gradient(to right,gold,#FFFF00"
@@ -119,7 +119,7 @@
             </div>
     </section>
 </main>
-<footer class="text-center text-white p-2 sticky-footer" style="background-image:linear-gradient(to
+<!-- <footer class="text-center text-white p-2 sticky-footer" style="background-image:linear-gradient(to
     right,#0b4761,#0e5c7d,#0b4761);color:#0e5c7d">
     <h5 class="text-uppercase">2021</h5>
     <p class="text-uppercase">find me </p>
@@ -134,6 +134,6 @@
           <i class="fab fa-instagram mx-3 fa-2x text-white"></i>
         </a>
     </div>
-</footer>
+</footer> -->
 @endsection
         
