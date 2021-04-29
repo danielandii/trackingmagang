@@ -157,4 +157,14 @@ class PengaduanController extends Controller
         })->first();
         return view('pengaduan.detail',compact('detailPengaduan','dataTanggapan'));
     }
+
+    public function getview()
+        {
+                 //PDF file is stored under project/public/download/info.pdf
+                $file= public_path(). "/download/info.pdf";
+                $headers = array(
+              'Content-Type: application/pdf',);
+
+        return Response::download($file, 'filename.pdf', $headers);
+        }       
 }
