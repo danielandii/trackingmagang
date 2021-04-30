@@ -14,7 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+            // $dataPengaduan = Pengaduan::get();
+            return view('admin.index');
     }
 
     /**

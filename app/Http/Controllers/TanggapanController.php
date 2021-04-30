@@ -118,4 +118,5 @@ class TanggapanController extends Controller
             $historytanggapan = tanggapan::latest()->get();
         return view('tanggapan.history', compact('historytanggapan'));
     }
+
 }

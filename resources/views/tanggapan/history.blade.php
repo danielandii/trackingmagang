@@ -2,16 +2,53 @@
 
 @section('content')
 
-	<!-- Page header -->
-	<div class="page-header page-header-light">
+<div class="page-header page-header-light">
 		<div class="page-header-content header-elements-md-inline">
 			<div class="page-title d-flex">
-				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Home</span> - Dashboard</h4>
+				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Home</span> - History Tanggapan</h4>
 				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 			</div>
 		</div>
 	</div>
-	<!-- /page header -->
+	<!-- Content area -->
+	<div class="content">
+
+		<!-- Hover rows -->
+		<div class="rows">
+			<div class="col">
+			@if ($message = Session::get('success'))
+				<div class="alert alert-success">
+					{{$message}}
+				</div>
+			@endif
+			<div class="table-responsive">
+
+				<table class="table datatable-basic table-hover border">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Pengaduan_Id</th>
+							<th>Tanggal Tanggapan</th>
+							<th>Laporan Tanggapan</th>
+							<th class="text-center">Actions</th>
+						</tr>
+						@foreach($historytanggapan as $tanggapan)
+							<tr>
+								<td>{{ $loop->iteration }}</td>
+								<td>{{ $tanggapan->pengaduan_id}}</td>
+								<td>{{ $tanggapan->tanggal_tanggapan}}</td>
+								<td>{{ $tanggapan->laporan_tanggapan}}</td>
+							</tr>
+                        @endforeach
+					</thead>
+				</table>
+			</div>
+			</div>
+		</div>
+		<!-- /hover rows -->
+
+	</div>
+	<!-- /content area -->
 
 @endsection
 

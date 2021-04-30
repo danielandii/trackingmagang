@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Pengaduan;
 use App\Model\Tanggapan;
 use App\Model\Petugas;
+use App\Mail\SendMail;
 use File;
 
 class PengaduanController extends Controller
@@ -60,6 +61,13 @@ class PengaduanController extends Controller
                 //     $message->to($data->email);
                 //     $message->subject('Pengaduan Anda Akan segera kami proses');
                 // });
+                // \Mail::to($data->email)->send(new \App\Mail\SendMail($data));
+                // \Mail::send('mail.index', ['no_tiket' => $data->no_tiket, 'email' => $data->email, 'laporan_pengaduan' => $data->laporan_pengaduan, 'file' => $data->file], function ($message) {
+
+                //         $message->to('your.email@gmail.com')->subject('Subject of the message!');
+                //     });
+                //     dd($data);
+            
 
                 return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
         // $request->validate([

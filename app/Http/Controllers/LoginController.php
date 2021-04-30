@@ -48,9 +48,9 @@ class LoginController extends Controller
     }
 
 	//petugas
-	public function FormLoginPetugas()
+	public function FormLoginAdmin()
 	{
-		return view('petugas.login');
+		return view('admin.auth.login');
 	}
 
 	public function LoginPetugas()
