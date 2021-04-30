@@ -30,6 +30,8 @@ Route::get('/login',  'LoginController@index')->name('login');
 Route::post('/login',  'LoginController@login');
 Route::get('/logout',  'LoginController@logout');
 
+
+
 // Route::get('/petugas/login', 'LoginController@FormLoginPetugas');
 // Route::get('/petugas/login/post', 'LoginController@LoginPetugas')->name('petugas.login');
 // Route::get('/pengaduan',  'PengaduanController@index');
@@ -43,8 +45,14 @@ Route::group(['middleware' => ['auth']], function() {
 	//superadmin
 	Route::group(['middleware' => ['role:1']], function() {
 		// *****************CRUD Superadmin********************
-		// Route::resource('super-admin', 'UserController');
-
+		Route::get('users', 'UserController@index')->name('users');
+		Route::get('users-edit/{id}', 'UserController@edit')->name('users-edit');
+		Route::get('users-create', 'UserController@create')->name('users-create');
+		Route::get('users-update/{id}', 'UserController@update')->name('users-update');
+		Route::post('users-store', 'UserController@store')->name('users-store');
+		Route::delete('users-delete/{id}', 'UserController@destroy')->name('users-delete');
+		
+			// Route::resource('users', 'UserController');
 		// Route::resource('tanggapan', 'TanggapanController');
 		
 		Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');

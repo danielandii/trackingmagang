@@ -1,13 +1,5 @@
 @extends('layout')
 
-@section('css')
-<style type="text/css">
-	.datatable-column-width{
-		overflow: hidden; text-overflow: ellipsis; max-width: 200px;
-	}
-</style>
-@endsection
-
 @section('content')
 
 	<!-- Page header -->
@@ -27,7 +19,7 @@
 		<!-- Hover rows -->
 		<div class="card">
 			<div class="card-header header-elements-inline">
-				<a href="{{ route('users.create')}}"><button type="button" class="btn btn-success rounded-round"><i class="icon-add mr-2"></i> Tambah</button></a>
+				<a href="{{ route('users-create')}}"><button type="button" class="btn btn-success rounded-round"><i class="icon-add mr-2"></i> Tambah</button></a>
 			</div>
 
 			<table class="table datatable-basic table-hover">
@@ -36,7 +28,6 @@
 						<th>No</th>
 						<th>Nama</th>
 						<th>Username</th>
-						<th>Role</th>
 						<th class="text-center">Actions</th>
 					</tr>
 				</thead>
@@ -48,7 +39,6 @@
 				        <td>{{$i}}</td>
 				        <td><div class="datatable-column-width">{{$user->nama}}</div></td>
 				        <td><div class="datatable-column-width">{{$user->username}}</div></td>
-				        <td>{{ (config('custom.role.'.$user->role)) ? config('custom.role.'.$user->role) : config('custom.role_karyawan.'.$user->role) }}</td>
 				        <td align="center">
 							<div class="list-icons">
 								<div class="dropdown">
@@ -57,8 +47,8 @@
 									</a>
 
 									<div class="dropdown-menu dropdown-menu-right">
-										<a href="{{ route('users.edit',$user->id)}}" class="dropdown-item"><i class="icon-pencil7"></i> Edit</a>
-							            <a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri="{{ route('users.destroy', $user->id)}}"><i class="icon-x"></i> Delete</a>
+										<a href="{{ route('users-edit',$user->id)}}" class="dropdown-item"><i class="icon-pencil7"></i> Edit</a>
+							            <a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri="{{ route('users-delete', $user->id)}}"><i class="icon-x"></i> Delete</a>
 									</div>
 								</div>
 							</div>
@@ -67,7 +57,7 @@
 				    @php ($i++)
 				    @endforeach
 				@else
-				  	<tr><td align="center" colspan="5">Data Kosong</td></tr>
+				  	<tr><td align="center" colspan="4">Data Kosong</td></tr>
 				@endif 
 				    
 				</tbody>
@@ -138,7 +128,7 @@
 		            columnDefs: [{ 
 		                orderable: false,
 		                width: 100,
-		                targets: [ 4 ]
+		                targets: [ 3 ]
 		            }],
 		            dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
 		            language: {

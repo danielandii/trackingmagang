@@ -21,7 +21,7 @@
 			<div class="card-header header-elements-inline">
 			</div>
 			<div class="card-body">
-				<form id="submituser" class="form-validate-jquery" action="{{ route('users.store')}}" method="post">
+				<form id="submituser" class="form-validate-jquery" action="{{ route('users-store')}}" method="post">
 					@csrf
 					<fieldset class="mb-3">
 						<legend class="text-uppercase font-size-sm font-weight-bold">Data User</legend>
@@ -51,7 +51,7 @@
 								<input type="password" name="password" class="form-control border-teal border-1 @error('password') is-invalid @enderror" placeholder="Password" required autocomplete="off" value="{{ old('password') }}">
 							</div>
 						</div>
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label class="col-form-label col-lg-2">Role</label>
 							<div class="col-lg-10">
 								<select name="role" class="form-control form-control-select2" data-container-css-class="border-teal" data-dropdown-css-class="border-teal" required>
@@ -60,7 +60,7 @@
 									@endforeach
                                 </select>
 							</div>
-                        </div>
+                        </div> -->
 						
 					</fieldset>
 					<div class="text-right">
@@ -184,9 +184,9 @@
 		                password: {
 		                    required: 'Mohon diisi.'
 		                },
-		                role: {
-		                    required: 'Mohon diisi.'
-		                },
+		                // role: {
+		                //     required: 'Mohon diisi.'
+		                // },
 		                cabang_id: {
 		                    required: 'Mohon diisi.'
 		                },
