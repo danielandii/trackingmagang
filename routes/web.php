@@ -21,7 +21,7 @@ Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengadu
 Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');
 Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
 Route::get('/detail-pengaduan/{id}', 'PengaduanController@TampilDetailPengaduan')->name('detail-pengaduan');
-
+//  Route::get('/View', 'PengaduanController@getview')->nama('View');
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
 
 
@@ -29,6 +29,8 @@ Route::get('/detail-pengaduan/{id}', 'PengaduanController@TampilDetailPengaduan'
 Route::get('/login',  'LoginController@index')->name('login');
 Route::post('/login',  'LoginController@login');
 Route::get('/logout',  'LoginController@logout');
+
+
 
 // Route::get('/petugas/login', 'LoginController@FormLoginPetugas');
 // Route::get('/petugas/login/post', 'LoginController@LoginPetugas')->name('petugas.login');
@@ -43,8 +45,14 @@ Route::group(['middleware' => ['auth']], function() {
 	//superadmin
 	Route::group(['middleware' => ['role:1']], function() {
 		// *****************CRUD Superadmin********************
-		// Route::resource('super-admin', 'UserController');
-
+		Route::get('users', 'UserController@index')->name('users');
+		Route::get('users-edit/{id}', 'UserController@edit')->name('users-edit');
+		Route::get('users-create', 'UserController@create')->name('users-create');
+		Route::get('users-update/{id}', 'UserController@update')->name('users-update');
+		Route::post('users-store', 'UserController@store')->name('users-store');
+		Route::delete('users-delete/{id}', 'UserController@destroy')->name('users-delete');
+		
+			// Route::resource('users', 'UserController');
 		// Route::resource('tanggapan', 'TanggapanController');
 		
 		Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');

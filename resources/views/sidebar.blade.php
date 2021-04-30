@@ -33,6 +33,15 @@
 						</span>
 					</a>
 				</li>
+
+				<li class="nav-item">
+					<a href="{{ url('/users') }}" class="nav-link {{ (request()->is('user*')) ? 'active' : '' }}">
+						<i class="icon-users"></i>
+						<span>
+							User
+						</span>
+					</a>
+				</li>
 				
 				
 				<li class="nav-item nav-item-submenu {{ (request()->is('superadmin*') || request()->is('admin*')) ? 'nav-item-expanded nav-item-open' : '' }}">

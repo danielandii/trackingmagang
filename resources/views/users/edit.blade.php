@@ -21,7 +21,7 @@
 			<div class="card-header header-elements-inline">
 			</div>
 			<div class="card-body">
-				<form class="form-validate-jquery" action="{{ route('users.update', $user->id)}}" method="post">
+				<form class="form-validate-jquery" action="{{ route('users-update', $user->id)}}" >
 					@method('PATCH')
 					@csrf
 					<fieldset class="mb-3">
@@ -52,7 +52,7 @@
 								<input type="password" name="password" class="form-control border-teal border-1 @error('password') is-invalid @enderror" placeholder="Password" autocomplete="off" value="{{ old('password') }}">
 							</div>
 						</div>
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label class="col-form-label col-lg-2">Role</label>
 							<div class="col-lg-10">
 								<select name="role" class="form-control form-control-select2" data-container-css-class="border-teal" data-dropdown-css-class="border-teal" required>
@@ -61,11 +61,11 @@
 									@endforeach
                                 </select>
 							</div>
-						</div>
+						</div> -->
 					</fieldset>
 					<div class="text-right">
 						<a href="{{ url('/users')}}" class="btn btn-light">Kembali <i class="icon-undo"></i></a>
-						<button type="submit" class="btn btn-primary">Update <i class="icon-paperplane ml-2"></i></button>
+						<button type="submit" class="btn btn-primary submitBtn">Update <i class="icon-paperplane ml-2"></i></button>
 					</div>
 				</form>
 			</div>

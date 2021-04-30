@@ -25,7 +25,7 @@ class PengaduanController extends Controller
                     'tanggal_pengaduan'=>'required',
                     'email'=>'required|email:rfc,dns',
                     'laporan_pengaduan'=>'required',
-                    'file' => 'required|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar',
+                    'file' => 'required|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar,wmv,mp4,txt',
         ],
         [
                 'required'          => 'wajib diisi.',
@@ -53,7 +53,7 @@ class PengaduanController extends Controller
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
                 $data->file = $namaFile;
-                $file->move(public_path().'/file_Laporan', $namaFile);
+                $file->move(public_path().'/storage', $namaFile);
                 $data->save();
 
                 // \Mail::raw('Terima Kasih'.$data->email.'sudah melakukan Pengaduan', function ($message) use ($data){
@@ -165,4 +165,14 @@ class PengaduanController extends Controller
         })->first();
         return view('pengaduan.detail',compact('detailPengaduan','dataTanggapan'));
     }
+
+    public function getview()
+        {
+                 //PDF file is stored under project/public/download/info.pdf
+                $file= public_path(). "storage";
+                $headers = array(
+              'Content-Type: application/file',);
+
+        return Response::download($file, 'storage', $headers);
+        }       
 }

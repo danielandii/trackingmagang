@@ -35,7 +35,7 @@
                             <td>{{ $item->laporan_pengaduan }}</td>
                             <td>
                             {{ $item->file }}
-                                <!-- <a href="{{ asset('file_Laporan/'. $item->file) }}" target="_blank" rel="noopener noreferrer">Lihat File</a> -->
+                                <!-- <a href="{{ asset('storage'. $item->file) }}" target="_blank" rel="noopener noreferrer">Lihat File</a> -->
                             </td>
 							<td>
                                             <a href="{{ Storage::url($item->file) }}">
@@ -73,12 +73,12 @@
 
 	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
-	<script src="../../../../global_assets/js/demo_pages/content_cards_content.js"></script>
-	<script src="../../../../global_assets/js/plugins/media/fancybox.min.js"></script>
+	<script src="{{asset('global_assets/js/demo_pages/content_cards_content.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/media/fancybox.min.js')}}"></script>
 	<script>
 		//modal delete
 		$(document).on("click", ".delbutton", function () {
-		     var url = $(this).data('uri');
+		     var url = $(this).data('url');
 		     $("#delform").attr("action", url);
 		});
 

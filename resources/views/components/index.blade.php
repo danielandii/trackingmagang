@@ -12,8 +12,8 @@
                     Pengaduan</h1>
                     <div class="container">
                         <h5 class="text-white text-center "><strong>Aplikasi 
-                        Pengaduan</strong> Aplikasi yang diuntukan untuk menyampaikan keluhan 
-                        keluhan yang dirasakan oleh pelanggan tentang apapun yang diberikan oleh kami
+                        Pengaduan</strong> Aplikasi yang diperuntukan untuk menyampaikan keluhan-keluhan
+                         yang dirasakan oleh pelanggan tentang apapun yang diberikan oleh kami
                         <strong>mengadukan keluhan ataupun memberikan saran</strong> untuk kami
                         lebih baik</h5>
                     </div>
@@ -36,21 +36,21 @@
                     <span class="icon-phone mr-3 icon-3x fa-6x p-3 rounded" style="background-image:
                     linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Respon Cepat</h2>
-                    <p style="color:#1890c8">Petugas siap standby di depan layar akan 
+                    <p style="color:#1890c8">Petugas siap standby di depan layar dan akan 
                     merespon laporan kamu</p>
                 </div>
                 <div class="col-md-4">
                     <span class="icon-watch mr-3 icon-3x fa-6x p-3 rounded" style="background-image:
                     linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Layanan 12 jam</h2>
-                    <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai jam 7 pagi 
+                    <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai dari jam 7 pagi 
                     sampai jam 7 malam</p>
                 </div>
                 <div class="col-md-4">
                     <span class="icon-mic-off2 icon-3x fa-6x p-3 rounded" style="background-image:
                     linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
                     <h2 class=""style="color:#1890c8">Aduanmu aman</h2>
-                    <p style="color:#1890c8">Kami tidak akan megadu tentang pwngaduan permasalahanmu 
+                    <p style="color:#1890c8">Kami tidak akan megadu tentang pengaduan permasalahanmu 
                     selain kepada pihak yang berwajib</p>
                 </div>
             </div>
@@ -103,14 +103,14 @@
                         <span class="fas fa-user-secret fa-6x p-3 rounded bg-white" style=";
                         background-image:linear-gradient(to right,#0b4761,#0e5c7d,#064761);
                         color:#oe5c7d;color:white"></span>
-                            <h2 class="" style="color:#0e5c7d">Fulan secret</h2>
+                            <h2 class="" style="color:#0e5c7d">Fulin</h2>
                              <p class="" style="color:#0e5c7d"><i>"sangat bermanfaat dimasa pandemi seperti ini ,sehingga kita tidak perlu berkerumun kesana"</i></p>
                     </div>
                     <div class="col-md-4">
                         <span class="fas fa-user-ninja fa-6x p-3 rounded bg-white" style="
                             background-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
                             color:#0e5c7d;color:white"></span>
-                            <h2 class="" style="color:#0e5c7d">Fulan ninja</h2>
+                            <h2 class="" style="color:#0e5c7d">Fulen</h2>
                             <p class="" style="color:#0e5c7d"><i>" Petugasnya cepat merespon,
                                 tanggapannya mudah dimengerti dan dalam beberapa hari aduan 
                                 saya terealisasi, terimakasih appems"</i></p>
