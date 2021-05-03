@@ -10,15 +10,18 @@ use Illuminate\Queue\SerializesModels;
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $no_tiket, $tanggal_pengaduan;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($no_tiket, $tanggal_pengaduan)
     {
-                $this->data = $data;
+                $this->no_tiket = $no_tiket;
+                $this->tanggal_pengaduan = $tanggal_pengaduan;
+
     }
 
     /**
@@ -28,7 +31,9 @@ class SendMail extends Mailable
      */
     public function build()
     {
+        // $data = Pengaduan::first();
         return $this->from('Pengaduanm@gmail.com')
-        ->view('mail.index');
+        ->view('mail.index')
+        ->with( $this->no_tiket,$this->tanggal_pengaduan);
     }
 }

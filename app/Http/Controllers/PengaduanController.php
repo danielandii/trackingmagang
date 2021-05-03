@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Model\Pengaduan;
 use App\Model\Tanggapan;
 use App\Model\Petugas;
 use App\Mail\SendMail;
 use File;
+
 
 class PengaduanController extends Controller
 {
@@ -67,9 +69,11 @@ class PengaduanController extends Controller
                 //         $message->to('your.email@gmail.com')->subject('Subject of the message!');
                 //     });
                 //     dd($data);
+
+                Mail::to($request->email)->send(new SendMail($no_tiket, $request->tanggal_pengaduan));
             
 
-                return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan");
+                return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan dan No tiket Anda sudah di kirimkan");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',
