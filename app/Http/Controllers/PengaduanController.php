@@ -13,9 +13,13 @@ use File;
 
 class PengaduanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-            $dataPengaduan = Pengaduan::get();
+        if ($request) {
+              $dataPengaduan = Pengaduan::where('no_tiket', 'like', '%'.$request->cari.'%')->get();
+        }else{
+            $dataPengaduan = Pengaduan::all();
+        } 
             return view('index',compact('dataPengaduan'));
     }
 
@@ -47,7 +51,7 @@ class PengaduanController extends Controller
         // $blt = date('my');
    
 
-        $no_tiket = 'P-'.uniqid().date('my');
+        $no_tiket = uniqid().date('my');
 
                 $data = new Pengaduan;
                 $data->no_tiket = $no_tiket; 
@@ -73,7 +77,7 @@ class PengaduanController extends Controller
                 Mail::to($request->email)->send(new SendMail($no_tiket, $request->tanggal_pengaduan));
             
 
-                return redirect()->to('/laporan-pengaduan')->with('success', "Laporan Pengaduan Sukses Disimpan dan No tiket Anda sudah di kirimkan");
+                return redirect()->to('/')->with('success', "Laporan Pengaduan Sukses Disimpan dan No tiket Anda sudah di kirimkan");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',
@@ -179,4 +183,13 @@ class PengaduanController extends Controller
 
         return Response::download($file, 'storage', $headers);
         }       
+   public function cari()
+        {
+                $cari = $_GET['query'];
+                
+                $dataPengaduan = Pengaduan::where('no_tiket','like','%'.$cari.'%')
+                ->paginate();
+
+                return view('pengaduan.search',compact('dataPengaduan'));
+        }
 }

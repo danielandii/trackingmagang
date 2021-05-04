@@ -11,6 +11,16 @@
 			<div class="card-header header-elements-inline">
 				<a href="{{ route('form-pengaduan') }}"><button type="button" class="btn btn-success rounded-round"><i class="icon-add mr-2"></i> Tambah Pengaduan</button></a>
 			</div>
+			<p>Cari Data Pegawai :</p>
+			<form action="/pengaduan/cari" method="get">
+							<div class="input-group mb-2">
+								<div class="form-group-feedback form-group-feedback-left">
+									<input type="text" class="form-control" name="cari" value="" placeholder="Search">
+									<div class="input-group-btn">
+										<button type="submit" class="btn btn-primary"><i class="fas fa-search"></i>Search</button>
+								</div>
+							</div>
+						</form>
 			<div class="table-responsive">
 
 			<table class="table datatable-basic table-hover text-center">
