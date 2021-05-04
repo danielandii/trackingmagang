@@ -21,16 +21,20 @@
 	</div>
 
     <div class="collapse navbar-collapse " id="navbarnavAltMarkup">
-    <div class="navbar-nav ml-auto mr-3">
+    <div class="navbar-nav ml-auto mr-1">
         <a class="nav-link text-white @if(request()->segment(1) == "") disabled border
         border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/">
         Home</a>
         <a class="nav-link text-white @if(request()->segment(1) == "lapor") disabled border
         border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/form-pengaduan">
         Buat Pengaduan</a>
-        <a class="nav-link text-white @if(request()->segment(1) == "lapor") disabled border
+        <form action="{{url ('/pengaduan/cari')}}" class="form-inline my-2 my-lg-0" type="get">
+					<input type="search" name="query" class="form-control mr-sm-2" placeholder="Cari No Tiket">
+					<button class="btn btn-outline-light my-0 my-sm-0" type="submit">Search</button>
+				</form>
+        <!-- <a class="nav-link text-white @if(request()->segment(1) == "lapor") disabled border
         border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/laporan-pengaduan">
-        Laporan Pengaduan</a>
+        Laporan Pengaduan</a> -->
         <!-- <li class="nav-item dropdown">
          <div class="nav-link text-white dropdown-toggle active" id="navbarDropdownMenuLink">
             <a href="/laporan-pengaduan"class="dropdown-item">

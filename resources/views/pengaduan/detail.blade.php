@@ -16,8 +16,8 @@
                         </div> -->
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <a href="{{ route('laporan-pengaduan') }}">
-                                <i class="fas fa-arrow-circle-left fa-2x"></i>
+                               
+                                
                                 </a>
                                 <h4>Status Detail Pengaduan : {{$detailPengaduan->status}} </h4>
                             </div>
