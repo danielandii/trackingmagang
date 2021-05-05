@@ -144,7 +144,6 @@ class PengaduanController extends Controller
             $dataPengaduan = Pengaduan::find($id);
             $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                     $query->where('pengaduan_id',request()->route('id'));
-                    
             })->first();
         return view('pengaduan.edit', compact('dataPengaduan','dataTanggapan'));
     }

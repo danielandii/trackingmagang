@@ -28,10 +28,10 @@ class TanggapanController extends Controller
      */
     public function create($id)
     {
+        // dd($request);
         $detailpengaduan = Pengaduan::find($id);
-        // $datapengaduan = Pengaduan::whereHas('tanggapan', function($query){
-        //     $query->where('pengaduan_id',request()->route('id'));
-        // })->first();
+      
+        // dd($detailpengaduan);
 
         return view('tanggapan.create',compact('detailpengaduan'));
         

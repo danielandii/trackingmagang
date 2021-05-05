@@ -33,11 +33,12 @@
                                 <form action="{{route('home-pengaduan.onchange',$dataPengaduan->id)}}" method="post" >
                                     @csrf
                                     <select name="status" class="form-control" onchange="javascript:this.form.submit()">
-                                    <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
-                                    <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
-                                    <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
-                                    <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
+                                        <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
+                                        <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
+                                        <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
+                                        <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
                                     </select>
+                                    
                                 </form>
                                 
                                 <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a>
