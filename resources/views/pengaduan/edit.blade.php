@@ -48,9 +48,13 @@
                         <div class="card-header">
                             <h4>Tanggapan</h4>
                         </div>
+                        @foreach($dataPengaduan->tanggapan as $tanggapan)
                         <div class="card-body">
-                            <p>{{ @$dataTanggapan->laporan_tanggapan }}</p>
+                            <p>{{$tanggapan->tanggal_tanggapan}}</p>
+                            <p>{{$tanggapan->laporan_tanggapan}}</p>
+                            <p>{{$tanggapan->pengaduan_status}}</p>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

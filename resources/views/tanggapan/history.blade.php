@@ -30,6 +30,7 @@
 							<th>Pengaduan_Id</th>
 							<th>Tanggal Tanggapan</th>
 							<th>Laporan Tanggapan</th>
+							<th>Status Pengaduan</th>
 							<th class="text-center">Actions</th>
 						</tr>
 						@foreach($historytanggapan as $tanggapan)
@@ -38,6 +39,7 @@
 								<td>{{ $tanggapan->pengaduan_id}}</td>
 								<td>{{ $tanggapan->tanggal_tanggapan}}</td>
 								<td>{{ $tanggapan->laporan_tanggapan}}</td>
+								<td>{{ $tanggapan->pengaduan_status}}</td>
 							</tr>
                         @endforeach
 					</thead>

@@ -39,7 +39,7 @@
                         <div class="card-body">
                             <p>{{$tanggapan->tanggal_tanggapan}}</p>
                             <p>{{$tanggapan->laporan_tanggapan}}</p>
-                            <p>{{$detailPengaduan->status}}</p>
+                            <p>{{$tanggapan->pengaduan_status}}</p>
                         </div>
                         @endforeach
                     </div>

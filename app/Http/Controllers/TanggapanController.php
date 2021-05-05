@@ -48,10 +48,11 @@ class TanggapanController extends Controller
         $data_tanggapan = new Tanggapan();
         $data_tanggapan->tanggal_tanggapan = request()->get('tanggal_tanggapan');
         $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
+        $data_tanggapan->pengaduan_status = request()->get('pengaduan_status');
         $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
         $data_tanggapan->save();
 
-        return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id :_".$data_tanggapan->pengaduan_id."_Sukses Disimpan");
+        return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
     }
 
     /**

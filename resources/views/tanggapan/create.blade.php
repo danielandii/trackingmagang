@@ -22,6 +22,16 @@
                             <label for="tanggapan">Tanggapan</label>
                             <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
                         </div>
+
+                        
+                                    <select name="pengaduan_status" class="form-control" >
+                                    <option value="Baru" >Baru</option>
+                                    <option value="Sedang di Cek" >Sedang di Cek</option>
+                                    <option value="Pengerjaan" >Pengerjaan</option>
+                                    <option value="Selesai">Selesai</option>
+                                    </select>
+                                
+                        
                         <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
                     </form>
                 </div>
