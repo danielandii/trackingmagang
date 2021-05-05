@@ -24,5 +24,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        // Response::macro('caps', function ($value) {
+        //     return Response::make(strtoupper($value));
+        // });
+        
     }
 }

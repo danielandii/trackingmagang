@@ -11,7 +11,7 @@
                                         <div class="card-body">
                                             <form class="form-validate-jquery"  method="POST"  action="{{ route('pengaduan-simpan') }}" enctype="multipart/form-data">
 											@csrf
-                                            <div class="card header">
+                                            <div class=" header">
                                                 <H3 class="text-center">Tambah Pengaduan</H3>
                                             </div>
 

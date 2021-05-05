@@ -23,8 +23,8 @@
 	<!-- <div class="row">
 		<h4><span class="font-weight-semibold">Total Pengaduan : {{ $dataPengaduan->count('pengaduan')}}</span></h4>
 	</div> -->
-	<div class="row-">
-	<div class="col-lg-20">
+	<div class="row">
+	<div class="col-lg-4">
 			<div class="card bg-blue-400">
 				<blockquote class="blockquote d-flex py-2 mb-0">
 					<div class="mr-4" style="padding-left: 1.875rem;">
@@ -42,7 +42,7 @@
 				</blockquote>
 			</div>
 		</div>
-		<div class="col-lg-20">
+		<div class="col-lg-4">
 			<div class="card bg-blue-400">
 				<blockquote class="blockquote d-flex py-2 mb-0">
 					<div class="mr-4" style="padding-left: 1.875rem;">
@@ -60,7 +60,7 @@
 				</blockquote>
 			</div>
 		</div>
-		<div class="col-lg-20">
+		<div class="col-lg-4">
 			<div class="card bg-blue-400">
 				<blockquote class="blockquote d-flex py-2 mb-0">
 					<div class="mr-4" style="padding-left: 1.875rem;">
@@ -78,7 +78,7 @@
 				</blockquote>
 			</div>
 		</div>
-		<div class="col-lg-20">
+		<div class="col-lg-6">
 			<div class="card bg-blue-400">
 				<blockquote class="blockquote d-flex py-2 mb-0">
 					<div class="mr-4" style="padding-left: 1.875rem;">
@@ -96,7 +96,7 @@
 				</blockquote>
 			</div>
 		</div>
-		<div class="col-lg-2-">
+		<div class="col-lg-6">
 			<div class="card bg-blue-400">
 				<blockquote class="blockquote d-flex py-2 mb-0">
 					<div class="mr-4" style="padding-left: 1.875rem;">

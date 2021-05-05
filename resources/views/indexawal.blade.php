@@ -3,7 +3,7 @@
     cover">
     <div class="card card-body border-0" style="background-color:rgba(24,145,201,0.7);">
         <div class="masthead" >
-            <div class="text-center" style="margin-bottom:300px;margin-top 120px">
+            <div class="text-center" style="margin-bottom:1200px;margin-top 120px">
                 <div class="masthead-subheading">
                     <h1 class="text-uppercase font-weight-bold" style="color:gold;;">Aplikasi 
                     Pengaduan</h1>
