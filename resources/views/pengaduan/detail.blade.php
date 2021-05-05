@@ -24,7 +24,7 @@
                     </div>
                         <div class="card-body">
                             <p>No Tiket : {{$detailPengaduan->no_tiket }}</p>
-                            <p> Tanggal Pengaduan : {{ $detailPengaduan->tanggal_pengaduan }}</p>
+                            <p> Tanggal Pengaduan : {{ $detailPengaduan->created_at->format('l, d F Y') }}</p>
                             <h5>Laporan Pengaduan : {{ $detailPengaduan->laporan_pengaduan }}</h5>
                             <img src="{{ Storage::url($detailPengaduan->file) }}" title="{{ $detailPengaduan->file }}">
                             <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i></button>

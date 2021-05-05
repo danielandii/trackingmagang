@@ -117,7 +117,8 @@ class TanggapanController extends Controller
     
     public function historytanggapan()
     {
-            $historytanggapan = tanggapan::latest()->get();
+            $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->get();
+            // dd($historytanggapan);
         return view('tanggapan.history', compact('historytanggapan'));
     }
 

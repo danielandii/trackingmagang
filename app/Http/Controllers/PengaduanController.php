@@ -28,7 +28,7 @@ class PengaduanController extends Controller
         //     $data = $request->except('_token', '_method');
         // dd($data);
             $request->validate([
-                    'tanggal_pengaduan'=>'required',
+                    'tanggal_pengaduan'=>'required ',
                     'email'=>'required|email:rfc,dns',
                     'laporan_pengaduan'=>'required',
                     'file' => 'required|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar,wmv,mp4,txt',
@@ -142,6 +142,7 @@ class PengaduanController extends Controller
     public function detailPengaduan($id)
     {
             $dataPengaduan = Pengaduan::find($id);
+            // dd($dataPengaduan);
             $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                     $query->where('pengaduan_id',request()->route('id'));
             })->first();

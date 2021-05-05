@@ -36,7 +36,7 @@
                         <tr>
 							<td>{{ $loop->iteration }}</td>
 							<td>{{ $pengaduan->no_tiket }}</td>
-							<td>{{ $pengaduan->tanggal_pengaduan }}</td>	
+							<td>{{ $pengaduan->created_at->format('l, d F Y') }}</td>	
 							<td>{{ $pengaduan->email }}</td>
 							<td>{{ $pengaduan->status }}</td>
                             <td>
