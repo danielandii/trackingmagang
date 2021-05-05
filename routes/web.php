@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengaduan');
 Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');
 Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
-Route::get('/detail-pengaduan/{id}', 'PengaduanController@TampilDetailPengaduan')->name('detail-pengaduan');
+Route::get('/detail-pengaduan/{id} {no_tiket}', 'PengaduanController@TampilDetailPengaduan')->name('detail-pengaduan');
 Route::get('/pengaduan/cari','PengaduanController@cari')->name('cari-pengaduan');
 //  Route::get('/View', 'PengaduanController@getview')->nama('View');
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
