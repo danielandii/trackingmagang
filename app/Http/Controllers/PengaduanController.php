@@ -74,7 +74,7 @@ class PengaduanController extends Controller
                 //     });
                 //     dd($data);
 
-                Mail::to($request->email)->send(new SendMail($no_tiket, $request->tanggal_pengaduan));
+                Mail::to($request->email)->send(new SendMail($no_tiket, $request->tanggal_pengaduan, $request->email));
             
 
                 return redirect()->to('/')->with('success', "Laporan Pengaduan Sukses Disimpan dan No tiket Anda sudah di kirimkan");
@@ -168,10 +168,10 @@ class PengaduanController extends Controller
     public function tampilDetailPengaduan($id)
     {
             $detailPengaduan = Pengaduan::find($id);
-            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
-                $query->where('pengaduan_id',request()->route('id'));
-        })->first();
-        return view('pengaduan.detail',compact('detailPengaduan','dataTanggapan'));
+        //     $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+        //         $query->where('pengaduan_id',request()->route('id'));
+        // })->first();
+        return view('pengaduan.detail',compact('detailPengaduan'));
     }
 
     public function getview()
