@@ -35,13 +35,6 @@
                                 <a href="/detail-pengaduan/{{$item->id}} {{$item->no_tiket}}" class="btn btn-info">
 									<i class="fas fa-clipboard">Detail</i>
 								</a>
-								<form action="{{ url('delete-pengaduan',$item->id ) }}" method="post" class="d-inline" onsubmit="return confirm('yakin hapus data')">
-									@method('delete')
-									@csrf 
-									<button class="btn btn-danger btn-sm">
-									<i class="fa fa-trash">delete</i>
-									</button>
-								</form>
                             </td>
 						</tr>
                         @endforeach

@@ -30,7 +30,7 @@
                             <!-- <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i>
                             </button> -->
                             <a href="{{ Storage::url($detailPengaduan->file) }}">
-                                <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i>
+                                <button type="button" class="btn bg-teal-222 btn-icon"><i class="icon-download7"></i>
                              </a>
                         </div>
 

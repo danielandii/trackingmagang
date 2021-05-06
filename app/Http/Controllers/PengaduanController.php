@@ -8,7 +8,6 @@ use App\Model\Pengaduan;
 use App\Model\Tanggapan;
 use App\Model\Petugas;
 use App\Mail\SendMail;
-use Carbon\Carbon;
 use File;
 
 
@@ -136,7 +135,7 @@ class PengaduanController extends Controller
 
     public function tampilPengaduan()
     {
-            $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->get();
+            $dataPengaduan = Pengaduan::latest()->get();
         return view('pengaduan.index', compact('dataPengaduan'));
     }
 
@@ -187,17 +186,10 @@ class PengaduanController extends Controller
         }       
    public function cari()
         {
-                $cari = request()->query('query');
-
-                // dd($cari);
-                if ($cari){
-                    $dataPengaduan = Pengaduan::where('no_tiket','like', "%{$cari}%")
-                    ->paginate();
-                }
-                else{
-                    return redirect()->to('/');
-                }
-                // dd($dataPengaduan);
+                $cari = $_GET['query'];
+                
+                $dataPengaduan = Pengaduan::where('no_tiket','like','%'.$cari.'%')
+                ->paginate();
 
                 return view('pengaduan.search',compact('dataPengaduan'));
         }

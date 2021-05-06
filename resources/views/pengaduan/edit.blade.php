@@ -26,6 +26,9 @@
                             <p>{{ $dataPengaduan->tanggal_pengaduan }}</p>
                             <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
                             <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}">
+                            <a href="{{ Storage::url($dataPengaduan->file) }}">
+                                <button type="button" class="btn bg-teal-222 btn-icon"><i class="icon-download7"></i>
+                             </a>
                         </div>
                         
                         <div class="card-footer">
