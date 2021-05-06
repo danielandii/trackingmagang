@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
         // Response::macro('caps', function ($value) {
         //     return Response::make(strtoupper($value));
         // });
-        
+        config(['app.locale' => 'id']);
+        carbon::setlocale('id');
+        date_default_timezone_set('Asia/Jakarta');
     }
 }
