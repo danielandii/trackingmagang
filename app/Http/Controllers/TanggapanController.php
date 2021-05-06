@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Model\Pengaduan;
 use App\Model\Tanggapan;
+use App\Mail\SendTanggapanMail;
 use Carbon\Carbon;
 
 class TanggapanController extends Controller
@@ -49,8 +50,11 @@ class TanggapanController extends Controller
         $data_tanggapan->tanggal_tanggapan = request()->get('tanggal_tanggapan');
         $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
         $data_tanggapan->pengaduan_status = request()->get('pengaduan_status');
+        $data_tanggapan->pengaduan_email = request()->get('pengaduan_email');
         $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
         $data_tanggapan->save();
+
+        Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('pengaduan_status'),  request()->get('pengaduan_email')));
 
         return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
     }
