@@ -195,8 +195,11 @@ class PengaduanController extends Controller
         }
    public function show($id)
    {
-       $dl = File::find($id);
-       return Storage::download($dl->path, $dl->title);
+    $file= public_path(). "storage";
+    $headers = array(
+  'Content-Type: application/file',);
+
+return Response::download($file, 'storage', $headers);
    }
    public function delete($id)
    {
