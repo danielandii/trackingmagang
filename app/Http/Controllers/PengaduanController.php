@@ -169,6 +169,7 @@ class PengaduanController extends Controller
     public function tampilDetailPengaduan($id)
     {
             $detailPengaduan = Pengaduan::find($id);
+            dd($detailPengaduan);
         //     $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
         //         $query->where('pengaduan_id',request()->route('id'));
         // })->first();
@@ -186,12 +187,26 @@ class PengaduanController extends Controller
         }       
    public function cari()
         {
+<<<<<<< HEAD
                 $cari = $_GET['query'];
                 
                 $dataPengaduan = Pengaduan::where('no_tiket','like','%'.$cari.'%')
                 ->paginate();
+=======
+                $cari = request()->query('query');
 
-                return view('pengaduan.search',compact('dataPengaduan'));
+                // dd($cari);
+                if ($cari){
+                    $detailPengaduan = Pengaduan::where('no_tiket','like', "%{$cari}%")
+                    ->first();
+                }
+                else{
+                    return redirect()->to('/');
+                }
+                // dd($detailPengaduan);
+>>>>>>> d060109405482e811d31e8f37be7a19fe1b915cb
+
+                return view('pengaduan.search',compact('detailPengaduan'));
         }
    public function show($id)
    {
