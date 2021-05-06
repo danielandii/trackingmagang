@@ -27,7 +27,7 @@ Route::delete('delete-pengaduan/{id}','PengaduanController@delete')->name('delet
 
 //  Route::get('/View', 'PengaduanController@getview')->nama('View');
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
-// route::get('/download/{id}','pengaduan controller@show')->name('download');
+route::get('/download/{id}','PengaduanController@show')->name('download');
 
 //all
 Route::get('/login',  'LoginController@index')->name('login');
