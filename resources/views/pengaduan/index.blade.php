@@ -44,9 +44,13 @@
                                 <a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="btn btn-info">
 									<i class="fas fa-clipboard"> Detail</i>
 								</a>
-                                <a href="{{route('home-pengaduan.destroy', $pengaduan->id)}}" class="btn btn-danger">
-									<i class="fas fa-trash-alt"> Hapus</i>
-								</a>
+								<form action="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}" method="post" class="d-inline" onsubmit="return confirm('yakin hapus data')">
+									@method('delete')
+									@csrf 
+									<button class="btn btn-danger btn-sm">
+									<i class="fa fa-trash">delete</i>
+									</button>
+								</form>
                             </td>
 						</tr>
                         @endforeach

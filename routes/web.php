@@ -22,6 +22,9 @@ Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-
 Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
 Route::get('/detail-pengaduan/{id} {no_tiket}', 'PengaduanController@TampilDetailPengaduan')->name('detail-pengaduan');
 Route::get('/pengaduan/cari','PengaduanController@cari')->name('cari-pengaduan');
+Route::delete('delete-pengaduan/{id}','PengaduanController@delete')->name('delete-pengaduan');
+	
+
 //  Route::get('/View', 'PengaduanController@getview')->nama('View');
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
 // route::get('/download/{id}','pengaduan controller@show')->name('download');
@@ -65,7 +68,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
 		Route::post('/home-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('home-pengaduan.onchange');
-		Route::get('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
+		Route::delete('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 	});
 	// //admin
 	// Route::group(['middleware' => ['role:10']], function() {
