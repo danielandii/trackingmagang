@@ -8,6 +8,7 @@ use App\Model\Pengaduan;
 use App\Model\Tanggapan;
 use App\Model\Petugas;
 use App\Mail\SendMail;
+use Carbon\Carbon;
 use File;
 
 
@@ -135,7 +136,7 @@ class PengaduanController extends Controller
 
     public function tampilPengaduan()
     {
-            $dataPengaduan = Pengaduan::latest()->get();
+            $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->get();
         return view('pengaduan.index', compact('dataPengaduan'));
     }
 

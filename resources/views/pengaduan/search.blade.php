@@ -18,7 +18,7 @@
                         <tr>
 							<td>{{ $loop->iteration }}</td>
 							<td>{{ $item->no_tiket }}</td>
-							<td>{{ $item->created_at->format('l, d F Y') }}</td>
+							<td>{{ $item->created_at->format('d F Y H:i') }}</td>
 							<td>{{ $item->email }}</td>
                             <td>{{ $item->laporan_pengaduan }}</td>
                             <td>
