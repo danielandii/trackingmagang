@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Tanggapan extends Model
 {
     protected $fillable = ['pengaduan_id','tanggal_tanggapan','laporan_tanggapan'];
@@ -12,4 +13,6 @@ class Tanggapan extends Model
     {
         return $this->belongsTo('App\Model\Pengaduan');
     }
+
+   
 }

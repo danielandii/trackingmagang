@@ -18,10 +18,22 @@
                     @csrf
                         <div class="form-group">
                         <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
-                        <input type="hidden" name ="pengaduan_id" value="{{request()->route('id')}}">
+                        <input type="hidden" name ="pengaduan_id" value="{{$detailpengaduan->id}}">
+                        <input type="hidden" name ="pengaduan_status" value="{{$detailpengaduan->status}}">
                             <label for="tanggapan">Tanggapan</label>
                             <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
                         </div>
+
+                        
+                        
+                                    <!-- <select name="pengaduan_status" class="form-control" >
+                                    <option value="Baru" >Baru</option>
+                                    <option value="Sedang di Cek" >Sedang di Cek</option>
+                                    <option value="Pengerjaan" >Pengerjaan</option>
+                                    <option value="Selesai">Selesai</option>
+                                    </select> -->
+                                
+                        
                         <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
                     </form>
                 </div>
