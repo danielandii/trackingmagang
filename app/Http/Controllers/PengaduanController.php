@@ -192,4 +192,9 @@ class PengaduanController extends Controller
 
                 return view('pengaduan.search',compact('dataPengaduan'));
         }
+   public function show($id)
+   {
+       $dl = File::find($id);
+       return Storage::download($dl->path, $dl->title);
+   }
 }

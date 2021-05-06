@@ -24,7 +24,7 @@ Route::get('/detail-pengaduan/{id} {no_tiket}', 'PengaduanController@TampilDetai
 Route::get('/pengaduan/cari','PengaduanController@cari')->name('cari-pengaduan');
 //  Route::get('/View', 'PengaduanController@getview')->nama('View');
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
-
+// route::get('/download/{id}','pengaduan controller@show')->name('download');
 
 //all
 Route::get('/login',  'LoginController@index')->name('login');

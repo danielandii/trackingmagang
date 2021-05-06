@@ -27,7 +27,8 @@
                             <p> Tanggal Pengaduan : {{ $detailPengaduan->tanggal_pengaduan }}</p>
                             <h5>Laporan Pengaduan : {{ $detailPengaduan->laporan_pengaduan }}</h5>
                             <img src="{{ Storage::url($detailPengaduan->file) }}" title="{{ $detailPengaduan->file }}">
-                            <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i></button>
+                            <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i>
+                            </button>
                         </div>
 
                     </div>
