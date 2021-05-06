@@ -195,7 +195,7 @@ class PengaduanController extends Controller
                     ->paginate();
                 }
                 else{
-                    return redirect()->back();
+                    return redirect()->to('/');
                 }
                 // dd($dataPengaduan);
 
