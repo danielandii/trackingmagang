@@ -194,4 +194,15 @@ class PengaduanController extends Controller
 
                 return view('pengaduan.search',compact('dataPengaduan'));
         }
+   public function show($id)
+   {
+       $dl = File::find($id);
+       return Storage::download($dl->path, $dl->title);
+   }
+   public function delete($id)
+   {
+    $dataPengaduan = Pengaduan::find($id);
+    $dataPengaduan->delete();
+    return redirect()->back()->with('success','Pengaduan Berhasil Dihapus');
+   }
 }
