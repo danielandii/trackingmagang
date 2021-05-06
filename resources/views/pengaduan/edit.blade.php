@@ -47,6 +47,10 @@
                         </div>
                     </div>
 
+        <div class="row">
+            <div class="col">
+                <div class="card card-body shadow">
+                   
                     <div class="card-body">
                         <form action="{{route('home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
                         @csrf
@@ -72,6 +76,9 @@
                             <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
 
                     <div class="card card-body shadow mt-3">
                         <div class="card-header">
