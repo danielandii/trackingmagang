@@ -187,24 +187,10 @@ class PengaduanController extends Controller
         }       
    public function cari()
         {
-<<<<<<< HEAD
                 $cari = $_GET['query'];
                 
                 $dataPengaduan = Pengaduan::where('no_tiket','like','%'.$cari.'%')
                 ->paginate();
-=======
-                $cari = request()->query('query');
-
-                // dd($cari);
-                if ($cari){
-                    $detailPengaduan = Pengaduan::where('no_tiket','like', "%{$cari}%")
-                    ->first();
-                }
-                else{
-                    return redirect()->to('/');
-                }
-                // dd($detailPengaduan);
->>>>>>> d060109405482e811d31e8f37be7a19fe1b915cb
 
                 return view('pengaduan.search',compact('detailPengaduan'));
         }
