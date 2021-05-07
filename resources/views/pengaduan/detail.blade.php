@@ -41,7 +41,7 @@
                         </div>
                         @foreach($detailPengaduan->tanggapan as $tanggapan)
                         <div class="card-body">
-                            <p>{{$tanggapan->tanggal_tanggapan}}</p>
+                            <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p>
                             <p>{{$tanggapan->laporan_tanggapan}}</p>
                             <p>{{$tanggapan->pengaduan_status}}</p>
                         </div>

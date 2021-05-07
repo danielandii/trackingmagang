@@ -32,7 +32,7 @@ class PengaduanController extends Controller
                     'tanggal_pengaduan'=>'required ',
                     'email'=>'required|email:rfc,dns',
                     'laporan_pengaduan'=>'required',
-                    'file' => 'required|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar,wmv,mp4,txt',
+                    'file' => 'nullable|mimes:png,jpg,jpeg,xls,xlsx,doc,docx,pdf,zip,rar,wmv,mp4,txt',
         ],
         [
                 'required'          => 'wajib diisi.',
@@ -42,9 +42,22 @@ class PengaduanController extends Controller
                 ]);
                 // dd($data);                
         
-        $file = $request->file;
-        $namaFile = $file->getClientOriginalName();
+        // $file = $request->file;
+        // $namaFile = $file->getClientOriginalName();
 
+        
+        $image = $request->file('file');
+        // dd($image);
+        if ($image) {
+            
+            $namaFile = $image->getClientOriginalName();
+            $image->move(public_path().'/storage', $namaFile);
+        } else {
+            
+            $namaFile = '';
+        }
+
+        // dd($namaFile);
         // $id = Pengaduan::getId();
         // foreach ($id as $value);
         // $idlm = $value->id;
@@ -60,7 +73,6 @@ class PengaduanController extends Controller
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
                 $data->file = $namaFile;
-                $file->move(public_path().'/storage', $namaFile);
                 $data->save();
 
                 // \Mail::raw('Terima Kasih'.$data->email.'sudah melakukan Pengaduan', function ($message) use ($data){
@@ -136,7 +148,7 @@ class PengaduanController extends Controller
 
     public function tampilPengaduan()
     {
-            $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->get();
+            $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
         return view('pengaduan.index', compact('dataPengaduan'));
     }
 

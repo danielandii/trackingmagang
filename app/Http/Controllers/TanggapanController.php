@@ -122,7 +122,7 @@ class TanggapanController extends Controller
     
     public function historytanggapan()
     {
-            $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->get();
+            $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
             // dd($historytanggapan);
         return view('tanggapan.history', compact('historytanggapan'));
     }
