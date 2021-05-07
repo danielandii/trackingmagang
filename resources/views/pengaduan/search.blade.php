@@ -26,12 +26,13 @@
                             <p>No Tiket : {{$detailPengaduan->no_tiket }}</p>
                             <p> Tanggal Pengaduan : {{ $detailPengaduan->created_at->format('d F Y H:i') }}</p>
                             <h5>Laporan Pengaduan : {{ $detailPengaduan->laporan_pengaduan }}</h5>
-                            <img title="{{ $detailPengaduan->file }}">
                             <!-- <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i>
                             </button> -->
+                            <h3> {{ $detailPengaduan->file }}
                             <a href="{{ Storage::url($detailPengaduan->file) }}">
-                                <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i>
+                                <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i></button>
                              </a>
+                             </h3>
                         </div>
 
                     </div>

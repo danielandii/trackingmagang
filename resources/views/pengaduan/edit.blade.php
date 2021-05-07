@@ -25,7 +25,7 @@
                         <div>
                             <p>{{ $dataPengaduan->tanggal_pengaduan }}</p>
                             <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
-                            <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}">
+                            <h4>{{ $dataPengaduan->file }}</h4>
                             <a href="{{ Storage::url($dataPengaduan->file) }}">
                                 <button type="button" class="btn bg-teal-222 btn-icon"><i class="icon-download7"></i>
                              </a>
@@ -63,7 +63,7 @@
                             <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
                             <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
                                 <label for="tanggapan">Tanggapan</label>
-                                <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="hone_tanggapan" id="" cols="30" rows="10"></textarea>
                             </div>
 
                             

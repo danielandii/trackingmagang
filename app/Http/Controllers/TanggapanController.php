@@ -51,7 +51,7 @@ class TanggapanController extends Controller
         $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
         $data_tanggapan->pengaduan_status = request()->get('pengaduan_status');
         $data_tanggapan->pengaduan_email = request()->get('pengaduan_email');
-        $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
+        $data_tanggapan->laporan_tanggapan = request()->get('home_tanggapan');
         $data_tanggapan->save();
 
         Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('pengaduan_status'),  request()->get('pengaduan_email')));
@@ -125,6 +125,9 @@ class TanggapanController extends Controller
             $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
             // dd($historytanggapan);
         return view('tanggapan.history', compact('historytanggapan'));
+    }
+    public function historyshow($id){
+        
     }
 
 }

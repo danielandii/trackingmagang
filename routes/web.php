@@ -62,13 +62,14 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');
 		Route::post('/home-tanggapan/{id}','TanggapanController@store')->name('home-tanggapi');
 		
-		 Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
+		 Route::get('/history','TanggapanController@historytanggapan')->name('home-history');
+		 Route::get('/history/{id}','TanggapanController@historyshow')->name('home-history.show');
 
-        Route::get('/home-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
+        Route::get('/laporan-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
 
-		Route::get('/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
-		Route::post('/home-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('home-pengaduan.onchange');
-		Route::delete('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
+		Route::get('/laporan-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
+		Route::post('/laporan-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('home-pengaduan.onchange');
+		Route::delete('/laporan-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 	});
 	// //admin
 	// Route::group(['middleware' => ['role:10']], function() {

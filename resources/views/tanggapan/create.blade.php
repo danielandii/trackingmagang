@@ -21,7 +21,7 @@
                         <input type="hidden" name ="pengaduan_id" value="{{$detailpengaduan->id}}">
                         <input type="hidden" name ="pengaduan_status" value="{{$detailpengaduan->status}}">
                             <label for="tanggapan">Tanggapan</label>
-                            <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                            <textarea class="form-control" name="home_tanggapan" id="" cols="30" rows="10"></textarea>
                         </div>
 
                         
