@@ -17,9 +17,10 @@ class CekRole
     {
         if(\Auth::user()->role!=$role){
             // dd($role);
-            return $next($request);
+            return redirect('login');
+            
             
         }
-        return redirect('login');
+        return $next($request);
     }
 }

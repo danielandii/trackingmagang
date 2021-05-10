@@ -28,6 +28,7 @@
 						<th>No</th>
 						<th>Nama</th>
 						<th>Username</th>
+						<th>Role</th>
 						<th class="text-center">Actions</th>
 					</tr>
 				</thead>
@@ -39,6 +40,7 @@
 				        <td>{{$i}}</td>
 				        <td><div class="datatable-column-width">{{$user->nama}}</div></td>
 				        <td><div class="datatable-column-width">{{$user->username}}</div></td>
+				        <td><div class="datatable-column-width">{{config('custom.role.'.$user->role)}}</div></td>
 				        <td align="center">
 							<div class="list-icons">
 								<div class="dropdown">

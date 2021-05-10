@@ -26,6 +26,16 @@
 					<fieldset class="mb-3">
 						<legend class="text-uppercase font-size-sm font-weight-bold">Data User</legend>
 
+						<div class="form-group form-group-feedback form-group-feedback-left">
+                                <label for="role">Role</label>
+								<select name="role" class="form-control">
+								@foreach(config('custom.role') as $key => $value)
+                                        <option value="{{$key}}">{{$value}}</option>
+                                    @endforeach
+                                    <!-- <option value="superadmin">SuperAdmin</option>
+                                    <option value="admin">Admin</option> -->
+                                </select>
+						</div>
 						<div class="form-group row">
 							<label class="col-form-label col-lg-2">Nama</label>
 							<div class="col-lg-10">
