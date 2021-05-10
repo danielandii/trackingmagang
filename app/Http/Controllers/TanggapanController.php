@@ -49,14 +49,15 @@ class TanggapanController extends Controller
         $data_tanggapan = new Tanggapan();
         $data_tanggapan->tanggal_tanggapan = request()->get('tanggal_tanggapan');
         $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
+        $data_tanggapan->pengaduan_tiket = request()->get('pengaduan_tiket');
         $data_tanggapan->pengaduan_status = request()->get('pengaduan_status');
         $data_tanggapan->pengaduan_email = request()->get('pengaduan_email');
-        $data_tanggapan->laporan_tanggapan = request()->get('home_tanggapan');
+        $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
         $data_tanggapan->save();
 
         Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('pengaduan_status'),  request()->get('pengaduan_email')));
 
-        return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
+        return redirect()->to('/laporan-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
     }
 
     /**
@@ -120,14 +121,18 @@ class TanggapanController extends Controller
     // aa
     // }
     
-    public function historytanggapan()
+    public function historiTanggapan()
     {
-            $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+            // $dataPengaduan = Pengaduan::where();
+            // dd($dataPengaduan);
+            $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+            
             // dd($historytanggapan);
         return view('tanggapan.history', compact('historytanggapan'));
     }
     public function historyshow($id){
-        
+        $dataTanggapan = Tanggapan::find($id)->first();
+        dd($dataTanggapan);
     }
 
 }

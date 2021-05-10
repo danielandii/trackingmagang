@@ -27,7 +27,8 @@
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>tanggapan_id</th>
+							<th>No Tiket</th>
+							<th>Email Pengaduan</th>
 							<th>Tanggal Tanggapan</th>
 							<th>Laporan Tanggapan</th>
 							<th>Status Pengaduan</th>
@@ -36,16 +37,14 @@
 						@foreach($historytanggapan as $tanggapan)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
-								<td>{{ $tanggapan->id}}</td>
+								<td>{{ $tanggapan->pengaduan_tiket}}</td>
+								<td>{{ $tanggapan->pengaduan_email}}</td>
 								<td>{{ $tanggapan->created_at->format('d F Y H:i')}}</td>
 								<td>{{ $tanggapan->laporan_tanggapan}}</td>
 								<td>{{ $tanggapan->pengaduan_status}}</td>
 								<td align="center">
-								<a href="{{ route('home-history.show', $tanggapan->id)}}" class="dropdown-item"><i class="fas fa-clipboard"></i> detail</a>
-													
-											
-										
-                            			</td>
+									<a href="{{ route('home-history.show', $tanggapan->id)}}" class="dropdown-item"><i class="fas fa-clipboard"></i> detail</a>
+								</td>
 							</tr>
                         @endforeach
 					</thead>

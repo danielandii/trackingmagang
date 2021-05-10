@@ -4,7 +4,7 @@
 	<div class="page-header page-header-light">
 		<div class="page-header-content header-elements-md-inline">
 			<div class="page-title d-flex">
-				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Home</span> - Pengaduan</h4>
+				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Home</span> -Laporan Pengaduan</h4>
 				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 			</div>
 		</div>
@@ -102,19 +102,19 @@
 @section('js')
 
 <!-- Theme JS files -->
-<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
 
-	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
-
+	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="assets/js/app.js"></script>
+	
 <!-- /theme JS files -->
-<script type="text/javascript">
+<script type="text/javascript">	
 		$( document ).ready(function() {
 	        // Default style
 	        @if(session('error'))

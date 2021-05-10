@@ -48,9 +48,7 @@
                                 <!-- <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a> -->
                             </div>
                         </div>
-                    </div>
-
-        <div class="row">
+                        <div class="row">
             <div class="col">
                 <div class="card card-body shadow">
                    
@@ -60,10 +58,11 @@
                             <div class="form-group">
                             <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
                             <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
+                            <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
                             <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
                             <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
                                 <label for="tanggapan">Tanggapan</label>
-                                <textarea class="form-control" name="hone_tanggapan" id="" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
                             </div>
 
                             
@@ -82,6 +81,9 @@
                 </div>
             </div>
         </div>
+                    </div>
+
+        
 
                     <div class="card card-body shadow mt-3">
                         <div class="card-header">
@@ -92,6 +94,7 @@
                             <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p>
                             <p>{{$tanggapan->laporan_tanggapan}}</p>
                             <p>{{$tanggapan->pengaduan_status}}</p>
+                            <p>{{$tanggapan->pengaduan_tiket}}</p>
                         </div>
                         @endforeach
                     </div>
