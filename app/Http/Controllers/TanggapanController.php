@@ -33,9 +33,11 @@ class TanggapanController extends Controller
         $detailpengaduan = Pengaduan::find($id);
       
         // dd($detailpengaduan);
-
-        return view('tanggapan.create',compact('detailpengaduan'));
-        
+        if (\Auth::user()->role == 1) {
+        return view('tanggapan.superadmin.create',compact('detailpengaduan'));
+        }elseif(\Auth::user()->role == 10) {
+            return view('tanggapan.admin.create',compact('detailpengaduan'));
+        }
     }
 
     /**
@@ -57,6 +59,11 @@ class TanggapanController extends Controller
 
         Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('pengaduan_status'),  request()->get('pengaduan_email')));
 
+        if (\Auth::user()->role == 1) {
+        return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
+        }elseif(\Auth::user()->role == 10) {
+            return redirect()->to('/admin/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
+        }
         return redirect()->to('/laporan-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
     }
 
@@ -123,12 +130,15 @@ class TanggapanController extends Controller
     
     public function historiTanggapan()
     {
-            // $dataPengaduan = Pengaduan::where();
-            // dd($dataPengaduan);
-            $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
-            
+        if (\Auth::user()->role == 1) {
+            $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
             // dd($historytanggapan);
-        return view('tanggapan.history', compact('historytanggapan'));
+        return view('tanggapan.superadmin.history', compact('historytanggapan'));
+    }elseif(\Auth::user()->role == 10) {
+        $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+        
+        return view('tanggapan.admin.history', compact('historytanggapan'));
+    }
     }
     public function historyshow($id){
         $dataTanggapan = Tanggapan::find($id)->first();

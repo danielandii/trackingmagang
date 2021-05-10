@@ -38,17 +38,17 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',  
-            'provider' => 'users',
+            'provider' => 'superadmins',
         ],
 
-        'petugas' => [
+        'superadmin' => [
             'driver' => 'eloquent',
-            'model' => App\Model\Petugas::class,
+            'model' => 'superadmins',
         ],
 
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Model\Admin::class,
+            'model' => 'admins',
         ],
 
         'api' => [
@@ -76,19 +76,19 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Model\User::class,
+        // ],
+
+        'superadmins' => [
             'driver' => 'eloquent',
             'model' => App\Model\User::class,
         ],
 
-        'petugas' => [
-            'driver' => 'eloquent',
-            'model' => App\Model\Petugas::class,
-        ],
-
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Model\Admin::class,
+            'model' => App\Model\User::class,
         ],
 
         // 'users' => [

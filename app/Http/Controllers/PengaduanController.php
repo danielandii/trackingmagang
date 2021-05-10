@@ -148,18 +148,32 @@ class PengaduanController extends Controller
 
     public function tampilPengaduan()
     {
+        if (\Auth::user()->role == 1) {
             $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
-        return view('pengaduan.index', compact('dataPengaduan'));
+        return view('pengaduan.superadmin.index', compact('dataPengaduan'));
+        }elseif(\Auth::user()->role == 10) {
+            $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+            return view('pengaduan.admin.index', compact('dataPengaduan'));
+        }
     }
 
     public function detailPengaduan($id)
     {
+        if (\Auth::user()->role == 1) {
             $dataPengaduan = Pengaduan::find($id);
             // dd($dataPengaduan);
             $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                     $query->where('pengaduan_id',request()->route('id'));
             })->first();
-        return view('pengaduan.edit', compact('dataPengaduan','dataTanggapan'));
+        return view('pengaduan.superadmin.edit', compact('dataPengaduan','dataTanggapan'));
+        }elseif(\Auth::user()->role == 10) {
+            $dataPengaduan = Pengaduan::find($id);
+            // dd($dataPengaduan);
+            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+                    $query->where('pengaduan_id',request()->route('id'));
+            })->first();
+        return view('pengaduan.admin.edit', compact('dataPengaduan','dataTanggapan'));
+        }
     }
     
 
@@ -173,10 +187,17 @@ class PengaduanController extends Controller
 
     public function statusOnchange($id)
     {
+        if (\Auth::user()->role == 1) {
             $dataPengaduan = Pengaduan::find($id);
             $dataPengaduan->status = request()->get('status');
             $dataPengaduan->save();
         return redirect()->back();
+        }elseif(\Auth::user()->role == 10) {
+            $dataPengaduan = Pengaduan::find($id);
+            $dataPengaduan->status = request()->get('status');
+            $dataPengaduan->save();
+        return redirect()->back();
+        }
     }
 
     public function tampilDetailPengaduan($id)

@@ -39,17 +39,30 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'role'=>'required',
             'nama'=>'required',
             'email'=>'required|unique:users',
             'username'=>'required|unique:users',
             'password'=>'required',
         ]);
 
+        // $data = new Users();
         $data = $request->except(['_token', '_method']);
         if($request->get('password')!=''){
             $data['password'] = bcrypt($request->get('password'));
         }
         $user = User::create($data);
+        // $data->role = request()->get('role');
+        // $data->username = request()->get('username');
+        // $data->password = request()->get('password');
+        // $data->email = request()->get('email');
+        // $data->save();
+
+        // $data = $request->except(['_token', '_method']);
+        // if($request->get('password')!=''){
+        //     $data['password'] = bcrypt($request->get('password'));
+        // }
+        // $user = User::create($data);
 
         return redirect('/users')->with('success', 'User saved!');
     }

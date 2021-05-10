@@ -53,14 +53,19 @@ class LoginController extends Controller
 		return view('admin.auth.login');
 	}
 
-	public function LoginPetugas()
-	{
+	// public function LoginPetugas()
+	// {
 
-		$auth = request()->only('username', 'password');
-		if(Auth()->guard('petugas')->attempt($auth))
-		{
-			return redirect()->to('/');
-		}
-		return redirect('/petugas/login')->with('error', 'Invalid Email address or Password');
-	}
+	// 	$auth = request()->only('username', 'password');
+	// 	if(Auth()->guard('superadmin')->attempt($auth))
+	// 	{
+	// 		if(Auth()->guard('superadmin')->user()->level == "superadmin")
+	// 		{
+	// 			return redirect()->to('/home');
+	// 		}else{
+	// 			return redirect()->to('/login');
+	// 		}
+	// 	}
+	// 	return redirect('/petugas/login')->with('error', 'Invalid Email address or Password');
+	// }
 }

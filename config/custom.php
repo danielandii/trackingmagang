@@ -6,6 +6,7 @@ return [
        	'1' => 'Super Admin',
        	'10' => 'Admin',
         '20' => 'User',
+        '99' => 'member',
     ],
 
     

@@ -15,6 +15,14 @@ class Superadmin
      */
     public function handle($request, Closure $next)
     {
+        if(!Auth()->guard('superadmin')->check())
+        {
+            return redirect()->to('/login');
+        }
+        if(!Auth()->guard('superadmin')->user()->level == "superadmin")
+        {
+            return redirect()->to('/login');
+        }
         return $next($request);
     }
 }
