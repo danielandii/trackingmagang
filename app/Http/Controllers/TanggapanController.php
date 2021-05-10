@@ -49,6 +49,7 @@ class TanggapanController extends Controller
         $data_tanggapan = new Tanggapan();
         $data_tanggapan->tanggal_tanggapan = request()->get('tanggal_tanggapan');
         $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
+        $data_tanggapan->pengaduan_tiket = request()->get('pengaduan_tiket');
         $data_tanggapan->pengaduan_status = request()->get('pengaduan_status');
         $data_tanggapan->pengaduan_email = request()->get('pengaduan_email');
         $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
@@ -61,6 +62,7 @@ class TanggapanController extends Controller
         }elseif(\Auth::user()->role == 10) {
             return redirect()->to('/admin/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
         }
+        return redirect()->to('/laporan-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
     }
 
     /**
@@ -124,10 +126,17 @@ class TanggapanController extends Controller
     // aa
     // }
     
-    public function historytanggapan()
+    public function historiTanggapan()
     {
+<<<<<<< HEAD
         if (\Auth::user()->role == 1) {
             $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+=======
+            // $dataPengaduan = Pengaduan::where();
+            // dd($dataPengaduan);
+            $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+            
+>>>>>>> 4d0b60f89b52ef8be948779b6489f860a21ce2c7
             // dd($historytanggapan);
         return view('tanggapan.superadmin.history', compact('historytanggapan'));
     }elseif(\Auth::user()->role == 10) {
@@ -135,6 +144,10 @@ class TanggapanController extends Controller
         
         return view('tanggapan.admin.history', compact('historytanggapan'));
     }
+    }
+    public function historyshow($id){
+        $dataTanggapan = Tanggapan::find($id)->first();
+        dd($dataTanggapan);
     }
 
 }

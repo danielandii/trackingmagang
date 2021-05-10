@@ -19,7 +19,6 @@ Route::get('/', function () {
 // Route::get('/pengaduan',  'PengaduanController@index');
 Route::get('/form-pengaduan',  'PengaduanController@create')->name('form-pengaduan');
 Route::post('/pengaduan-simpan',  'PengaduanController@store')->name('pengaduan-simpan');
-Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
 Route::get('/detail-pengaduan/ {id} {no_tiket}', 'PengaduanController@TampilDetailPengaduan')->name('detail-pengaduan');
 Route::get('/pengaduan/cari','PengaduanController@cari')->name('cari-pengaduan');
 Route::delete('delete-pengaduan/{id}','PengaduanController@delete')->name('delete-pengaduan');
@@ -27,7 +26,7 @@ Route::delete('delete-pengaduan/{id}','PengaduanController@delete')->name('delet
 
 //  Route::get('/View', 'PengaduanController@getview')->nama('View');
 // Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
-route::get('/download/{id}','PengaduanController@show')->name('download');
+// Route::get('/download/{id}','PengaduanController@show')->name('download');
 
 //all
 Route::get('/login',  'LoginController@index')->name('login');
@@ -75,6 +74,14 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 
 		
+		Route::get('/history','TanggapanController@historiTanggapan')->name('home-history');
+		Route::get('/history/{id}','TanggapanController@historyshow')->name('home-history.show');
+
+		Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
+        Route::get('/laporan-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
+		Route::get('/laporan-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
+		Route::post('/laporan-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('home-pengaduan.onchange');
+		Route::delete('/laporan-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 	});
 
 	// //admin

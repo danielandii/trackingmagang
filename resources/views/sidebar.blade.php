@@ -43,6 +43,24 @@
 						</span>
 					</a>
 				</li>
+
+				<li class="nav-item">
+					<a href="{{ url('/laporan-pengaduan') }}" class="nav-link {{ (request()->is('laporan-pengaduan*')) ? 'active' : '' }}">
+						<i class="icon-pencil3"></i>
+						<span>
+							Laporan Pengaduan
+						</span>
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a href="{{ url('/history') }}" class="nav-link {{ (request()->is('history*')) ? 'active' : '' }}">
+						<i class="icon-history"></i>
+						<span>
+							History Tanggapan
+						</span>
+					</a>
+				</li>
 				
 				
 				
@@ -54,16 +72,6 @@
 						<li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link {{ (request()->is('ukm*')) ? 'active' : '' }}"><span>Admin/Petugas</span></a></li>
 					</ul>
 				</li> -->
-
-
-				<li class="nav-item">
-					<a href="{{ url('/home-pengaduan') }}" class="nav-link {{ (request()->is('home-pengaduan*')) ? 'active' : '' }}">
-						<i class="icon-pencil3"></i>
-						<span>
-							Laporan Pengaduan
-						</span>
-					</a>
-				</li>
 				
 				<!-- <li class="nav-item">
 					<a href="{{ url('/home-tanggapan') }}" class="nav-link {{ (request()->is('home-tanggapan*')) ? 'active' : '' }}">

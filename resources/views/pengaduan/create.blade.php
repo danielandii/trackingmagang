@@ -59,6 +59,22 @@
                                                 <div class="text-right">
                                                     <button type="submit" class="btn btn-primary submitBtn">Submit<i class="icon-paperplane ml-2"></i></button>
                                                 </div>
+                                                <!-- <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow" role="alert" style="min-height: 16px;">
+                                                    <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Close" style="cursor: pointer; visibility: hidden;">
+                                                        <span class="brighttheme-icon-closer"></span>
+                                                    </div>
+                                                    <div class="ui-pnotify-sticker" aria-role="button" aria-pressed="false" tabindex="0" title="Stick" style="cursor: pointer; visibility: hidden;">
+                                                        <span class="brighttheme-icon-sticker" aria-pressed="false"></span>
+                                                    </div>
+                                                    <div class="ui-pnotify-icon">
+                                                        <span class="brighttheme-icon-notice"></span>
+                                                    </div>
+                                                    <h4 class="ui-pnotify-title">Success notice</h4>
+                                                    <div class="ui-pnotify-text" aria-role="alert">Check me out! I'm a notice.
+                                                    </div>
+                                                    <div class="ui-pnotify-action-bar" style="margin-top: 5px; clear: both; text-align: right; display: none;">
+                                                    </div>
+                                                </div> -->
                                             </form>
                                         </div>
                                     </div>
@@ -76,28 +92,58 @@
 	<!-- /page content -->
 
 @endsection
+@section('js')
 
-<head>
 	
 	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="{{asset('global_assets/css/icons/icomoon/styles.min.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('assets/css/bootstrap_limitless.min.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('assets/css/layout.min.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('assets/css/components.min.css')}}" rel="stylesheet" type="text/css">
-	<link href="{{asset('assets/css/colors.min.css')}}" rel="stylesheet" type="text/css">
+	<link href="{{asset('assets/css/colors.min.css')}}" rel="stylesheet" type="text/css"> -->
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
 	<script src="{{asset('global_assets/js/main/jquery.min.js') }}"></script>
-<script src="{{asset('global_assets/js/main/bootstrap.bundle.min.js') }}"></script>
-<script src="{{asset('global_assets/js/plugins/loaders/blockui.min.js') }}"></script>
+    <script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
+    <script src="{{asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
+    <script src="{{asset('global_assets/js/plugins/loaders/blockui.min.js') }}"></script>
+
+    <script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
+	<script src="{{asset('assets/js/app.js')}}"></script>
+	
 	<!-- /core JS files -->
 
 	<!-- Theme JS files -->
 	<script src="assets/js/app.js"></script>
 	<!-- /theme JS files -->
+    <script type="text/javascript">
+		$( document ).ready(function() {
+	        // Default style
+	        @if(session('error'))
+	            new PNotify({
+	                title: 'Error',
+	                text: '{{ session('error') }}.',
+	                icon: 'icon-blocked',
+	                type: 'error'
+	            });
+            @endif
+            @if ( session('success'))
+	            new PNotify({
+	                title: 'Success',
+	                text: '{{ session('success') }}.',
+	                icon: 'icon-checkmark3',
+	                type: 'success'
+	            });
+            @endif
 
-</head>
+		});
+	</script>
+
+@endsection
 </html>
