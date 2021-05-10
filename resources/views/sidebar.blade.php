@@ -82,14 +82,14 @@
 					</a>
 				</li> -->
 				
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a href="{{ url('/home-history') }}" class="nav-link {{ (request()->is('home-historySS*')) ? 'active' : '' }}">
 						<i class="icon-history"></i>
 						<span>
 							History Tanggapan
 						</span>
 					</a>
-				</li>
+				</li> -->
 				@endif
 				
 				@if (\Auth::user()->role == 10)	

@@ -19,6 +19,7 @@
                         <div class="form-group">
                         <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
                         <input type="hidden" name ="pengaduan_id" value="{{$detailpengaduan->id}}">
+                        <input type="hidden" name ="pengaduan_tiket" value="{{$detailpengaduan->tiket}}">
                         <input type="hidden" name ="pengaduan_status" value="{{$detailpengaduan->status}}">
                             <label for="tanggapan">Tanggapan</label>
                             <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>

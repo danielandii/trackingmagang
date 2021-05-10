@@ -33,9 +33,11 @@ class TanggapanController extends Controller
         $detailpengaduan = Pengaduan::find($id);
       
         // dd($detailpengaduan);
-
-        return view('tanggapan.create',compact('detailpengaduan'));
-        
+        if (\Auth::user()->role == 1) {
+        return view('tanggapan.superadmin.create',compact('detailpengaduan'));
+        }elseif(\Auth::user()->role == 10) {
+            return view('tanggapan.admin.create',compact('detailpengaduan'));
+        }
     }
 
     /**
@@ -128,15 +130,8 @@ class TanggapanController extends Controller
     
     public function historiTanggapan()
     {
-<<<<<<< HEAD
         if (\Auth::user()->role == 1) {
             $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
-=======
-            // $dataPengaduan = Pengaduan::where();
-            // dd($dataPengaduan);
-            $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
-            
->>>>>>> 4d0b60f89b52ef8be948779b6489f860a21ce2c7
             // dd($historytanggapan);
         return view('tanggapan.superadmin.history', compact('historytanggapan'));
     }elseif(\Auth::user()->role == 10) {

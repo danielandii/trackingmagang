@@ -60,6 +60,7 @@
                             <div class="form-group">
                             <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
                             <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
+                            <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
                             <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
                             <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
                                 <label for="tanggapan">Tanggapan</label>
