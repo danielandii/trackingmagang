@@ -17,9 +17,9 @@
                     <form action="{{route('home-tanggapi', $detailpengaduan->id)}}" method="POST" accept-charset="utf-8">
                     @csrf
                         <div class="form-group">
-                        <input type="text" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
-                        <input type="text" name ="pengaduan_tiket" value="{{$detailpengaduan->no_tiket}}">
-                        <input type="text" name ="pengaduan_status" value="{{$detailpengaduan->status}}">
+                        <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
+                        <input type="hidden" name ="pengaduan_tiket" value="{{$detailpengaduan->no_tiket}}">
+                        <input type="hidden" name ="pengaduan_status" value="{{$detailpengaduan->status}}">
                             <label for="tanggapan">Tanggapan</label>
                             <textarea class="form-control" name="home_tanggapan" id="" cols="30" rows="10"></textarea>
                         </div>

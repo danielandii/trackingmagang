@@ -16,9 +16,9 @@
                         </div> -->
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <!-- <a href="{{ route('home-pengaduan.tampil') }}"> -->
+                                <!-- <a href="{{ route('home-pengaduan.tampil') }}"> </a> -->
                                 <i class="fas fa-arrow-circle-left fa-2x"></i>
-                                </a>
+                               
                                 <h4>Status Detail Pengaduan : {{$dataPengaduan->status}} </h4>
                             </div>
                     </div>
@@ -42,48 +42,41 @@
                                         <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
                                         <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
                                     </select>
-                                    
                                 </form>
                                 
                                 <!-- <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a> -->
                             </div>
                         </div>
-                        <div class="row">
-            <div class="col">
-                <div class="card card-body shadow">
-                   
-                    <div class="card-body">
-                        <form action="{{route('home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
-                        @csrf
-                            <div class="form-group">
-                            <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
-                            <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
-                            <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
-                            <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
-                            <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
-                                <label for="tanggapan">Tanggapan</label>
-                                <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="card card-body shadow">
+                            
+                                <div class="card-body">
+                                    <form action="{{route('home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
+                                    @csrf
+                                        <div class="form-group">
+                                        <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
+                                        <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
+                                        <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
+                                        <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
+                                        <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
+                                            <label for="tanggapan">Tanggapan</label>
+                                            <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                                        </div>
+                                            <!-- <select name="pengaduan_status" class="form-control" >
+                                            <option value="Baru" >Baru</option>
+                                            <option value="Sedang di Cek" >Sedang di Cek</option>
+                                            <option value="Pengerjaan" >Pengerjaan</option>
+                                            <option value="Selesai">Selesai</option>
+                                            </select> -->
+                                        <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
+                                    </form>
+                                </div>
                             </div>
-
-                            
-                            
-                                        <!-- <select name="pengaduan_status" class="form-control" >
-                                        <option value="Baru" >Baru</option>
-                                        <option value="Sedang di Cek" >Sedang di Cek</option>
-                                        <option value="Pengerjaan" >Pengerjaan</option>
-                                        <option value="Selesai">Selesai</option>
-                                        </select> -->
-                                    
-                            
-                            <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
-                        </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-                    </div>
-
-        
 
                     <div class="card card-body shadow mt-3">
                         <div class="card-header">
@@ -92,9 +85,10 @@
                         @foreach($dataPengaduan->tanggapan as $tanggapan)
                         <div class="card-body">
                             <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p>
-                            <p>{{$tanggapan->laporan_tanggapan}}</p>
+                            <span class="font-weight-bold"><p>{{$tanggapan->laporan_tanggapan}}</p></span>
                             <p>{{$tanggapan->pengaduan_status}}</p>
-                            <p>{{$tanggapan->pengaduan_tiket}}</p>
+                            
+                            <!-- <p>{{$tanggapan->pengaduan_tiket}}</p> -->
                         </div>
                         @endforeach
                     </div>
