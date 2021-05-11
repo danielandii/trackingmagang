@@ -128,7 +128,7 @@ class TanggapanController extends Controller
     // aa
     // }
     
-    public function historiTanggapan()
+    public function historyTanggapan()
     {
         if (\Auth::user()->role == 1) {
             $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
