@@ -42,7 +42,7 @@
                         @foreach($detailPengaduan->tanggapan as $tanggapan)
                         <div class="card-body">
                             <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p>
-                            <p>{{$tanggapan->laporan_tanggapan}}</p>
+                            <span class="font-weight-bold"><p>{{$tanggapan->laporan_tanggapan}}</p></span>
                             <p>{{$tanggapan->pengaduan_status}}</p>
                         </div>
                         @endforeach

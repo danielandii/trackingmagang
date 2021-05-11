@@ -32,11 +32,15 @@
 							<th>Laporan Tanggapan</th>
 							<th>Status Pengaduan</th>
 							<th class="text-center">Actions</th>
+							<td align center>
+							<a href="{{ route('home-history.show', $history->id)}}" class="dropdown-item"><i class="fas fa-clipboard"></i> show</a>
+							</td>
+
 						</tr>
 						@foreach($historytanggapan as $tanggapan)
 							<tr>
 								<td>{{ $loop->iteration }}</td>
-								<td>{{ $tanggapan->pengaduan_id}}</td>
+								<td>{{ $tanggapan->pengaduan_tiket}}</td>
 								<td>{{ $tanggapan->created_at->format('d F Y H:i')}}</td>
 								<td>{{ $tanggapan->laporan_tanggapan}}</td>
 								<td>{{ $tanggapan->pengaduan_status}}</td>

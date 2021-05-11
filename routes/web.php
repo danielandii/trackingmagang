@@ -65,7 +65,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/home-tanggapan/{id}','TanggapanController@create')->name('home-tanggapan.create');
 		Route::post('/home-tanggapan/{id}','TanggapanController@store')->name('home-tanggapi');
 		
-		 Route::get('/home-history','TanggapanController@historytanggapan')->name('home-history');
+	
 
         Route::get('/home-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
 
@@ -74,7 +74,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 
 		
-		Route::get('/history','TanggapanController@historiTanggapan')->name('home-history');
+		Route::get('/history','TanggapanController@historyTanggapan')->name('home-history');
 		Route::get('/history/{id}','TanggapanController@historyshow')->name('home-history.show');
 
 		Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
@@ -90,6 +90,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('/admin/home-tanggapan/{id}','TanggapanController@store')->name('admin.home-tanggapi');
 		
 		 Route::get('/admin/home-history','TanggapanController@historytanggapan')->name('admin.home-history');
+		 Route::get('/admin/history/{id}','TanggapanController@historyshow')->name('home-history.show');
 
         Route::get('/admin/home-pengaduan','PengaduanController@tampilpengaduan')->name('admin.home-pengaduan.tampil');
 
