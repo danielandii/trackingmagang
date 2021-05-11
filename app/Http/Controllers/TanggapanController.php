@@ -46,13 +46,22 @@ class TanggapanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id, Request $request)
     {
+
+        $request->validate([
+            'laporan_tanggapan'=>'required ',
+]);
+        $dataPengaduan = Pengaduan::find($id);
+        $dataPengaduan->status = request()->get('status');
+        $dataPengaduan->save();
+        // dd($dataPengaduan);
+
         $data_tanggapan = new Tanggapan();
         $data_tanggapan->tanggal_tanggapan = request()->get('tanggal_tanggapan');
         $data_tanggapan->pengaduan_id = request()->get('pengaduan_id');
         $data_tanggapan->pengaduan_tiket = request()->get('pengaduan_tiket');
-        $data_tanggapan->pengaduan_status = request()->get('pengaduan_status');
+        $data_tanggapan->pengaduan_status = request()->get('status');
         $data_tanggapan->pengaduan_email = request()->get('pengaduan_email');
         $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
         $data_tanggapan->save();
@@ -64,7 +73,7 @@ class TanggapanController extends Controller
         }elseif(\Auth::user()->role == 10) {
             return redirect()->to('/admin/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
         }
-        return redirect()->to('/laporan-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
+        // return redirect()->to('/laporan-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
     }
 
     /**
