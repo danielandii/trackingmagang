@@ -17,7 +17,7 @@ class CekRole
     {
         if(\Auth::user()->role!=$role){
             // dd($role);
-            return redirect('login');
+            return redirect('home');
             
             
         }

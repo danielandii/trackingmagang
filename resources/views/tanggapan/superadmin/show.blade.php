@@ -16,6 +16,7 @@
 					<div>
 						<div class="table-responsive">
 
+<<<<<<< HEAD
 							<table class="table datatable-basic table-hover border">
 								<thead>
 									<tr>
@@ -23,6 +24,24 @@
 										<th>Jam</th>
 										<th>Tanggapan</th>
 										<th>Status</th>
+=======
+    <table class="table datatable-basic table-hover border">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>No Tiket</th>
+									<th>Tanggal Pengaduan</th>
+									<th>Status Pengaduan</th>
+									<th>Laporan Tanggapan</th>
+								</tr>
+                        		@foreach($dataTanggapan as $tanggapan)
+                        			<tr>
+										<td>{{ $loop->iteration }}</td>
+										<td>{{ $tanggapan->pengaduan_tiket }}</td>
+										<td>{{ $tanggapan->tanggal_tanggapan }}</td>
+										<td>{{ $tanggapan->pengaduan_status}}</td>
+										<td>{{ $tanggapan->laporan_tanggapan}}</td>
+>>>>>>> f5511ceb4b525be4d1669b6e71b430a2adc2e6e3
 									</tr>
 									@foreach($historyPengaduan as $tanggapan)
 									<tr>

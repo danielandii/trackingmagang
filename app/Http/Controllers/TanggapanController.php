@@ -66,7 +66,7 @@ class TanggapanController extends Controller
         $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
         $data_tanggapan->save();
 
-        Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('pengaduan_status'),  request()->get('pengaduan_email')));
+        Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('status'), request()->get('pengaduan_tiket'),  request()->get('pengaduan_email')));
 
         if (\Auth::user()->role == 1) {
         return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");
@@ -149,16 +149,20 @@ class TanggapanController extends Controller
         return view('tanggapan.admin.history', compact('historytanggapan'));
     }
     }
-    public function historyshow($id)
+    public function historyshow($id, Request $request)
     {
          if (\Auth::user()->role == 1) {
-            $dataPengaduan = Pengaduan::find($id);
+            $dataTanggapan = Tanggapan::where('pengaduan_tiket', '=', $id)->orderBy('id', 'DESC')->get();
             // dd($dataTanggapan);
-        return view('tanggapan.superadmin.show', compact('dataPengaduan'));
+        //     $historytanggapan = Tanggapan::whereHas('pengaduan', function($query){
+        //         $query->where('pengaduan_tiket',request()->route('no_tiket'));
+        // })->first();
+            // dd($historytanggapan);
+        return view('tanggapan.superadmin.show', compact('dataTanggapan'));
     } elseif(\Auth::user()->role == 10) {
-                $dataPengaduan = Pengaduan::find($id);
+        $dataTanggapan = Tanggapan::where('pengaduan_tiket', '=', $id)->orderBy('id', 'DESC')->get();
                 // dd($dataPengaduan);
-            return view('tanggapan.admin.show');
+            return view('tanggapan.admin.show', compact('dataTanggapan'));
             }
         
     }

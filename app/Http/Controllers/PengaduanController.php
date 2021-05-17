@@ -90,7 +90,7 @@ class PengaduanController extends Controller
                 Mail::to($request->email)->send(new SendMail($no_tiket, $request->tanggal_pengaduan, $request->email));
             
 
-                return redirect()->to('/')->with('success', "Laporan Pengaduan Sukses Disimpan dan No tiket Anda sudah di kirimkan");
+                return redirect()->to('/')->with('success', "Silahkan Cek email Anda");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',
@@ -172,6 +172,7 @@ class PengaduanController extends Controller
             $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                     $query->where('pengaduan_id',request()->route('id'));
             })->first();
+            // dd($dataTanggapan);
         return view('pengaduan.admin.edit', compact('dataPengaduan','dataTanggapan'));
         }
     }
@@ -250,14 +251,20 @@ return Response::download($file, 'storage', $headers);
     return redirect()->back()->with('success','Pengaduan Berhasil Dihapus');
    }
 
-   public function historyTanggapanshow($id)
+   public function historyTanggapanShow($id)
     {
          if (\Auth::user()->role == 1) {
             $dataPengaduan = Pengaduan::find($id);
+<<<<<<< HEAD
             // dd($dataTanggapan);
             $historyTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+=======
+            // dd($dataPengaduan);
+            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+>>>>>>> f5511ceb4b525be4d1669b6e71b430a2adc2e6e3
                 $query->where('pengaduan_id',request()->route('id'));
         })->first();
+                dd($dataTanggapan);
         return view('tanggapan.superadmin.show', compact('dataPengaduan','dataTanggapan'));
     } elseif(\Auth::user()->role == 10) {
                 $dataPengaduan = Pengaduan::find($id);
