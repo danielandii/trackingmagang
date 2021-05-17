@@ -15,27 +15,16 @@
 									<th>No</th>
 									<th>No Tiket</th>
 									<th>Tanggal Pengaduan</th>
-									<th>Email</th>
-									<th>Status Laporan</th>
-									<th class="text-center">Actions</th>
+									<th>Status Pengaduan</th>
+									<th>Laporan Tanggapan</th>
 								</tr>
-                        		@foreach($dataPengaduan->tanggapan as $tanggapan)
+                        		@foreach($dataTanggapan as $tanggapan)
                         			<tr>
 										<td>{{ $loop->iteration }}</td>
 										<td>{{ $tanggapan->pengaduan_tiket }}</td>
-										
-										<!-- {{ route('home-pengaduan.detail', $pengaduan->no_tiket)}} -->
-											<!-- <a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="btn btn-info">
-												<i class="fas fa-clipboard"> Detail</i>
-											</a>
-											<form action="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}" method="post" class="d-inline" onsubmit="return confirm('yakin hapus data')">
-												@method('delete')
-												@csrf 
-												<button class="btn btn-danger btn-sm">
-												<i class="fa fa-trash">delete</i>
-												</button>
-											</form> -->
-										
+										<td>{{ $tanggapan->tanggal_tanggapan }}</td>
+										<td>{{ $tanggapan->pengaduan_status}}</td>
+										<td>{{ $tanggapan->laporan_tanggapan}}</td>
 									</tr>
                         		@endforeach
                         	</thead>

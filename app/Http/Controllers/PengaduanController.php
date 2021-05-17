@@ -251,14 +251,15 @@ return Response::download($file, 'storage', $headers);
     return redirect()->back()->with('success','Pengaduan Berhasil Dihapus');
    }
 
-   public function historyTanggapanshow($id)
+   public function historyTanggapanShow($id)
     {
          if (\Auth::user()->role == 1) {
             $dataPengaduan = Pengaduan::find($id);
-            // dd($dataTanggapan);
+            // dd($dataPengaduan);
             $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                 $query->where('pengaduan_id',request()->route('id'));
         })->first();
+                dd($dataTanggapan);
         return view('tanggapan.superadmin.show', compact('dataPengaduan','dataTanggapan'));
     } elseif(\Auth::user()->role == 10) {
                 $dataPengaduan = Pengaduan::find($id);
