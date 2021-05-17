@@ -31,7 +31,7 @@
                              </a>
                         </div>
                         
-                        <div class="card-footer">
+                        <!-- <div class="card-footer">
                             <div class="d-flex justify-content-between">
                                 
                                 <form action="{{route('admin.home-pengaduan.onchange',$dataPengaduan->id)}}" method="post" >
@@ -45,9 +45,9 @@
                                     
                                 </form>
                                 
-                                <!-- <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a> -->
+                                <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
         <div class="row">
@@ -57,6 +57,15 @@
                     <div class="card-body">
                         <form action="{{route('admin.home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
                         @csrf
+
+                        <label for="status">Status</label>
+                        <select name="status" class="form-control" >
+                                        <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
+                                        <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
+                                        <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
+                                        <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
+                                    </select>
+
                             <div class="form-group">
                             <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
                             <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
