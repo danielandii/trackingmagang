@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Model\Pengaduan;
-use App\Model\Tanggapan;
+use App\Model\tanggapan;
 use App\Mail\SendTanggapanMail;
 use Carbon\Carbon;
 
@@ -140,9 +140,18 @@ class TanggapanController extends Controller
         return view('tanggapan.admin.history', compact('historytanggapan'));
     }
     }
-    public function historyshow($id){
-        $dataTanggapan = Tanggapan::find($id)->first();
-        dd($dataTanggapan);
+    public function historyshow($id)
+    {
+         if (\Auth::user()->role == 1) {
+            $dataPengaduan = Pengaduan::find($id);
+            // dd($dataTanggapan);
+        return view('tanggapan.superadmin.show', compact('dataPengaduan'));
+    } elseif(\Auth::user()->role == 10) {
+                $dataPengaduan = Pengaduan::find($id);
+                // dd($dataPengaduan);
+            return view('tanggapan.admin.show');
+            }
+        
     }
 
 }

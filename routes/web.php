@@ -75,7 +75,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 		
 		Route::get('/history','TanggapanController@historyTanggapan')->name('home-history');
-		Route::get('/history/{id}','TanggapanController@historyshow')->name('home-history.show');
+		Route::get('/history/{id}','PengaduanController@historyTanggapanshow')->name('home-history.show');
 
 		Route::get('/laporan-pengaduan', 'PengaduanController@laporanPengaduan')->name('laporan-pengaduan');
         Route::get('/laporan-pengaduan','PengaduanController@tampilpengaduan')->name('home-pengaduan.tampil');
@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('/admin/home-tanggapan/{id}','TanggapanController@store')->name('admin.home-tanggapi');
 		
 		 Route::get('/admin/home-history','TanggapanController@historytanggapan')->name('admin.home-history');
-		 Route::get('/admin/history/{id}','TanggapanController@historyshow')->name('home-history.show');
+		 Route::get('/admin/history/{id}','TanggapanController@historyshow')->name('admin.home-history.show');
 
         Route::get('/admin/home-pengaduan','PengaduanController@tampilpengaduan')->name('admin.home-pengaduan.tampil');
 

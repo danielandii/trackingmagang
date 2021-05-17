@@ -52,7 +52,7 @@
             </a> -->
             </div>
         </li>
-        <a class ="nav-link btn text-white" style="background-image;linear-gradient(to right,gold,#fff700)"href="/login">Login</a>
+        <!-- <a class ="nav-link btn text-white" style="background-image;linear-gradient(to right,gold,#fff700)"href="/login">Login</a> -->
     </div>
 </div>
 </div>

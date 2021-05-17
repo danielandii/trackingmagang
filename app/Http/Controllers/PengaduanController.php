@@ -249,4 +249,21 @@ return Response::download($file, 'storage', $headers);
     $dataPengaduan->delete();
     return redirect()->back()->with('success','Pengaduan Berhasil Dihapus');
    }
+
+   public function historyTanggapanshow($id)
+    {
+         if (\Auth::user()->role == 1) {
+            $dataPengaduan = Pengaduan::find($id);
+            // dd($dataTanggapan);
+            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+                $query->where('pengaduan_id',request()->route('id'));
+        })->first();
+        return view('tanggapan.superadmin.show', compact('dataPengaduan','dataTanggapan'));
+    } elseif(\Auth::user()->role == 10) {
+                $dataPengaduan = Pengaduan::find($id);
+                // dd($dataPengaduan);
+            return view('tanggapan.admin.show');
+            }
+        
+    }
 }
