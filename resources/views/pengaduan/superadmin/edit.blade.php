@@ -102,9 +102,11 @@
                         </div>
                         @foreach($dataPengaduan->tanggapan as $tanggapan)
                         <div class="card-body">
-                            <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p>
+                            <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p> 
+                            <span class="font-weight-bold"><p>{{$tanggapan->pengaduan_status}}</p></span>
                             <p>{{$tanggapan->laporan_tanggapan}}</p>
-                            <p>{{$tanggapan->pengaduan_status}}</p>
+                           
+                            <!-- <p>{{$tanggapan->pengaduan_tiket}}</p> -->
                         </div>
                         @endforeach
                     </div>
