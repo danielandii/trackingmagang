@@ -30,10 +30,10 @@ Toggle navigation">
             
             
             </a> -->
-            </div>
+            <!-- </div>
         </li>
         <a class ="nav-link btn text-dark" style="background-image;linear-gradient(to right,gold
         ,#fff700)"href="/login">Login</a>
-    </div>
+    </div> -->
 </div>
 </nav>

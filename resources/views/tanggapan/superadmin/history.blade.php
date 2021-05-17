@@ -32,6 +32,8 @@
 							<th>Laporan Tanggapan</th>
 							<th>Status Pengaduan</th>
 							<th class="text-center">Actions</th>
+							
+
 						</tr>
 						@foreach($historytanggapan as $tanggapan)
 							<tr>
@@ -41,6 +43,10 @@
 								<td>{{ $tanggapan->laporan_tanggapan}}</td>
 								<td>{{ $tanggapan->pengaduan_status}}</td>
 								<td align="center">
+<<<<<<< HEAD
+									<a href="{{ route('home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="icon-file-eye2 mr-0 icon-1x">Show</i></a>
+								</td>
+=======
 							<div class="list-icons">
 								<div class="dropdown">
 									<a href="#" class="list-icons-item" data-toggle="dropdown">
@@ -54,6 +60,7 @@
 								</div>
 							</div>
 				        </td>	
+>>>>>>> b71ab711ee611406c5e1f4c77d2649d817ed2d5e
 							</tr>
                         @endforeach
 					</thead>

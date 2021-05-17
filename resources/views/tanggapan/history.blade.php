@@ -43,7 +43,7 @@
 								<td>{{ $tanggapan->laporan_tanggapan}}</td>
 								<td>{{ $tanggapan->pengaduan_status}}</td>
 								<td align="center">
-									<a href="{{ route('home-history.show', $tanggapan->id)}}" class="dropdown-item"><i class="fas fa-clipboard"></i> detail</a>
+									<a href="{{ route('home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="fas fa-clipboard"></i> detail</a>
 								</td>
 							</tr>
                         @endforeach

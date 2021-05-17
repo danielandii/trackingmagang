@@ -15,9 +15,9 @@
                             </div>
                         </div> -->
                         <div class="card-header">
-                            <div class="d-flex justify-content-between">
+                            <div class="center">
                                 <!-- <a href="{{ route('home-pengaduan.tampil') }}"> -->
-                                <i class="fas fa-arrow-circle-left fa-2x"></i>
+                               
                                 </a>
                                 <h4>Status Detail Pengaduan : {{$dataPengaduan->status}} </h4>
                             </div>
@@ -25,9 +25,9 @@
                         <div>
                             <p>{{ $dataPengaduan->tanggal_pengaduan }}</p>
                             <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
-                            <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}">
+                            <!-- <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}"> -->
                             <a href="{{ Storage::url($dataPengaduan->file) }}">
-                                <button type="button" class="btn bg-teal-222 btn-icon"><i class="icon-download7"></i>
+                                <button type="button" class="btn bg-teal-222 btn-icon">{{ $dataPengaduan->file }}
                              </a>
                         </div>
                         

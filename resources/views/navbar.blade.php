@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-expand-md navbar-dark">
 	<div class="navbar-brand">
 		<a href="{{ url('/home') }}" class="d-inline-block">
