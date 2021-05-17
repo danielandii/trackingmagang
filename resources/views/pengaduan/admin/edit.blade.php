@@ -97,16 +97,24 @@
                         <div class="card-header">
                             <h4>Tanggapan</h4>
                         </div>
+                        <table class="table datatable-basic table-hover border">
+							<thead>
+								<tr>
+                                    <th>No</th>
+									<th>Tanggal tanggapan</th>
+									<th>Laporan Tanggapan</th>
+									<th>Status Laporan</th>
+								</tr>
                         @foreach($dataPengaduan->tanggapan as $tanggapan)
-                        <div class="card-body">
-                            <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p>
-                            <p>{{$tanggapan->laporan_tanggapan}}</p>
-                            <p>{{$tanggapan->pengaduan_status}}</p>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{$tanggapan->created_at->format('d F Y H:i')}}</td>
+                                <td>{{$tanggapan->laporan_tanggapan}}</td>
+                                <td>{{$tanggapan->pengaduan_status}}</td>
+                            </tr>
+                    @endforeach
+                </thead>
+			</table>
             </div>
-        </div>
-    </div>
+            
 @endsection

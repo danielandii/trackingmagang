@@ -66,7 +66,7 @@ class TanggapanController extends Controller
         $data_tanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
         $data_tanggapan->save();
 
-        Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('pengaduan_status'),  request()->get('pengaduan_email')));
+        Mail::to(request()->get('pengaduan_email'))->send(new SendTanggapanMail(request()->get('tanggal_tanggapan'), request()->get('status'), request()->get('pengaduan_tiket'),  request()->get('pengaduan_email')));
 
         if (\Auth::user()->role == 1) {
         return redirect()->to('/home-pengaduan')->with('success', "Tanggapan dengan pengaduan id : ".$data_tanggapan->pengaduan_id." Sukses Disimpan");

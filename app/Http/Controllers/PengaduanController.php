@@ -90,7 +90,7 @@ class PengaduanController extends Controller
                 Mail::to($request->email)->send(new SendMail($no_tiket, $request->tanggal_pengaduan, $request->email));
             
 
-                return redirect()->to('/')->with('success', "Laporan Pengaduan Sukses Disimpan dan No tiket Anda sudah di kirimkan");
+                return redirect()->to('/')->with('success', "Silahkan Cek email Anda");
         // $request->validate([
         //         'tanggal_pengaduan'=>'required|date_format:dd/mm/YY',
         //         'email'=>'required|email:rfc,dns',
@@ -172,6 +172,7 @@ class PengaduanController extends Controller
             $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                     $query->where('pengaduan_id',request()->route('id'));
             })->first();
+            // dd($dataTanggapan);
         return view('pengaduan.admin.edit', compact('dataPengaduan','dataTanggapan'));
         }
     }

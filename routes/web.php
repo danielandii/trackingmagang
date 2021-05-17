@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 	//superadmin
 	// Route::middleware('superadmin')->group(function() {
-		 Route::get('/home',  'PengaduanController@index');
+		 Route::get('/home',  'PengaduanController@index')->name('home');
 	Route::get('/changepass',  'UserController@changePass');
 	Route::post('/changepass/{id}',  'UserController@changePassSubmit')->name('changepass');
 	
