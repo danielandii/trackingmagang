@@ -226,8 +226,8 @@ class PengaduanController extends Controller
 
                 // dd($cari);
                 if ($cari){
-                    $detailPengaduan = Pengaduan::where('no_tiket','like', "%{$cari}%")
-                    ->first();
+                    $detailPengaduan = Pengaduan::where('no_tiket','=', $cari)->orderBy('id', 'DESC')->first();
+                    // dd($detailPengaduan);
                 }
                 else{
                     return redirect()->to('/');
