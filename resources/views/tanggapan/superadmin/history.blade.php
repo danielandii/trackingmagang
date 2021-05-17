@@ -43,24 +43,8 @@
 								<td>{{ $tanggapan->laporan_tanggapan}}</td>
 								<td>{{ $tanggapan->pengaduan_status}}</td>
 								<td align="center">
-<<<<<<< HEAD
 									<a href="{{ route('home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="icon-file-eye2 mr-0 icon-1x">Show</i></a>
-								</td>
-=======
-							<div class="list-icons">
-								<div class="dropdown">
-									<a href="#" class="list-icons-item" data-toggle="dropdown">
-										<i class="icon-menu9"></i>
-									</a>
-
-									<div class="dropdown-menu dropdown-menu-right">
-										<a href="" class="dropdown-item"><i class="icon-pencil7"></i> Edit</a>
-							            <a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri=""><i class="icon-x"></i> Delete</a>
-									</div>
-								</div>
-							</div>
-				        </td>	
->>>>>>> b71ab711ee611406c5e1f4c77d2649d817ed2d5e
+								</td>	
 							</tr>
                         @endforeach
 					</thead>

@@ -255,7 +255,7 @@ return Response::download($file, 'storage', $headers);
          if (\Auth::user()->role == 1) {
             $dataPengaduan = Pengaduan::find($id);
             // dd($dataTanggapan);
-            $dataTanggapan = Tanggapan::whereHas('pengaduan', function($query){
+            $historyTanggapan = Tanggapan::whereHas('pengaduan', function($query){
                 $query->where('pengaduan_id',request()->route('id'));
         })->first();
         return view('tanggapan.superadmin.show', compact('dataPengaduan','dataTanggapan'));

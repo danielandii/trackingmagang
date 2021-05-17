@@ -1,6 +1,14 @@
 @extends('layout')
 
 @section('content')
+    <div class="page-header page-header-light">
+		<div class="page-header-content header-elements-md-inline">
+			<div class="page-title d-flex">
+				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Laporan Pengaduan</span> - Tanggapan</h4>
+				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+			</div>
+		</div>
+	</div>
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -50,48 +58,43 @@
                         </div> -->
                     </div>
 
-        <div class="row">
-            <div class="col">
-                <div class="card card-body shadow">
-                   
-                    <div class="card-body">
-                        <form action="{{route('home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
-                        @csrf
+                    <div class="row">
+                        <div class="col">
+                            <div class="card card-body shadow">
+                            
+                                <div class="card-body">
+                                    <form action="{{route('home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
+                                    @csrf
 
-                        <label for="status">Status</label>
-                        <select name="status" class="form-control" >
-                                        <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
-                                        <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
-                                        <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
-                                        <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
-                                    </select>
+                                    <label for="status">Status</label>
+                                    <select name="status" class="form-control" >
+                                                    <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
+                                                    <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
+                                                    <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
+                                                    <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
+                                                </select>
 
-                            <div class="form-group">
-                            <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
-                            <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
-                            <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
-                            <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
-                            <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
-                                <label for="tanggapan">Tanggapan</label>
-                                <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                                        <div class="form-group">
+                                        <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
+                                        <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
+                                        <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
+                                        <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
+                                        <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
+                                            <label for="tanggapan">Tanggapan</label>
+                                            <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                                        </div>
+                                                    <!-- <select name="pengaduan_status" class="form-control" >
+                                                    <option value="Baru" >Baru</option>
+                                                    <option value="Sedang di Cek" >Sedang di Cek</option>
+                                                    <option value="Pengerjaan" >Pengerjaan</option>
+                                                    <option value="Selesai">Selesai</option>
+                                                    </select> -->
+                                        <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
+                                    </form>
+                                </div>
                             </div>
-
-                            
-                            
-                                        <!-- <select name="pengaduan_status" class="form-control" >
-                                        <option value="Baru" >Baru</option>
-                                        <option value="Sedang di Cek" >Sedang di Cek</option>
-                                        <option value="Pengerjaan" >Pengerjaan</option>
-                                        <option value="Selesai">Selesai</option>
-                                        </select> -->
-                                    
-                            
-                            <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
-                        </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
                     <div class="card card-body shadow mt-3">
                         <div class="card-header">
