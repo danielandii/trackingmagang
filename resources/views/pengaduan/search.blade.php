@@ -28,11 +28,9 @@
                             <h5>Laporan Pengaduan : {{ $detailPengaduan->laporan_pengaduan }}</h5>
                             <!-- <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i>
                             </button> -->
-                            <h3> {{ $detailPengaduan->file }}
                             <a href="{{ Storage::url($detailPengaduan->file) }}">
-                                <button type="button" class="btn bg-teal-400 btn-icon"><i class="icon-download7"></i></button>
+                                <button type="button" class="btn bg-teal-1 btn-icon">{{ $detailPengaduan->file }}
                              </a>
-                             </h3>
                         </div>
 
                     </div>
