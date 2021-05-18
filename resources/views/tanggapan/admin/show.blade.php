@@ -31,9 +31,12 @@
                             </div>
                     </div>
                         <div>
-                            <p>{{ $dataPengaduan->created_at->format('d F Y H:i')}}</p>
-                            <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
+						<p>Tanggal Pengaduan : {{ $dataPengaduan->created_at->format('d F Y H:i')}}</p>
+                            <p>Pengadu : {{ $dataPengaduan->email}}</p>
+                            <p>Laporan yang Diadukan : </p>
+                            <p>{{ $dataPengaduan->laporan_pengaduan }}</p>
                             <!-- <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}"> -->
+							<p>File Pengaduan :</p>
                             <a href="{{ Storage::url($dataPengaduan->file) }}">
                                 <button type="button" class="btn bg-teal-222 btn-icon">{{ $dataPengaduan->file }}
                              </a>
