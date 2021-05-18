@@ -33,7 +33,7 @@ Pengaduan anda akan segera kami proses atas perhatiannya kami ucapkan terima kas
                     <h4>Hallo, {{ $email }}</h4>
                     <p>Kami telah Memverifikasi Pengaduan Anda pada Tanggal {{$tanggal_pengaduan}}. </a></p>
                     <p>
-                        Selanjutnya, silahkan cek No Tiket : {{$no_tiket}} <a href="http://dev.tracking.local/pengaduan/cari?query={{$no_tiket}}">klik disini</a> ,
+                        Selanjutnya, silahkan cek No Tiket : {{$no_tiket}} dan bisa langsung menuju ke link <a href="http://dev.tracking.local/pengaduan/cari?query={{$no_tiket}}">klik disini</a> ,
                         Pengaduan anda akan segera kami proses atas perhatiannya kami ucapkan terima kasih
                     </p>
                     <hr>

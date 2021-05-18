@@ -152,17 +152,21 @@ class TanggapanController extends Controller
     public function historyshow($id, Request $request)
     {
          if (\Auth::user()->role == 1) {
+            $dataPengaduan = Pengaduan::where('no_tiket', '=', $id)->first();
             $dataTanggapan = Tanggapan::where('pengaduan_tiket', '=', $id)->orderBy('id', 'DESC')->get();
+            
+            // dd($dataPengaduan);
             // dd($dataTanggapan);
         //     $historytanggapan = Tanggapan::whereHas('pengaduan', function($query){
         //         $query->where('pengaduan_tiket',request()->route('no_tiket'));
         // })->first();
             // dd($historytanggapan);
-        return view('tanggapan.superadmin.show', compact('dataTanggapan'));
+        return view('tanggapan.superadmin.show', compact('dataTanggapan', 'dataPengaduan'));
     } elseif(\Auth::user()->role == 10) {
+        $dataPengaduan = Pengaduan::where('no_tiket', '=', $id)->first();
         $dataTanggapan = Tanggapan::where('pengaduan_tiket', '=', $id)->orderBy('id', 'DESC')->get();
                 // dd($dataPengaduan);
-            return view('tanggapan.admin.show', compact('dataTanggapan'));
+            return view('tanggapan.admin.show', compact('dataTanggapan', 'dataPengaduan'));
             }
         
     }
