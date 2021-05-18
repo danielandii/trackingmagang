@@ -31,7 +31,7 @@
                             </div>
                     </div>
                         <div>
-                            <p>{{ $dataPengaduan->tanggal_pengaduan }}</p>
+                            <p>{{ $dataPengaduan->created_at->format('d F Y H:i')}}</p>
                             <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
                             <!-- <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}"> -->
                             <a href="{{ Storage::url($dataPengaduan->file) }}">

@@ -9,11 +9,60 @@
 		</div>
 	</div>
 
-    <table class="table datatable-basic table-hover border">
+	<div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="card card-body shadow">
+                    <div class="card card-body shadow">
+                        <!-- <div class="card-header">
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ route('home-pengaduan.tampil') }}">
+                                <i class="fas fa-arrow-circle-left fa-2x"></i>
+                                </a>
+                                <h4>Detail Pengaduan</h4>
+                            </div>
+                        </div> -->
+                        <div class="card-header">
+                            <div class="center">
+                                <!-- <a href="{{ route('home-pengaduan.tampil') }}"> -->
+                               
+                                </a>
+                                <h4>Nomor Tiket Pengaduan : {{ $dataPengaduan->no_tiket }} </h4>
+                            </div>
+                    </div>
+                        <div>
+                            <p>{{ $dataPengaduan->created_at->format('d F Y H:i')}}</p>
+                            <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
+                            <!-- <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}"> -->
+                            <a href="{{ Storage::url($dataPengaduan->file) }}">
+                                <button type="button" class="btn bg-teal-222 btn-icon">{{ $dataPengaduan->file }}
+                             </a>
+                        </div>
+                        
+                        <!-- <div class="card-footer">
+                            <div class="d-flex justify-content-between">
+                                
+                                <form action="{{route('home-pengaduan.onchange',$dataPengaduan->id)}}" method="post" >
+                                    @csrf
+                                    <select name="status" class="form-control" onchange="javascript:this.form.submit()">
+                                        <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
+                                        <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
+                                        <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
+                                        <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
+                                    </select>
+                                    
+                                </form>
+                                
+                                <a href="/home-tanggapan/{{$dataPengaduan->id}}" class="btn btn-primary">Tanggapi</a>
+                            </div>
+                        </div> -->
+                    </div>
+
+					<div class="card card-body shadow">
+					<table class="table datatable-basic table-hover border">
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>No Tiket</th>
 									<th>Tanggal Pengaduan</th>
 									<th>Status Pengaduan</th>
 									<th>Laporan Tanggapan</th>
@@ -21,7 +70,6 @@
                         		@foreach($dataTanggapan as $tanggapan)
                         			<tr>
 										<td>{{ $loop->iteration }}</td>
-										<td>{{ $tanggapan->pengaduan_tiket }}</td>
 										<td>{{ $tanggapan->created_at->format('d F Y H:i') }}</td>
 										<td>{{ $tanggapan->pengaduan_status}}</td>
 										<td>{{ $tanggapan->laporan_tanggapan}}</td>
@@ -29,4 +77,9 @@
                         		@endforeach
                         	</thead>
 						</table>
+						</div>
+					</div>
+					</div>
+					</div>
+					</div>
 @endsection
