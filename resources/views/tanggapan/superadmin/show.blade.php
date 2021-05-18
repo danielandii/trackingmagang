@@ -22,7 +22,7 @@
                         			<tr>
 										<td>{{ $loop->iteration }}</td>
 										<td>{{ $tanggapan->pengaduan_tiket }}</td>
-										<td>{{ $tanggapan->tanggal_tanggapan }}</td>
+										<td>{{ $tanggapan->created_at->format('d F Y H:i') }}</td>
 										<td>{{ $tanggapan->pengaduan_status}}</td>
 										<td>{{ $tanggapan->laporan_tanggapan}}</td>
 									</tr>

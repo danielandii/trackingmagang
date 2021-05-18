@@ -51,14 +51,14 @@
 											</form> -->
 										<td align="center">
 											<div class="list-icons">
-												<div class="dropdown">
-													<a href="#" class="list-icons-item" data-toggle="dropdown">
-														<i class="icon-menu9"></i>
+												<div class="btn-group ml-2 show">
+													<a class="btn btn-info btn-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+														<i class="icon-menu7"></i>
 													</a>
 
 													<div class="dropdown-menu dropdown-menu-right">
-														<a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="dropdown-item"><i class="fas fa-clipboard"></i> tanggapi</a>
-														<a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}"><i class="icon-x"></i> Delete</a>
+														<a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="dropdown-item"><i class="fas fa-clipboard text-blue-300"></i> tanggapi</a>
+														<a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}"><i class="icon-x badge-danger"></i> Delete</a>
 													</div>
 												</div>
 											</div>
