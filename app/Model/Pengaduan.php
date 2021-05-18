@@ -16,6 +16,6 @@ class Pengaduan extends Model
 
     public function tanggapan()
     {
-        return $this->hasMany('App\Model\Tanggapan');
+        return $this->hasMany('App\Model\Tanggapan')->orderBy('created_at','DESC');
     }
 }
