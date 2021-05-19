@@ -223,10 +223,12 @@ class PengaduanController extends Controller
    public function cari()
         {
                 $cari = request()->query('query');
-
+                
                 // dd($cari);
-                if ($cari){
-                    $detailPengaduan = Pengaduan::where('no_tiket','=', $cari)->orderBy('id', 'DESC')->first();
+                $detailPengaduan = Pengaduan::where('no_tiket','=', $cari)->orderBy('id', 'DESC')->first();
+                // dd($detailPengaduan);
+                if ($detailPengaduan){
+                    return view('pengaduan.search',compact('detailPengaduan'));
                     // dd($detailPengaduan);
                 }
                 else{
@@ -234,7 +236,7 @@ class PengaduanController extends Controller
                 }
                 // dd($detailPengaduan);
 
-                return view('pengaduan.search',compact('detailPengaduan'));
+                
         }
    public function show($id)
    {
