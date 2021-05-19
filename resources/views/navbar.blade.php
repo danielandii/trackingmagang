@@ -1,8 +1,11 @@
-<div class="navbar navbar-expand-md navbar-dark">
-	<div class="navbar-brand">
-		<a href="{{ url('/home') }}" class="d-inline-block">
-			<img src="{{asset('global_assets/images/logo_light.png') }}" alt="">
-		</a>
+<div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
+<div class="navbar-nav ml-auto mr-1">
+		<!-- <a href="{{ url('') }}" class="d-inline-block">
+			<img src="{{asset('global_assets/images/logo.png') }}" alt="ters">
+		</a> -->
+		<a class="nav-link text-white @if(request()->segment(1) == "") disabled border
+        border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/home">
+        PENGADUAN MASYARAKAT</a>
 	</div>
 
 	<div class="d-md-none">

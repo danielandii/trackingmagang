@@ -4,12 +4,15 @@
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button> -->
-<div class="navbar navbar-expand-md navbar-dark">
-    <div class="navbar-brand">
+<div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
+    <!-- <div class="navbar-brand">
 		<a href="http://127.0.0.1:8000/" class="d-inline-block">
 			<img src="{{asset('global_assets/images/logo_light.png') }}" alt="">
 		</a>
-	</div>
+	</div> -->
+    <a class="nav-link text-white @if(request()->segment(1) == "home") disabled border
+        border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/">
+        PENGADUAN MASYAAKAT</a>
 
     <div class="d-md-none">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
@@ -22,7 +25,7 @@
 
     <div class="collapse navbar-collapse " id="navbarnavAltMarkup">
     <div class="navbar-nav ml-auto mr-1">
-        <a class="nav-link text-white @if(request()->segment(1) == "") disabled border
+        <a class="nav-link text-white @if(request()->segment(1) == "home") disabled border
         border-warning border-top-0 border-left-0 border-right-0 @else active @endif" href="/">
         Home</a>
         <a class="nav-link text-white @if(request()->segment(1) == "lapor") disabled border

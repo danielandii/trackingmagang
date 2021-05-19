@@ -88,3 +88,6 @@
 
     
 @endsection
+@section('js')
+    <script src="{{asset('assets/js/app.js')}}"></script>
+@endsection

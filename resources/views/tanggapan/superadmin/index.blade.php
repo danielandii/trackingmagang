@@ -1,18 +1,16 @@
 @extends('layout')
 @section('content')
-<div class="page-content">
-
-
-<!-- Main content -->
-<div class="content-wrapper">
-<div class="page-header page-header-light">
-		<div class="page-header-content header-elements-md-inline">
-			<div class="page-title d-flex">
-				<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Tanggapan</h4>
-				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-			</div>
-		</div>
-	</div>
+    <div class="page-content">
+        <!-- Main content -->
+        <div class="content-wrapper">
+            <div class="page-header page-header-light">
+                <div class="page-header-content header-elements-md-inline">
+                    <div class="page-title d-flex">
+                        <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Tanggapan</h4>
+                        <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                    </div>
+                </div>
+            </div>
 
                             
                 <!-- Vertical form -->
@@ -66,11 +64,9 @@
                         </div>
                     </div>
                 </div>
-                    
-                </div>
+        </div>
                 <!-- /vertical form --> 
-
-</div>
+    </div>
 @endsection
 @section('js')
 
@@ -121,52 +117,52 @@
 
 <!-- Vertical form -->
 
-<div class="container">
-<div class="row justify-content-center my-5">
-<div class="col-lg-12 col-md-12 col-xl-6">
-<div class="card shadow">
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-12 col-md-12 col-xl-6">
+                <div class="card shadow">
 
-    <div class="card-body">
-        <form class="form-validate-jquery" action="" method="POST" enctype="multipart/form-data">                                          
-            <div class="card header">
-                <h3 class="text-center">Tanggapan</h3>
-            </div>
+                    <div class="card-body">
+                        <form class="form-validate-jquery" action="" method="POST" enctype="multipart/form-data">                                          
+                            <div class="card header">
+                                <h3 class="text-center">Tanggapan</h3>
+                            </div>
 
-          
-                <div class="input-group custom-search-form">
-                    <input type="text" rows="5" class="form-control" name="search" placeholder="search...">
-                    <span class="input-group-btn">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i> cari </buton>
-                        </span>
-                    </span>
+                        
+                                <div class="input-group custom-search-form">
+                                    <input type="text" rows="5" class="form-control" name="search" placeholder="search...">
+                                    <span class="input-group-btn">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i> cari </buton>
+                                        </span>
+                                    </span>
+                                </div>
+                        
+                            <div class="form-group">
+                                <label for="no_ticket">Laporan</label>
+                                <textarea name="laporan" rows="5" cols="4" class="form-control "></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tanggal_pengaduan">Tanggal Tanggapan</label>
+                                <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
+                                <input type="hidden" name ="pengaduan_id" value="{{request()->route('id')}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tanggapan">Tanggapan</label>
+                                <textarea name="tanggapan" rows="7" cols="7" class="form-control "></textarea>
+                            </div>
+                                
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary submitBtn">Submit form <i class="icon-paperplane ml-2"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-           
-            <div class="form-group">
-                <label for="no_ticket">Laporan</label>
-                <textarea name="laporan" rows="5" cols="4" class="form-control "></textarea>
             </div>
-
-            <div class="form-group">
-                <label for="tanggal_pengaduan">Tanggal Tanggapan</label>
-                <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
-                <input type="hidden" name ="pengaduan_id" value="{{request()->route('id')}}">
-            </div>
-
-            <div class="form-group">
-                <label for="tanggapan">Tanggapan</label>
-                <textarea name="tanggapan" rows="7" cols="7" class="form-control "></textarea>
-            </div>
-                
-            <div class="text-right">
-                <button type="submit" class="btn btn-primary submitBtn">Submit form <i class="icon-paperplane ml-2"></i></button>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-</div>
-</div>
-</div>
 
 </div>
 <!-- /vertical form --> 

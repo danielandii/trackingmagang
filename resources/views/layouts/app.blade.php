@@ -37,7 +37,7 @@
 			@yield('content')
 
 			<!-- Footer -->
-			<div class="navbar navbar-expand-lg navbar-light">
+			<div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
 				<div class="text-center d-lg-none w-100">
 					<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
 						<i class="icon-unfold mr-2"></i>
@@ -48,8 +48,8 @@
         			
    				</div>
 				<div class="navbar-collapse collapse" id="navbar-footer">
-				<a target=" blank" herf="http//github.com">
-            			<i class="icon-chrome mx-3 fa-2x text-red"></i>
+					<a href="https://www.google.com/" class="d-inline-block">
+          				<i class="icon-chrome mx-3 fa-2x text-red"></i>
         			</a>
         			<a href="https://www.facebook.com/norewebid" class="d-inline-block">
           				<i class="fab fa-facebook mx-3 fa-2x text-red"></i>

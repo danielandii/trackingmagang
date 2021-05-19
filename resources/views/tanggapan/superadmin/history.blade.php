@@ -27,9 +27,9 @@
 						</tr>
 					</thead>	
 					<tbody>	
-					@if(!$historytanggapan->isEmpty())
-					@php ($i = 1)
-					@foreach($historytanggapan as $tanggapan)
+						@if(!$historytanggapan->isEmpty())
+						@php ($i = 1)
+						@foreach($historytanggapan as $tanggapan)
 							<tr>
 								<td>{{$i}}</td>
 								<td><div class="datatable-column-width">{{ $tanggapan->pengaduan_tiket}}</div></td>
@@ -60,15 +60,6 @@
 @section('js')
 
 <!-- Theme JS files -->
-<script src="{{asset('global_assets/js/plugins/visualization/d3/d3.min.js') }}"></script>
-<script src="{{asset('global_assets/js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
-<script src="{{asset('global_assets/js/plugins/forms/styling/switchery.min.js') }}"></script>
-<script src="{{asset('global_assets/js/plugins/forms/selects/bootstrap_multiselect.js') }}"></script>
-<script src="{{asset('global_assets/js/plugins/ui/moment/moment.min.js') }}"></script>
-
-<script src="{{asset('assets/js/app.js') }}"></script>
-<script src="{{asset('global_assets/js/demo_pages/dashboard.js') }}"></script>
-<!-- /theme JS files -->
 	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
