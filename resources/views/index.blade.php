@@ -18,7 +18,7 @@
 	
 	<!-- Quick stats boxes -->
 	<div class="row">
-		<h3><span class="font-weight">info laporan</span></h3>
+		<h3><div class="font-weight" style="color:white"> info laporan</div></h3>
 	</div>
 	<!-- <div class="row">
 		<h4><span class="font-weight-semibold">Total Pengaduan : {{ $dataPengaduan->count('pengaduan')}}</span></h4>
@@ -120,7 +120,7 @@
 @endsection
 
 @section('js')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <!-- Theme JS files -->
 <script src="{{asset('global_assets/js/plugins/visualization/d3/d3.min.js') }}"></script>
 <script src="{{asset('global_assets/js/plugins/visualization/d3/d3_tooltip.js') }}"></script>

@@ -3,10 +3,10 @@
 @section('content')
 <main data-spy="scroll" data-target=".header" data-offset="50">
     <section class="hero-area" id="\">
-        <div class="area" style="background:transparent url('/img/bg.jpg') no-repeat;background-size:cover">
-            <div class="card card-body border-0" style="background-color:rgba(24,145,201,0.7);">
+        <div class="area" style="background:transparent url('/global_assets/images/backgrounds/user_bg1.png') no-repeat;background-size:cover">
+            <div class="card card-body border-0" style="background-color:rgba(0,0,0,0.4);">
                 <div class="masthead" >
-                    <div class="text-center" style="margin-bottom:400px;margin-top 120px">
+                    <div class="text-center" style="margin-bottom:400px;margin-top:10px">
                         <div class="masthead-subheading">
                             <h1 class="text-uppercase font-weight-bold" style="color:gold;;">Aplikasi 
                             Pengaduan</h1>
@@ -27,70 +27,75 @@
     </section>
     <!-- fiturfitur -->
     <section class="hero-area" id="fiturfitur">
-       <div class="card card-body border" style="background-image:linier-gradient(to right,#0b4761,#0e5c7d,#0b4761);">
+    <div class="area" style="background:transparent url('/global_assets/images/backgrounds/user_bg1.png') no-repeat;background-size:cover">
+            <div class="card card-body border-0" style="background-color:rgba(0,0,0,0.4);">
             <div class="card-body">
                 <div class="mt-4 text-center">
-                    <h1 class="text-uppercase font-weight-bold  "  style="color:#1890c8">Keunggulan</h1>
-                    <hr style="border-color:#1890c8;border-width:2px;">
+                    <h1 class="text-uppercase font-weight-bold  "  style="color:#00FFD3">Keunggulan</h1>
+                    <hr style="border-color:#00FFD3;border-width:2px;">
                 </div>
                 <div class="row mt-4 text-center">
                     <div class="col-md-4">
                         <span class="icon-phone mr-3 icon-3x fa-6x p-3 rounded" style="background-image:
                         linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
-                        <h2 class=""style="color:#1890c8">Respon Cepat</h2>
-                        <p style="color:#1890c8">Petugas siap standby di depan layar dan akan 
+                        <h2 class=""style="color:#00FFD3">Respon Cepat</h2>
+                        <p style="color:#00FFD3">Petugas siap standby di depan layar dan akan 
                         merespon laporan kamu</p>
                     </div>
                     <div class="col-md-4">
                         <span class="icon-watch mr-3 icon-3x fa-6x p-3 rounded" style="background-image:
                         linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
-                        <h2 class=""style="color:#1890c8">Layanan 12 jam</h2>
-                        <p style="color:#1890c8">Kamu akan dilayani oleh petugas desa mulai dari jam 7 pagi 
+                        <h2 class=""style="color:#00FFD3">Layanan 12 jam</h2>
+                        <p style="color:#00FFD3">Kamu akan dilayani oleh petugas desa mulai dari jam 7 pagi 
                         sampai jam 7 malam</p>
                     </div>
                     <div class="col-md-4">
                         <span class="icon-mic-off2 icon-3x fa-6x p-3 rounded" style="background-image:
                         linear-gradient(to right,#1890c8,#1aa61,#1890c8); color:red"></span>
-                        <h2 class=""style="color:#1890c8">Aduanmu aman</h2>
-                        <p style="color:#1890c8">Kami tidak akan megadu tentang pengaduan permasalahanmu 
+                        <h2 class=""style="color:#00FFD3">Aduanmu aman</h2>
+                        <p style="color:#00FFD3">Kami tidak akan megadu tentang pengaduan permasalahanmu 
                         selain kepada pihak yang berwajib</p>
                     </div>
+</div>
                 </div>
             </div> 
         </div>
     </section>
     <!--tahapan-proses-laporan-->
     <section class="page-section mb-4 mt-4">
-        <div class="card card-body border" style="background-image:linier-gradient(to right,#0b4761,#0e5c7d,#0b4761);">
+    <div class="area" style="background:transparent url('/global_assets/images/backgrounds/user_bg1.png') no-repeat;background-size:cover">
+            <div class="card card-body border-0" style="background-color:rgba(0,0,0,0.4);">
             <div class="card-body">
                  <div class="mt-4 text-center">
-                    <h1 class="text-uppercase font-weight-bold text-red">Tahapan proses laporan</h1>
-                    <hr style="border-color:white:border-width:2px:">
+                 <h1 class="text-uppercase font-weight-bold  "  style="color:#BAFF00">Tahap Proses Laporan</h1>
+                    <hr style="border-color:#BAFF00;border-width:2px;">
                     </div>
                     <div class="row mt-4 text-center">
                         <div class="col-md-4">
                             <span class="fas fa-pencil-alt fa-5x p-3 rounded bg-white" style="color:#0e5c7d"></span>
-                            <h3 class="" style="color:#0e5c7d">1. Anda menulis laporan</h3>
+                            <h3 class="" style="color:#BAFF00">1. Anda menulis laporan</h3>
                         </div>
                         <div class="col-md-4">
                             <span class="fas fa-check fa-5x p-3 rounded bg-white" style="color:#0e5c7d"></span>
-                            <h3 class="" style="color:#0e5c7d">2. Petugas akan melakukan validasi</h3>
+                            <h3 class="" style="color:#BAFF00">2. Petugas akan melakukan validasi</h3>
                         </div>
                         <div class="col-md-4">
                             <span class="fas fa-comments fa-5x p-3 rounded bg-white" style="color:#0e5c7d"></span>
-                            <h3 class="" style="color:#0e5c7d">3. Petugas akan memberikan tanggapan yang artinya laporan sudah di verivikasi</h3>
+                            <h3 class="" style="color:#BAFF00">3. Petugas akan memberikan tanggapan yang artinya laporan sudah di verivikasi</h3>
                         </div>
                     </div>
+</div>
                 </div>
         </div>
     </section>
     <!--tahapan proses laporan-->
     <section class="page-section mb-4 mt-4" >
-            <div class="card card=body border-0">
+    <div class="area" style="background:transparent url('/global_assets/images/backgrounds/user_bg1.png') no-repeat;background-size:cover">
+            <div class="card card-body border-0" style="background-color:rgba(0,0,0,0.4);">
                 <div class="card-body">
                     <div class="mt-4 text-center">
-                        <h1 class="text-uppercese font-weight-bold" style="color:#0e5c7d">Apa kata mereka ?</h1>
-                        <hr style="border-color:#0e5c7d;border-width:2px:">
+                    <h1 class="text-uppercase font-weight-bold  "  style="color:#00F5FF">Apa Kata Mereka?</h1>
+                    <hr style="border-color:#00F5FF;border-width:2px;">
                     </div>
                 </div>
                 <div class="row mt-4 text-center">
@@ -98,26 +103,27 @@
                         <span class="fas fa-user fa-6x p-3 rounded bg-white" style=";
                         background-image:linear-gradient(to right,#0b4761,#0e5c7d,#064761);
                         color:#oe5c7d;color:white"></span>
-                        <h2 class="" style="color:#0e5c7d">Fulan</h2>
-                        <p class="" style="color:#0e5c7d"><i>"dengan adanya aplikasi appems,
+                        <h2 class="" style="color:#00F5FF">Fulan</h2>
+                        <p class="" style="color:#00F5FF"><i>"dengan adanya aplikasi appems,
                         proses pengaduan saya jadi lebih mudah dan tidak perlu datang ke lokasi"</i></p>
                     </div>
                     <div class="col-md-4">
                         <span class="fas fa-user-secret fa-6x p-3 rounded bg-white" style=";
                         background-image:linear-gradient(to right,#0b4761,#0e5c7d,#064761);
                         color:#oe5c7d;color:white"></span>
-                            <h2 class="" style="color:#0e5c7d">Fulin</h2>
-                             <p class="" style="color:#0e5c7d"><i>"sangat bermanfaat dimasa pandemi seperti ini ,sehingga kita tidak perlu berkerumun kesana"</i></p>
+                            <h2 class="" style="color:#00F5FF">Fulin</h2>
+                             <p class="" style="color:#00F5FF"><i>"sangat bermanfaat dimasa pandemi seperti ini ,sehingga kita tidak perlu berkerumun kesana"</i></p>
                     </div>
                     <div class="col-md-4">
                         <span class="fas fa-user-ninja fa-6x p-3 rounded bg-white" style="
                             background-image:linear-gradient(to right,#0b4761,#0e5c7d,#0b4761);
                             color:#0e5c7d;color:white"></span>
-                            <h2 class="" style="color:#0e5c7d">Fulen</h2>
-                            <p class="" style="color:#0e5c7d"><i>" Petugasnya cepat merespon,
+                            <h2 class="" style="color:#00F5FF">Fulen</h2>
+                            <p class="" style="color:#00F5FF"><i>" Petugasnya cepat merespon,
                                 tanggapannya mudah dimengerti dan dalam beberapa hari aduan 
                                 saya terealisasi, terimakasih appems"</i></p>
                     </div>
+</div>
                 </div>    
             </div>
     </section>

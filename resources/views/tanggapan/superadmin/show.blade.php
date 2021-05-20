@@ -89,5 +89,6 @@
     
 @endsection
 @section('js')
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
     <script src="{{asset('assets/js/app.js')}}"></script>
 @endsection

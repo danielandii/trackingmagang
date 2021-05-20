@@ -1,8 +1,9 @@
 @extends('layouts.app')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 @section('content')
+
 <div class="container mt-2">
-<h2 class="text-center">Detail Pengaduan</h2>
+<h2 class="text-center "style="color:white">Detail Pengaduan</h2>
     <div class="row">
         <div class="card card-body shadow">
                     <div class="card card-body shadow">
@@ -49,4 +50,7 @@
         </div>
     </div>
 </div>
+@endsection
+@section('JS')
+
 @endsection

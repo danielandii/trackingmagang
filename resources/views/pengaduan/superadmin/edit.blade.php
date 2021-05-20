@@ -96,25 +96,36 @@
                         </div>
                     </div>
 
-                    <div class="card card-body shadow mt-3">
-                        <div class="card-header">
-                            <h4>Tanggapan</h4>
-                        </div>
-                        @foreach($dataPengaduan->tanggapan as $tanggapan)
-                        <div class="card-body">
-                            <p>{{$tanggapan->created_at->format('d F Y H:i')}}</p> 
-                            <span class="font-weight-bold"><p>{{$tanggapan->pengaduan_status}}</p></span>
-                            <p>{{$tanggapan->laporan_tanggapan}}</p>
-                           
-                            <!-- <p>{{$tanggapan->pengaduan_tiket}}</p> -->
-                        </div>
-                        @endforeach
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+    <div class="card card-body shadow mt-3">
+        <div class="card-header">
+            <h4>Tanggapan</h4>
+         </div>
+        <table class="table datatable-basic table-hover border">
+			<thead>
+			    <tr>
+                    <th>No</th>
+				    <th>Tanggal tanggapan</th>
+			        <th>Laporan Tanggapan</th>
+					<th>Status Laporan</th>
+				</tr>
+                @foreach($dataPengaduan->tanggapan as $tanggapan)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{$tanggapan->created_at->format('d F Y H:i')}}</td>
+                    <td>{{$tanggapan->laporan_tanggapan}}</td>
+                    <td>{{$tanggapan->pengaduan_status}}</td>
+                </tr>
+                @endforeach
+            </thead>
+		</table>
+    </div>
 @endsection
 @section('js')
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
     <script src="{{asset('assets/js/app.js')}}"></script>
 @endsection

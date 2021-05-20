@@ -1,5 +1,5 @@
 <main data-spy="scroll" data-target=".area" data-offset="50">
-    <div class="area" style="background:transparent url('/img/bg.jpg') no-repeat;background-size:
+    <div class="area" style="background:transparent url('/global_assets/images/backgrounds/user_bg1.png') no-repeat;background-size:
     cover">
     <div class="card card-body border-0" style="background-color:rgba(24,145,201,0.7);">
         <div class="masthead" >

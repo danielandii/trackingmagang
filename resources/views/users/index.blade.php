@@ -96,7 +96,7 @@
 	<!-- /default modal -->
 
 @endsection
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 @section('js')
 	<!-- Theme JS files -->
 	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>

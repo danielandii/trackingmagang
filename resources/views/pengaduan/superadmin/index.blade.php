@@ -91,7 +91,7 @@
 @endsection
 
 @section('js')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <!-- Theme JS files -->
 <script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
