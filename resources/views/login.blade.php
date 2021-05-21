@@ -3,7 +3,7 @@
         <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE-edge">
-            <title>Login Page</title>
+            <title>Login Pengaduan Masyarakat</title>
             <link rel="stylesheet" href="style.css" media="screen" title="no title">
             <link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
              <!-- Core JS files -->

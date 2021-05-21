@@ -6,17 +6,17 @@
                         <div class="container">
                             <div class="row justify-content-center my-5">
                                 <div class="col-lg-12 col-md-12 col-xl-6">
-                                    <div class="card shadow">
+                                    <div class="form-pengaduan">
                                     
                                         <div class="card-body">
                                             <form class="form-validate-jquery"  method="POST"  action="{{ route('pengaduan-simpan') }}" enctype="multipart/form-data">
 											@csrf
-                                            <div class=" header">
-                                                <H3 class="text-center">Tambah Pengaduan</H3>
+                                            <div class=" text-center">
+                                                <H3 class="text-uppercase font-weight-bold  " style="color:BAFF00">Tambah Pengaduan</H3>
                                             </div>
 
-                                                <div class="form-group">
-                                                    <label for="tanggal_pengaduan">Tanggal Pengaduan</label>
+                                                <div class="box-form-pengaduan">
+                                                    <label class="text-uppercase font-weight-bold  " style="color:BAFF00" for="tanggal_pengaduan">Tanggal Pengaduan</label>
                                                     <input type="date" name ="tanggal_pengaduan" class="form-control @error('tanggal_pengaduan') is-invalid @enderror">
 													@error('tanggal_pengaduan')
 														<span class="invalid-feedback" role="alert">
@@ -25,8 +25,8 @@
 													@enderror
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="email">email</label>
+                                                <div class="box-form-pengaduan">
+                                                    <label class="text-uppercase font-weight-bold  " style="color:BAFF00" for="email" >email</label>
                                                     <input type="text" name="email" class="form-control @error('email') is-invalid @enderror">
 													@error('email')
                                                         <span class="invalid-feedback" role="alert">
@@ -36,8 +36,8 @@
                                                 </div>
 
 
-                                                <div class="form-group">
-                                                    <label for="laporan_pengaduan">Laporan Pengaduan</label>
+                                                <div class="box-form-pengaduan">
+                                                    <label class="text-uppercase font-weight-bold  " style="color:BAFF00" for="laporan_pengaduan">Laporan Pengaduan</label>
                                                     <textarea name="laporan_pengaduan" rows="10" cols="4" class="form-control @error('laporan_pengaduan') is-invalid @enderror" placeholder="Default textarea"></textarea>
 													@error('laporan_pengaduan')
                                                         <span class="invalid-feedback" role="alert">
@@ -46,8 +46,8 @@
                                                     @enderror
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <label for="file">Input File</label>
+                                                <div class="box-form-pengaduan">
+                                                    <label class="text-uppercase font-weight-bold  " style="color:BAFF00" for="file">Input File</label>
                                                 <input class="form-control form-control-sm" id="formFileSm" type="file" name="file"/>
                                                 </div>
                                                 @error('file')
@@ -56,8 +56,8 @@
                                                     </span>
                                                     @enderror
     
-                                                <div class="text-right">
-                                                    <button type="submit" class="btn btn-primary submitBtn">Submit<i class="icon-paperplane ml-2"></i></button>
+                                                <div class="mt-4 text-center">
+                                                    <button type="submit" class="btn-form-pengaduan">Submit<i class="icon-paperplane ml-2"></i></button>
                                                 </div>
                                                 <!-- <div class="brighttheme ui-pnotify-container brighttheme-notice ui-pnotify-shadow" role="alert" style="min-height: 16px;">
                                                     <div class="ui-pnotify-closer" aria-role="button" tabindex="0" title="Close" style="cursor: pointer; visibility: hidden;">
@@ -104,6 +104,7 @@
 	<link href="{{asset('assets/css/components.min.css')}}" rel="stylesheet" type="text/css">
 	<link href="{{asset('assets/css/colors.min.css')}}" rel="stylesheet" type="text/css"> -->
     <link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/css/form.css') }}" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
 
