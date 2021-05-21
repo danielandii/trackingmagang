@@ -1,5 +1,5 @@
 @extends('layout')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 @section('content')
 <div class="container-fluid">
     <div class="row">

@@ -25,7 +25,6 @@
                         <div class="card-header">
                             <div class="center">
                                 <!-- <a href="{{ route('home-pengaduan.tampil') }}"> -->
-                               
                                 </a>
                                 <h4>Status Detail Pengaduan : {{$dataPengaduan->status}} </h4>
                             </div>

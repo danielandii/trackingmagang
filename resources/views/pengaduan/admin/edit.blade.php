@@ -9,7 +9,6 @@
 			</div>
 		</div>
 	</div>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -31,7 +30,7 @@
                             </div>
                     </div>
                         <div>
-                        <p>{{ $dataPengaduan->created_at->format('d F Y H:i')}}</p>
+                            <p>{{ $dataPengaduan->created_at->format('d F Y H:i')}}</p>
                             <h5>{{ $dataPengaduan->laporan_pengaduan }}</h5>
                             <!-- <img src="{{ Storage::url($dataPengaduan->file) }}" title="{{ $dataPengaduan->file }}"> -->
                             <a href="{{ Storage::url($dataPengaduan->file) }}">
@@ -42,7 +41,7 @@
                         <!-- <div class="card-footer">
                             <div class="d-flex justify-content-between">
                                 
-                                <form action="{{route('admin.home-pengaduan.onchange',$dataPengaduan->id)}}" method="post" >
+                                <form action="{{route('home-pengaduan.onchange',$dataPengaduan->id)}}" method="post" >
                                     @csrf
                                     <select name="status" class="form-control" onchange="javascript:this.form.submit()">
                                         <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
@@ -58,71 +57,74 @@
                         </div> -->
                     </div>
 
-        <div class="row">
-            <div class="col">
-                <div class="card card-body shadow">
-                   
-                    <div class="card-body">
-                        <form action="{{route('admin.home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
-                        @csrf
+                    <div class="row">
+                        <div class="col">
+                            <div class="card card-body shadow">
+                            
+                                <div class="card-body">
+                                    <form action="{{route('admin.home-tanggapi', $dataPengaduan->id)}}" method="POST" accept-charset="utf-8">
+                                    @csrf
 
-                        <label for="status">Status</label>
-                        <select name="status" class="form-control" >
-                                        <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
-                                        <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
-                                        <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
-                                        <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
-                                    </select>
+                                    <label for="status">Status</label>
+                                    <select name="status" class="form-control" >
+                                                    <option value="Baru" @if ($dataPengaduan->status == "Baru") selected @endif>Baru</option>
+                                                    <option value="Sedang di Cek" @if ($dataPengaduan->status == "Sedang di Cek") selected @endif>Sedang di Cek</option>
+                                                    <option value="Pengerjaan" @if ($dataPengaduan->status == "Pengerjaan") selected @endif>Pengerjaan</option>
+                                                    <option value="Selesai" @if ($dataPengaduan->status == "Selesai") selected @endif>Selesai</option>
+                                                </select>
 
-                            <div class="form-group">
-                            <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
-                            <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
-                            <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
-                            <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
-                            <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
-                                <label for="tanggapan">Tanggapan</label>
-                                <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                                        <div class="form-group">
+                                        <input type="hidden" name ="tanggal_tanggapan" value="{{Carbon\Carbon::today()}}">
+                                        <input type="hidden" name ="pengaduan_id" value="{{$dataPengaduan->id}}">
+                                        <input type="hidden" name ="pengaduan_tiket" value="{{$dataPengaduan->no_tiket}}">
+                                        <input type="hidden" name ="pengaduan_status" value="{{$dataPengaduan->status}}">
+                                        <input type="hidden" name ="pengaduan_email" value="{{$dataPengaduan->email}}">
+                                            <label for="tanggapan">Tanggapan</label>
+                                            <textarea class="form-control" name="laporan_tanggapan" id="" cols="30" rows="10"></textarea>
+                                        </div>
+                                            <!-- <select name="pengaduan_status" class="form-control" >
+                                            <option value="Baru" >Baru</option>
+                                            <option value="Sedang di Cek" >Sedang di Cek</option>
+                                            <option value="Pengerjaan" >Pengerjaan</option>
+                                            <option value="Selesai">Selesai</option>
+                                            </select> -->
+                                        <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
+                                    </form>
+                                </div>
                             </div>
-
-                            
-                            
-                                        <!-- <select name="pengaduan_status" class="form-control" >
-                                        <option value="Baru" >Baru</option>
-                                        <option value="Sedang di Cek" >Sedang di Cek</option>
-                                        <option value="Pengerjaan" >Pengerjaan</option>
-                                        <option value="Selesai">Selesai</option>
-                                        </select> -->
-                                    
-                            
-                            <button class="btn btn-primary form-control" type="submit">Tanggapi</button>
-                        </form>
+                        </div>
                     </div>
+
+                    
                 </div>
             </div>
         </div>
-
-                    <div class="card card-body shadow mt-3">
-                        <div class="card-header">
-                            <h4>Tanggapan</h4>
-                        </div>
-                        <table class="table datatable-basic table-hover border">
-							<thead>
-								<tr>
-                                    <th>No</th>
-									<th>Tanggal tanggapan</th>
-									<th>Laporan Tanggapan</th>
-									<th>Status Laporan</th>
-								</tr>
-                        @foreach($dataPengaduan->tanggapan as $tanggapan)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{$tanggapan->created_at->format('d F Y H:i')}}</td>
-                                <td>{{$tanggapan->laporan_tanggapan}}</td>
-                                <td>{{$tanggapan->pengaduan_status}}</td>
-                            </tr>
-                    @endforeach
-                </thead>
-			</table>
-            </div>
-            
+    </div>
+    <div class="card card-body shadow mt-3">
+        <div class="card-header">
+            <h4>Tanggapan</h4>
+         </div>
+        <table class="table datatable-basic table-hover border">
+			<thead>
+			    <tr>
+                    <th>No</th>
+				    <th>Tanggal tanggapan</th>
+			        <th>Laporan Tanggapan</th>
+					<th>Status Laporan</th>
+				</tr>
+                @foreach($dataPengaduan->tanggapan as $tanggapan)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{$tanggapan->created_at->format('d F Y H:i')}}</td>
+                    <td>{{$tanggapan->laporan_tanggapan}}</td>
+                    <td>{{$tanggapan->pengaduan_status}}</td>
+                </tr>
+                @endforeach
+            </thead>
+		</table>
+    </div>
+@endsection
+@section('js')
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{asset('assets/js/app.js')}}"></script>
 @endsection

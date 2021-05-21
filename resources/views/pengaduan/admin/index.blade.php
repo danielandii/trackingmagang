@@ -12,17 +12,9 @@
 	<!-- Content area -->
 	<div class="content">
 		<!-- Hover rows -->
-		<div class="card">
-			<div class="rows">
+			<div class="card">
 				<div class="col">
-					@if ($message = Session::get('success'))
-						<!-- <div class="alert alert-success">
-							{{$message}}
-						</div> -->
-					@endif
-					<div class="table-responsive">
-
-						<table class="table datatable-basic table-hover">
+					<table class="table datatable-basic table-hover border">
 							<thead>
 								<tr>
 									<th>No</th>
@@ -32,34 +24,23 @@
 									<th>Status Laporan</th>
 									<th class="text-center">Actions</th>
 								</tr>
-								</thead>
-								<tbody>
+							</thead>
+							<tbody>
 								@if(!$dataPengaduan->isEmpty())
-									@php ($i = 1)
+								@php ($i = 1)
                         		@foreach($dataPengaduan as $pengaduan)
                         			<tr>
-										<td>{{ $loop->iteration }}</td>
-										<td>{{ $pengaduan->no_tiket }}</td>
-										<td>{{ $pengaduan->created_at->format('d F Y H:i') }}</td>	
-										<td>{{ $pengaduan->email }}</td>
-										<td>{{ $pengaduan->status }}</td>
-										<!-- {{ route('home-pengaduan.detail', $pengaduan->no_tiket)}} -->
-											<!-- <a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="btn btn-info">
-												<i class="fas fa-clipboard"> Detail</i>
-											</a>
-											<form action="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}" method="post" class="d-inline" onsubmit="return confirm('yakin hapus data')">
-												@method('delete')
-												@csrf 
-												<button class="btn btn-danger btn-sm">
-												<i class="fa fa-trash">delete</i>
-												</button>
-											</form> -->
+										<td>{{$i}}</td>
+										<td><div class="datatable-column-width">{{ $pengaduan->no_tiket }}</div></td>
+										<td><div class="datatable-column-width">{{ $pengaduan->created_at->format('d F Y H:i') }}</div></td>	
+										<td><div class="datatable-column-width">{{ $pengaduan->email }}</div></td>
+										<td><div class="datatable-column-width">{{ $pengaduan->status }}</div></td>
 										<td align="center">
 											<div class="list-icons">
 												<div class="btn-group ml-2 show">
-														<a class="btn btn-info btn-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-															<i class="icon-menu7"></i>
-														</a>
+													<a class="btn btn-info btn-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+														<i class="icon-menu7"></i>
+													</a>
 
 													<div class="dropdown-menu dropdown-menu-right">
 														<a href="{{ route('admin.home-pengaduan.detail', $pengaduan->id)}}" class="dropdown-item"><i class="fas fa-clipboard text-blue-300"></i> tanggapi</a>
@@ -67,64 +48,61 @@
 													</div>
 												</div>
 											</div>
-											<div id="modal_theme_danger" class="modal fade" tabindex="-1">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header bg-danger" align="center">
-															<button type="button" class="close" data-dismiss="modal">&times;</button>
-														</div>
-
-														<form action="{{ route('admin.home-pengaduan.destroy',$pengaduan->id ) }}" method="post" id="delform">
-															@csrf
-															@method('DELETE')
-															<div class="modal-body" align="center">
-																<h2> Hapus Data? </h2>
-															</div>
-
-															<div class="modal-footer">
-																<button type="button" class="btn btn-link" data-dismiss="modal">Batal</button>
-																<button type="submit" class="btn bg-danger">Hapus</button>
-															</div>
-														</form>
-													</div>
-												</div>
-											</div>
-                            			</td>
+										</td>
 									</tr>
 									@php ($i++)
                         		@endforeach
 								@else
-								<tr><td align="center" colspan="4">Data Kosong</td></tr>
-								@endif
-								</tbody>
-						</table>
+				  				<tr><td align="center" colspan="4">Data Kosong</td></tr>
+								@endif 
+							</tbody>
+                        </table>
 					</div>
 				</div>
-			</div>
-			</div>
 			<!-- /hover rows -->
 		</div>
+		<div id="modal_theme_danger" class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header bg-danger" align="center">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+
+							<form action="{{ route('admin.home-pengaduan.destroy',$pengaduan->id ) }}" method="post" id="delform">
+							@csrf
+							@method('DELETE')
+								<div class="modal-body" align="center">
+									<h2> Hapus Data? </h2>
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-link" data-dismiss="modal">Batal</button>
+									<button type="submit" class="btn bg-danger">Hapus</button>
+								</div>
+							</form>
+				</div>
+			</div>
+		</div>
+                    			
+									
 	<!-- /content area -->
 
 
 @endsection
 
 @section('js')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <!-- Theme JS files -->
-	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
+<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 
-	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
 	<script src="{{asset('assets/js/app.js')}}"></script>
-	<script src="assets/js/app.js"></script>
-	
-<!-- /theme JS files -->
-<script>
+	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
+	<script>
 		//modal delete
 		$(document).on("click", ".delbutton", function () {
 		     var url = $(this).data('uri');
@@ -243,5 +221,6 @@
 
 		});
 	</script>
+
 
 @endsection

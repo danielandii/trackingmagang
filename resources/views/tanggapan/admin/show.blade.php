@@ -1,4 +1,5 @@
 @extends('layout')
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 @section('content')
 <div class="page-header page-header-light">
 		<div class="page-header-content header-elements-md-inline">
