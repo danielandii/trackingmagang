@@ -66,30 +66,19 @@
 	<!-- /content area -->
 
 @endsection
-<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 @section('js')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <!-- Theme JS files -->
-<script src="{{asset('global_assets/js/plugins/visualization/d3/d3.min.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/visualization/d3/d3_tooltip.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/forms/styling/switchery.min.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/forms/selects/bootstrap_multiselect.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/ui/moment/moment.min.js')}}"></script>
-
-<script src="{{asset('assets/js/app.js')}}"></script>
-<script src="{{asset('global_assets/js/demo_pages/dashboard.js')}}"></script>
-<!-- /theme JS files -->
-<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 
+	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
-	<script src="assets/js/app.js"></script>
-
-<script>
+	<script>
 		//modal delete
 		$(document).on("click", ".delbutton", function () {
 		     var url = $(this).data('uri');
@@ -186,29 +175,6 @@
 		    DatatableBasic.init();
 		});
 	</script>
-	<script type="text/javascript">
-		$( document ).ready(function() {
-	        // Default style
-	        @if(session('error'))
-	            new PNotify({
-	                title: 'Error',
-	                text: '{{ session('error') }}.',
-	                icon: 'icon-blocked',
-	                type: 'error'
-	            });
-            @endif
-            @if ( session('success'))
-	            new PNotify({
-	                title: 'Success',
-	                text: '{{ session('success') }}.',
-	                icon: 'icon-checkmark3',
-	                type: 'success'
-	            });
-            @endif
-
-		});
-	</script>
-
 
 @endsection
 
