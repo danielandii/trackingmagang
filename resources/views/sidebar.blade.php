@@ -61,8 +61,15 @@
 						</span>
 					</a>
 				</li>
-				
-				
+
+				<li class="nav-item">
+					<a href="{{ url('/cetak') }}" class="nav-link {{ (request()->is('cetak*')) ? 'active' : '' }}">
+						<i class="icon-printer2"></i>
+						<span>
+							Cetak Laporan
+						</span>
+					</a>
+				</li>
 				
 				
 				<!-- <li class="nav-item nav-item-submenu {{ (request()->is('superadmin*') || request()->is('admin*')) ? 'nav-item-expanded nav-item-open' : '' }}">
@@ -130,6 +137,16 @@
 						</span>
 					</a>
 				</li>
+
+				<li class="nav-item">
+					<a href="{{ url('/history') }}" class="nav-link {{ (request()->is('history*')) ? 'active' : '' }}">
+						<i class="icon-printer2"></i>
+						<span>
+							Cetak Laporan
+						</span>
+					</a>
+				</li>
+
 				@endif
 
 			</ul>

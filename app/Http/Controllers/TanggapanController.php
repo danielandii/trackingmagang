@@ -171,4 +171,9 @@ class TanggapanController extends Controller
         
     }
 
+    public function halamanCetak()
+    {
+        return view ('cetak.index');
+    }
+
 }

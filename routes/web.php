@@ -82,6 +82,8 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/laporan-pengaduan/{id}','PengaduanController@detailPengaduan')->name('home-pengaduan.detail');
 		Route::post('/laporan-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('home-pengaduan.onchange');
 		Route::delete('/laporan-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
+
+		Route::get('/cetak','TanggapanController@halamanCetak')->name('cetak');
 	});
 
 	// //admin
