@@ -15,9 +15,10 @@
 			<div class="card">
 				<div class="col">
 				<br/>
-		<a href="cetak" class="btn btn-primary">CETAK PDF</a>
+		
 				<div class="card-header">
-					<a href="/pengaduan/export" class="btn btn-sm btn-primary">Eksport</a>
+				<a href="cetak" class="btn btn-primary">CETAK PDF</a>
+					<a href="/pengaduan/export" class="btn btn-primary">Eksport Excel</a>
 				</div>
 					<table class="table datatable-basic table-hover border">
 							<thead>
