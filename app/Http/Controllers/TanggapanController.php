@@ -176,7 +176,11 @@ class TanggapanController extends Controller
 
     public function halamanCetak()
     {
-        return view ('cetak.index');
+        if (\Auth::user()->role == 1) {
+        return view ('cetak.superadmin.index');
+            } elseif(\Auth::user()->role == 10) {
+        return view ('cetak.admin.index');
+            }
     }
 
     public function halamanTanggalCetak($tglawal, $tglakhir)
@@ -186,7 +190,11 @@ class TanggapanController extends Controller
         // $cetakTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir]);
         // $cetakPengaduan = Pengaduan::whereBetween('created_at',[$tglawal, $tglakhir]);
         // return view('cetak.show', compact('cetakPengaduan'));
+        if (\Auth::user()->role == 1) {
         return Excel::download(new CetakExport($tglawal, $tglakhir), 'LaporanPertanggal.xlsx');
+        } elseif(\Auth::user()->role == 10) {
+        return Excel::download(new CetakExport($tglawal, $tglakhir), 'LaporanPertanggal.xlsx');
+        }
     }
 
     public function tanggapanexport() 

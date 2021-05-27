@@ -107,7 +107,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('/admin/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('admin.home-pengaduan.destroy');
 
 		Route::get('/admin/cetak','TanggapanController@halamanCetak')->name('cetak');
-		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
+		Route::get('/admin/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
 	});
 
 });
