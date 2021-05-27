@@ -14,6 +14,8 @@
 		<!-- Hover rows -->
 			<div class="card">
 				<div class="col">
+				<br/>
+		<a href="cetak" class="btn btn-primary">CETAK PDF</a>
 					<table class="table datatable-basic table-hover border">
 							<thead>
 								<tr>

@@ -20,7 +20,7 @@
         </div>
 
         <div class="input-group mb-3">
-            <button type="submit">Cetak</button>
+            <a href="#" target="_blank" class="btn btn-primary col-md-12">cetak data<i class="fas fa-print"></i></a>
         </div>
     </div>
     </div>

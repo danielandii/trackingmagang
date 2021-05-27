@@ -15,11 +15,14 @@
 
 		<!-- Hover rows -->
 		<div class="card">
+		<div class="col">
+		<br>
+		<a href="history-cetak" class="btn btn-primary">CETAK PDF</a>
 				<table class="table datatable-basic table-hover border">
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>Pengaduan_Id</th>
+							<th>nomer tiket</th>
 							<th>Tanggal Tanggapan</th>
 							<th>Laporan Tanggapan</th>
 							<th>Status Pengaduan</th>
@@ -47,6 +50,7 @@
 						@endif
 					</tbody>
 				</table>
+			</div>
 			</div>
 		</div>
 		
@@ -168,5 +172,3 @@
 	</script>
 
 @endsection
-
-

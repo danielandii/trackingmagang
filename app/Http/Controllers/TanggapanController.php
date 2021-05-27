@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Model\Pengaduan;
-use App\Model\tanggapan;
+use App\Model\Tanggapan;
 use App\Mail\SendTanggapanMail;
+use App\Mail\SendMail;
 use Carbon\Carbon;
+use File;
+use PDF;
 
 class TanggapanController extends Controller
 {
@@ -140,11 +143,11 @@ class TanggapanController extends Controller
     public function historyTanggapan()
     {
         if (\Auth::user()->role == 1) {
-            $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+            $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
             // dd($historytanggapan);
         return view('tanggapan.superadmin.history', compact('historytanggapan'));
     }elseif(\Auth::user()->role == 10) {
-        $historytanggapan = tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+        $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
         
         return view('tanggapan.admin.history', compact('historytanggapan'));
     }
@@ -170,10 +173,25 @@ class TanggapanController extends Controller
             }
         
     }
+    public function historycetak_pdf()
+    {
+        if (\Auth::user()->role == 1) {
+        $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+        $pdf = PDF::loadview('cetak.superadmin.dataTanggapan_PDF',['historytanggapan'=>$historytanggapan]);
+        return $pdf->download('superadmin_datahistory');
+        }elseif(\Auth::user()->role == 10) {
+            $historytanggapan = Tanggapan::where('Pengaduan_status', '=' , 'selesai')->orderBy('id', 'DESC')->get();
+        $pdf = PDF::loadview('cetak.admin.dataTanggapan_PDF',['historytanggapan'=>$historytanggapan]);
+        return $pdf->download('admin_datahistory');
+        }
+    }
 
     public function halamanCetak()
     {
         return view ('cetak.index');
     }
-
+    public function halamancetakpertanggal($tgawal,$tgakhir){
+        dd("Tanggal Awal:".$tgawal,"Tanggal Akhir:".$tgakhir);
+    } 
+    
 }
