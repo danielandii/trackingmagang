@@ -219,7 +219,11 @@ class TanggapanController extends Controller
     public function tanggapanexport() 
     {
         // $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+        if (\Auth::user()->role == 1) {
         return Excel::download(new TanggapanExport, 'tanggapan.xlsx');
+    } elseif(\Auth::user()->role == 10) {
+        return Excel::download(new TanggapanExport, 'tanggapan.xlsx');
+    }
         // return Excel::create('pengaduan.xlsx', function($excel) {
 
         //     $excel->sheet('New sheet', function($sheet) {

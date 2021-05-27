@@ -11,6 +11,7 @@
     </tr>
     </thead>
     <tbody>
+    @php ($i = 1)
     @foreach($dataPengaduan as $item)
         <tr>
             <td>{{ $i }}</td>
@@ -21,6 +22,7 @@
             <td>{{ $item->file }}</td>
             <td>{{ $item->status }}</td>
         </tr>
+        @php ($i++)
     @endforeach
     </tbody>
 </table>
