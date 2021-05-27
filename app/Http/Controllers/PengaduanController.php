@@ -10,6 +10,7 @@ use App\Model\Petugas;
 use App\Mail\SendMail;
 use Carbon\Carbon;
 use File;
+use PDF;
 use App\Exports\PengaduanExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -68,6 +69,9 @@ class PengaduanController extends Controller
    
 
         $no_tiket = uniqid().date('my');
+        $dataTanggapan = Tanggapan::find($id);
+        $dataTanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
+        $dataTanggapan->save();
 
                 $data = new Pengaduan;
                 $data->no_tiket = $no_tiket; 
@@ -75,6 +79,7 @@ class PengaduanController extends Controller
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
                 $data->file = $namaFile;
+                $data->laporan_tanggapan = $request->laporan_tanggapan;
                 $data->save();
 
                 // \Mail::raw('Terima Kasih'.$data->email.'sudah melakukan Pengaduan', function ($message) use ($data){
@@ -246,7 +251,7 @@ class PengaduanController extends Controller
     $headers = array(
   'Content-Type: application/file',);
 
-return Response::download($file, 'storage', $headers);
+    return Response::download($file, 'storage', $headers);
    }
    public function delete($id)
    {
@@ -270,8 +275,21 @@ return Response::download($file, 'storage', $headers);
                 // dd($dataPengaduan);
             return view('tanggapan.admin.show');
             }
-        
     }
+    public function cetak_pdf()
+    {
+        if (\Auth::user()->role == 1) {
+        $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+        $pdf = PDF::loadview('cetak.superadmin.dataPengaduan_pdf',['dataPengaduan'=>$dataPengaduan]);
+        return $pdf->download('superadmin_dataPengaduan');
+        }elseif(\Auth::user()->role == 10) {
+            $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+        $pdf = PDF::loadview('cetak.admin.dataPengaduan_pdf',['dataPengaduan'=>$dataPengaduan]);
+        return $pdf->download('admin_dataPengaduan');
+        }
+    }
+
+
 
     public function pengaduanexport() 
     {

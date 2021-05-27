@@ -14,9 +14,14 @@
 		<!-- Hover rows -->
 			<div class="card">
 				<div class="col">
+<<<<<<< HEAD
+				<br/>
+		<a href="cetak" class="btn btn-primary">CETAK PDF</a>
+=======
 				<div class="right">
 					<a href="/pengaduan/export" class="btn btn-primary">Eksport</a>
 				</div>
+>>>>>>> 60fbb6113a416f99a7f0240b21d5d7487c66b116
 					<table class="table datatable-basic table-hover border">
 							<thead>
 								<tr>

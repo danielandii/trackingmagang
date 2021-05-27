@@ -70,7 +70,7 @@
 									<th>Status Pengaduan</th>
 									<th>Laporan Tanggapan</th>
 								</tr>
-                        		@foreach($dataTanggapan as $tanggapan)
+                        		@foreach($historytanggapan as $tanggapan)
                         			<tr>
 										<td>{{ $loop->iteration }}</td>
 										<td>{{ $tanggapan->created_at->format('d F Y H:i') }}</td>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="page-header page-header-light">
+	<div class="page-header page-header-light">
 		<div class="page-header-content header-elements-md-inline">
 			<div class="page-title d-flex">
 				<h4><i class="icon-home2 mr-3 icon-2x"></i> <span class="font-weight-semibold">Home</span> - History Tanggapan</h4>
@@ -12,84 +12,68 @@
 	</div>
 	<!-- Content area -->
 	<div class="content">
-	<div class="card">
-		<!-- Hover rows -->
-		<div class="rows">
-			<div class="col">
-			@if ($message = Session::get('success'))
-				<div class="alert alert-success">
-					{{$message}}
-				</div>
-			@endif
-			<div class="table-responsive">
 
-				<table class="table datatable-basic table-hover">
+		<!-- Hover rows -->
+		<div class="card">
+		<div class="col">
+		<br>
+		<a href="history-cetak" class="btn btn-primary">CETAK PDF</a>
+				<table class="table datatable-basic table-hover border">
 					<thead>
 						<tr>
 							<th>No</th>
-							<th>Pengaduan_Id</th>
+							<th>nomer tiket</th>
 							<th>Tanggal Tanggapan</th>
 							<th>Laporan Tanggapan</th>
 							<th>Status Pengaduan</th>
 							<th class="text-center">Actions</th>
-							
-
 						</tr>
-						</thead>
-						<tbody>
+					</thead>	
+					<tbody>	
 						@if(!$historytanggapan->isEmpty())
-									@php ($i = 1)
+						@php ($i = 1)
 						@foreach($historytanggapan as $tanggapan)
 							<tr>
-								<td>{{ $loop->iteration }}</td>
-								<td>{{ $tanggapan->pengaduan_tiket}}</td>
-								<td>{{ $tanggapan->created_at->format('d F Y H:i')}}</td>
-								<td>{{ $tanggapan->laporan_tanggapan}}</td>
-								<td>{{ $tanggapan->pengaduan_status}}</td>
-								<td align center>
-							<a href="{{ route('admin.home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="icon-file-eye2 mr-0 icon-1x list-icons-item text-blue-300"></i> show</a>
-							</td>
+								<td>{{$i}}</td>
+								<td><div class="datatable-column-width">{{ $tanggapan->pengaduan_tiket}}</div></td>
+								<td><div class="datatable-column-width">{{ $tanggapan->created_at->format('d F Y H:i')}}</div></td>
+								<td><div class="datatable-column-width">{{ $tanggapan->laporan_tanggapan}}</div></td>
+								<td><div class="datatable-column-width">{{ $tanggapan->pengaduan_status}}</div></td>
+								<td align="center">
+									<a href="{{ route('admin.home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="icon-file-eye2 mr-0 icon-1x list-icons-item text-blue-300">Show</i></a>
+								</td>
 							</tr>
-							@php ($i++)
-                        		@endforeach
-								@else
-								<tr><td align="center" colspan="4">Data Kosong</td></tr>
-								@endif
-								</tbody>
+						@php ($i++)
+                        @endforeach
+						@else
+				  			<tr><td align="center" colspan="4">Data Kosong</td></tr>
+						@endif
+					</tbody>
 				</table>
 			</div>
 			</div>
 		</div>
+		
 		<!-- /hover rows -->
-	</div>
-	</div>
+
+	
 	<!-- /content area -->
 
 @endsection
-<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+
 @section('js')
-
+<link href="{{asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <!-- Theme JS files -->
-<script src="{{asset('global_assets/js/plugins/visualization/d3/d3.min.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/visualization/d3/d3_tooltip.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/forms/styling/switchery.min.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/forms/selects/bootstrap_multiselect.js')}}"></script>
-<script src="{{asset('global_assets/js/plugins/ui/moment/moment.min.js')}}"></script>
-
-<script src="{{asset('assets/js/app.js')}}"></script>
-<script src="{{asset('global_assets/js/demo_pages/dashboard.js')}}"></script>
-<!-- /theme JS files -->
-<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/pnotify.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/notifications/bootbox.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/tables/datatables/datatables.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/forms/selects/select2.min.js')}}"></script>
-	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 	<script src="{{asset('global_assets/js/plugins/buttons/spin.min.js')}}"></script>
+	<script src="{{asset('global_assets/js/plugins/buttons/ladda.min.js')}}"></script>
 
+	<script src="{{asset('assets/js/app.js')}}"></script>
 	<script src="{{asset('global_assets/js/demo_pages/components_modals.js')}}"></script>
-	<script src="assets/js/app.js"></script>
-
-<script>
+	<script>
 		//modal delete
 		$(document).on("click", ".delbutton", function () {
 		     var url = $(this).data('uri');
@@ -186,30 +170,5 @@
 		    DatatableBasic.init();
 		});
 	</script>
-	<script type="text/javascript">
-		$( document ).ready(function() {
-	        // Default style
-	        @if(session('error'))
-	            new PNotify({
-	                title: 'Error',
-	                text: '{{ session('error') }}.',
-	                icon: 'icon-blocked',
-	                type: 'error'
-	            });
-            @endif
-            @if ( session('success'))
-	            new PNotify({
-	                title: 'Success',
-	                text: '{{ session('success') }}.',
-	                icon: 'icon-checkmark3',
-	                type: 'success'
-	            });
-            @endif
-
-		});
-	</script>
-
 
 @endsection
-
-
