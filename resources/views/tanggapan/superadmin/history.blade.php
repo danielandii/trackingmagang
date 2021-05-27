@@ -12,12 +12,18 @@
 	</div>
 	<!-- Content area -->
 	<div class="content">
-
+	
 		<!-- Hover rows -->
 		<div class="card">
+<<<<<<< HEAD
 		<div class="col">
 		<br>
 		<a href="history-cetak" class="btn btn-primary">CETAK PDF</a>
+=======
+		<div class="card-header">
+					<a href="/tanggapan/export" class="btn btn-sm btn-primary">Eksport</a>
+				</div>
+>>>>>>> 60fbb6113a416f99a7f0240b21d5d7487c66b116
 				<table class="table datatable-basic table-hover border">
 					<thead>
 						<tr>

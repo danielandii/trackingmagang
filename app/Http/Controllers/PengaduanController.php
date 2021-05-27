@@ -11,6 +11,8 @@ use App\Mail\SendMail;
 use Carbon\Carbon;
 use File;
 use PDF;
+use App\Exports\PengaduanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class PengaduanController extends Controller
@@ -287,4 +289,26 @@ class PengaduanController extends Controller
         }
     }
 
+
+
+    public function pengaduanexport() 
+    {
+        // $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+        return Excel::download(new PengaduanExport, 'pengaduan.xlsx');
+        // return Excel::create('pengaduan.xlsx', function($excel) {
+
+        //     $excel->sheet('New sheet', function($sheet) {
+        
+        //         $sheet->loadView('excel.pengaduan.index');
+        
+        //     });
+        
+        // })->download();
+    }
+
+    public function pengaduanexportpertanggal($tglawal, $tglakhir) 
+    {
+        dd(["Tanggal Awal : ".$tglawal, "Tanggal Akhir : ".$tglakhir]);
+    //     return Excel::download(new PengaduanExport, 'pengaduan.xlsx');
+    }
 }

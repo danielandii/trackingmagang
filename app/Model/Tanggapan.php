@@ -11,7 +11,7 @@ class Tanggapan extends Model
 
     public function pengaduan()
     {
-        return $this->belongsTo('App\Model\Pengaduan');
+        return $this->belongsTo('App\Model\Pengaduan','pengaduan_id', 'id');
     }
 
    

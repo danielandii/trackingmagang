@@ -88,6 +88,13 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/cetak-pertanggal','Tanggapan@cetakpertanggal_pdf')->name('cetak-pertanggal');
 
 		// Route::get('/cetak-data-pertanggal/{$tgawal}','')
+		Route::get('/cetak','TanggapanController@halamanCetak')->name('cetak');
+		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
+
+		Route::get('/pengaduan/export','PengaduanController@pengaduanexport');
+		Route::get('/pengaduan/export/{tglawal}/{tglakhir}','PengaduanController@pengaduanexportpertanggal');
+
+		Route::get('/tanggapan/export','TanggapanController@tanggapanexport');
 	});
 
 	// //admin
@@ -106,6 +113,8 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('/admin/cetak','PengaduanController@cetak_pdf')->name('admin.cetak');
 		Route::get('/admin/history-cetak','TanggapanController@historycetak_pdf')->name('admin.historycetak');
+		Route::get('/admin/cetak','TanggapanController@halamanCetak')->name('cetak');
+		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
 	});
 
 });

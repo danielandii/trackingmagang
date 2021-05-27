@@ -11,6 +11,9 @@ use App\Mail\SendMail;
 use Carbon\Carbon;
 use File;
 use PDF;
+use App\Exports\TanggapanExport;
+use App\Exports\CetakExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TanggapanController extends Controller
 {
@@ -194,4 +197,29 @@ class TanggapanController extends Controller
         dd("Tanggal Awal:".$tgawal,"Tanggal Akhir:".$tgakhir);
     } 
     
+
+    public function halamanTanggalCetak($tglawal, $tglakhir)
+    {
+        // dd("Tanggal awal :".$tglawal, "Tanggal Akhir :".$tglakhir);
+        // return view ('cetak.index');
+        // $cetakTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir]);
+        // $cetakPengaduan = Pengaduan::whereBetween('created_at',[$tglawal, $tglakhir]);
+        // return view('cetak.show', compact('cetakPengaduan'));
+        return Excel::download(new CetakExport($tglawal, $tglakhir), 'LaporanPertanggal.xlsx');
+    }
+
+    public function tanggapanexport() 
+    {
+        // $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+        return Excel::download(new TanggapanExport, 'tanggapan.xlsx');
+        // return Excel::create('pengaduan.xlsx', function($excel) {
+
+        //     $excel->sheet('New sheet', function($sheet) {
+        
+        //         $sheet->loadView('excel.pengaduan.index');
+        
+        //     });
+        
+        // })->download();
+    }
 }
