@@ -139,7 +139,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a href="{{ url('/history') }}" class="nav-link {{ (request()->is('history*')) ? 'active' : '' }}">
+					<a href="{{ url('/admin/cetak') }}" class="nav-link {{ (request()->is('admin/cetak*')) ? 'active' : '' }}">
 						<i class="icon-printer2"></i>
 						<span>
 							Cetak Laporan

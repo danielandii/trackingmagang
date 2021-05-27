@@ -105,6 +105,9 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/admin/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('admin.home-pengaduan.detail');
 		Route::post('/admin/home-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('admin.home-pengaduan.onchange');
 		Route::delete('/admin/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('admin.home-pengaduan.destroy');
+
+		Route::get('/admin/cetak','TanggapanController@halamanCetak')->name('cetak');
+		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
 	});
 
 });
