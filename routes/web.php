@@ -84,6 +84,12 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('/laporan-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 
 		Route::get('/cetak','TanggapanController@halamanCetak')->name('cetak');
+		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
+
+		Route::get('/pengaduan/export','PengaduanController@pengaduanexport');
+		Route::get('/pengaduan/export/{tglawal}/{tglakhir}','PengaduanController@pengaduanexportpertanggal');
+
+		Route::get('/tanggapan/export','TanggapanController@tanggapanexport');
 	});
 
 	// //admin

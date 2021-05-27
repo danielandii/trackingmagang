@@ -12,9 +12,12 @@
 	</div>
 	<!-- Content area -->
 	<div class="content">
-
+	
 		<!-- Hover rows -->
 		<div class="card">
+		<div class="card-header">
+					<a href="/tanggapan/export" class="btn btn-sm btn-primary">Eksport</a>
+				</div>
 				<table class="table datatable-basic table-hover border">
 					<thead>
 						<tr>

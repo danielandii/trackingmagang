@@ -14,6 +14,9 @@
 		<!-- Hover rows -->
 			<div class="card">
 				<div class="col">
+				<div class="right">
+					<a href="/pengaduan/export" class="btn btn-primary">Eksport</a>
+				</div>
 					<table class="table datatable-basic table-hover border">
 							<thead>
 								<tr>
