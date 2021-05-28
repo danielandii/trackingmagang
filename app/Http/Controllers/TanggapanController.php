@@ -191,27 +191,51 @@ class TanggapanController extends Controller
 
     public function halamanCetak()
     {
-        return view ('cetak.index');
+        if (\Auth::user()->role == 1) {
+        return view ('cetak.superadmin.index');
+            } elseif(\Auth::user()->role == 10) {
+        return view ('cetak.admin.index');
+            }
     }
     public function halamancetakpertanggal($tgawal,$tgakhir){
         dd("Tanggal Awal:".$tgawal,"Tanggal Akhir:".$tgakhir);
     } 
     
 
-    public function halamanTanggalCetak($tglawal, $tglakhir)
+    public function halamanTanggalExcelCetak($tglawal, $tglakhir)
     {
         // dd("Tanggal awal :".$tglawal, "Tanggal Akhir :".$tglakhir);
         // return view ('cetak.index');
         // $cetakTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir]);
         // $cetakPengaduan = Pengaduan::whereBetween('created_at',[$tglawal, $tglakhir]);
         // return view('cetak.show', compact('cetakPengaduan'));
+        if (\Auth::user()->role == 1) {
         return Excel::download(new CetakExport($tglawal, $tglakhir), 'LaporanPertanggal.xlsx');
+        } elseif(\Auth::user()->role == 10) {
+        return Excel::download(new CetakExport($tglawal, $tglakhir), 'LaporanPertanggal.xlsx');
+        }
+    }
+    public function halamanTanggalPDFCetak($tglawal, $tglakhir)
+    {
+        
+        if (\Auth::user()->role == 1) {
+        $dataTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir])->with('Pengaduan')->wherehas('Pengaduan')->get();
+        $pdf = PDF::loadview('cetak.superadmin.pertanggal',['dataTanggapan'=>$dataTanggapan]);
+        return $pdf->download('pertanggal.pdf');
+        }elseif(\Auth::user()->role == 10) {
+        $dataTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir])->with('Pengaduan')->wherehas('Pengaduan')->get();
+        $pdf = PDF::loadview('cetak.admin.pertanggal',['dataTanggapan'=>$dataTanggapan]);
+        }
     }
 
     public function tanggapanexport() 
     {
         // $dataPengaduan = Pengaduan::where('status', '<' , 'Selesai')->orderBy('id', 'DESC')->get();
+        if (\Auth::user()->role == 1) {
         return Excel::download(new TanggapanExport, 'tanggapan.xlsx');
+    } elseif(\Auth::user()->role == 10) {
+        return Excel::download(new TanggapanExport, 'tanggapan.xlsx');
+    }
         // return Excel::create('pengaduan.xlsx', function($excel) {
 
         //     $excel->sheet('New sheet', function($sheet) {

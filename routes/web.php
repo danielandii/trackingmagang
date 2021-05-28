@@ -89,7 +89,8 @@ Route::group(['middleware' => ['auth']], function() {
 
 		// Route::get('/cetak-data-pertanggal/{$tgawal}','')
 		Route::get('/cetak','TanggapanController@halamanCetak')->name('cetak');
-		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
+		Route::get('/Excel-pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalExcelCetak')->name('Excel-tanggal-cetak');
+		Route::get('/PDF-pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalPDFCetak')->name('PDF-tanggal-cetak');
 
 		Route::get('/pengaduan/export','PengaduanController@pengaduanexport');
 		Route::get('/pengaduan/export/{tglawal}/{tglakhir}','PengaduanController@pengaduanexportpertanggal');
@@ -114,7 +115,9 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/admin/cetak','PengaduanController@cetak_pdf')->name('admin.cetak');
 		Route::get('/admin/history-cetak','TanggapanController@historycetak_pdf')->name('admin.historycetak');
 		Route::get('/admin/cetak','TanggapanController@halamanCetak')->name('cetak');
-		Route::get('/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
+		Route::get('/admin/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
+		Route::get('/admin/PDF-pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalPDFCetak')->name('PDF-tanggal-cetak');
+		
 	});
 
 });
