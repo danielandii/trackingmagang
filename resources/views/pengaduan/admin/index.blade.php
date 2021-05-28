@@ -15,16 +15,10 @@
 			<div class="card">
 				<div class="col">
 				<br/>
-<<<<<<< HEAD
 		
 				<div class="card-header">
-				<a href="cetak" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
+				<a href="/admin/cetak-PDFpengaduan" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
 				</i> <a href="/pengaduan/export" class="btn btn-outline bg-green text-green border-green">Eksport Excel<i class="icon-file-excel icon-2x bg-white text-green border-green"></i></a>
-=======
-		<a href="/admin/cetak-PDFpengaduan" class="btn btn-primary">CETAK PDF</a>
-				<div class="right">
-					<a href="/pengaduan/export" class="btn btn-primary">Eksport</a>
->>>>>>> 173f5a31ec368aa202f2dbcfa9de1b8cd9a89993
 				</div>
 					<table class="table datatable-basic table-hover border">
 							<thead>
