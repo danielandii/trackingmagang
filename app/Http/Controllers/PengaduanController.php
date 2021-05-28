@@ -70,6 +70,9 @@ class PengaduanController extends Controller
 
         $no_tiket = uniqid().date('my');
 
+        // $dataTanggapan = Tanggapan::find($id);
+        // $dataTanggapan->laporan_tanggapan = request()->get('laporan_tanggapan');
+        // $dataTanggapan->save();
 
                 $data = new Pengaduan;
                 $data->no_tiket = $no_tiket; 
@@ -77,6 +80,7 @@ class PengaduanController extends Controller
                 $data->email = $request->email;
                 $data->laporan_pengaduan = $request->laporan_pengaduan;
                 $data->file = $namaFile;
+                // $data->laporan_tanggapan = $request->laporan_tanggapan;
                 $data->save();
 
                 // \Mail::raw('Terima Kasih'.$data->email.'sudah melakukan Pengaduan', function ($message) use ($data){

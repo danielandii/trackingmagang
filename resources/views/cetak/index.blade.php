@@ -21,11 +21,11 @@
 
         <div class="input-group mb-3">
            <a href="" onclick="this.href='/pertanggal/'+document.getElementById('tglawal').value + 
-           '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-primary col-md-12">Eksport Excel</a>
+           '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-primary col-md-12">Eksport Excel <i class="icon-file-upload2"></i></a>
         </div>
         <div class="input-group mb-3">
         <a href="" onclick="this.href='/pertanggal/'+document.getElementById('tglawal').value + 
-           '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-primary col-md-12">Eksport PDF</a>
+           '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-primary col-md-12">Eksport PDF<i class="icon-file-upload2"></i></a>
         </div>
     </div>
     </div>

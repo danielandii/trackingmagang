@@ -20,3 +20,4 @@ class TanggapanExport implements FromView
         // return Tanggapan::all();
     }
 }
+// :where('pengaduan_status', '=' , 'Selesai')->orderBy('id', 'DESC')->get()
