@@ -29,17 +29,12 @@
 
         <div class="input-group mb-3">
            <a href="" onclick="this.href='/Excel-pertanggal/'+document.getElementById('tglawal').value + 
-           '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-primary col-md-12">Eksport Excel</a>
-        </div>
-        <div class="input-group mb-3">
-           <a href="" onclick="this.href='/PDF-pertanggal/'+document.getElementById('tglawal').value + 
-           '/' + document.getElementById('tglakhir').value " target="/cetak" class="btn btn-primary col-md-12">Eksport PDF</a>
-           <a href="" onclick="this.href='/pertanggal/'+document.getElementById('tglawal').value + 
            '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-outline bg-green text-green border-green col-md-12">Eksport Excel <i class="icon-file-excel icon-2x bg-white text-green border-green"></i></a>
         </div>
+
         <div class="input-group mb-3">
-        <a href="" onclick="this.href='/pertanggal/'+document.getElementById('tglawal').value + 
-           '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-outline bg-danger text-danger border-danger col-md-12">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
+           <a href="" onclick="this.href='/PDF-pertanggal/'+document.getElementById('tglawal').value + 
+           '/' + document.getElementById('tglakhir').value " target="/cetak" class="btn btn-outline bg-danger text-danger border-danger col-md-12">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
         </div>
     </div>
     </div>
