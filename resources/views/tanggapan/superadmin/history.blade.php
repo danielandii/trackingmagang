@@ -17,7 +17,10 @@
 		<div class="card">
 		<div class="col">
 		<br>
+<<<<<<< HEAD
 		<div class="card-header">
+=======
+>>>>>>> 3a20d84f6fd20594c276e4d864f04467b75fc90c
 		<a href="history-cetak" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
 		
 		<a href="/tanggapan/export" class="btn btn-outline bg-green text-green border-green">Eksport Excel<i class="icon-file-excel icon-2x bg-white text-green border-green"></i></a>
