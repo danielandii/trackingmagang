@@ -117,6 +117,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/admin/cetak','TanggapanController@halamanCetak')->name('cetak');
 		Route::get('/admin/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
 		Route::get('/admin/PDF-pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalPDFCetak')->name('PDF-tanggal-cetak');
+		Route::get('/admin/Excel-pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalExcelCetak')->name('Excel-tanggal-cetak');
 		
 	});
 

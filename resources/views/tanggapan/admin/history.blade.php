@@ -12,12 +12,16 @@
 	</div>
 	<!-- Content area -->
 	<div class="content">
-
+	
 		<!-- Hover rows -->
 		<div class="card">
 		<div class="col">
 		<br>
-		<a href="history-cetak" class="btn btn-primary">CETAK PDF</a>
+		<div class="card-header">
+		<a href="history-cetak" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
+		
+		<a href="/tanggapan/export" class="btn btn-outline bg-green text-green border-green">Eksport Excel<i class="icon-file-excel icon-2x bg-white text-green border-green"></i></a>
+		</div>
 				<table class="table datatable-basic table-hover border">
 					<thead>
 						<tr>
@@ -40,7 +44,7 @@
 								<td><div class="datatable-column-width">{{ $tanggapan->laporan_tanggapan}}</div></td>
 								<td><div class="datatable-column-width">{{ $tanggapan->pengaduan_status}}</div></td>
 								<td align="center">
-									<a href="{{ route('admin.home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="icon-file-eye2 mr-0 icon-1x list-icons-item text-blue-300">Show</i></a>
+									<a href="{{ route('home-history.show', $tanggapan->pengaduan_tiket)}}" class="dropdown-item"><i class="icon-file-eye2 mr-0 icon-1x list-icons-item text-blue-300">Show</i></a>
 								</td>
 							</tr>
 						@php ($i++)
