@@ -33,13 +33,10 @@
         </div>
 
         <div class="input-group mb-3">
-<<<<<<< HEAD
         <a href="" onclick="this.href='/PDF-pertanggal/'+document.getElementById('tglawal').value + 
            '/' + document.getElementById('tglakhir').value " target="_blank" class="btn btn-outline bg-danger text-danger border-danger col-md-12">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
-=======
-           <a href="" onclick="this.href='/PDF-pertanggal/'+document.getElementById('tglawal').value + 
-           '/' + document.getElementById('tglakhir').value " target="/cetak" class="btn btn-outline bg-danger text-danger border-danger col-md-12">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
->>>>>>> 3a20d84f6fd20594c276e4d864f04467b75fc90c
+           <!-- <a href="" onclick="this.href='/PDF-pertanggal/'+document.getElementById('tglawal').value + 
+           '/' + document.getElementById('tglakhir').value " target="/cetak" class="btn btn-outline bg-danger text-danger border-danger col-md-12">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a> -->
         </div>
     </div>
     </div>
