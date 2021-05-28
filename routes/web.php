@@ -105,10 +105,10 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('/admin/home-tanggapan/{id}','TanggapanController@create')->name('admin.home-tanggapan.create');
 		Route::post('/admin/home-tanggapan/{id}','TanggapanController@store')->name('admin.home-tanggapi');
 		
-		 Route::get('/admin/home-history','TanggapanController@historyTanggapan')->name('admin.home-history');
+		 Route::get('/admin/history','TanggapanController@historyTanggapan')->name('admin.home-history');
 		 Route::get('/admin/history/{id}','TanggapanController@historyshow')->name('admin.home-history.show');
 
-        Route::get('/admin/home-pengaduan','PengaduanController@tampilpengaduan')->name('admin.home-pengaduan.tampil');
+        Route::get('/admin/pengaduan','PengaduanController@tampilpengaduan')->name('admin.home-pengaduan.tampil');
 
 		Route::get('/admin/home-pengaduan/{id}','PengaduanController@detailPengaduan')->name('admin.home-pengaduan.detail');
 		Route::post('/admin/home-pengaduan/onchange/{id}','PengaduanController@statusOnchange')->name('admin.home-pengaduan.onchange');
