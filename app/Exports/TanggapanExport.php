@@ -14,9 +14,10 @@ class TanggapanExport implements FromView
     */
     public function view(): View
     {
-        $dataTanggapan = Tanggapan::where('pengaduan_status', '=' , 'Selesai')->orderBy('id', 'DESC')->get();
-        return view('excel.tanggapan.index',['index'=> Tanggapan::where('pengaduan_status', '=' , 'Selesai')->orderBy('id', 'DESC')->get()
+        $dataTanggapan = Tanggapan::all();
+        return view('excel.tanggapan.index',['index'=> Tanggapan::all()
     ], compact('dataTanggapan'));
         // return Tanggapan::all();
     }
 }
+// :where('pengaduan_status', '=' , 'Selesai')->orderBy('id', 'DESC')->get()

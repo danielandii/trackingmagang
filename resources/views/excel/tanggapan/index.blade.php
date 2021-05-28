@@ -3,8 +3,8 @@
     <tr>
         <th>No</th>
         <th>No Tiket</th>
-        <th>Tanggal Tanggapam</th>
-        <th>Email Pengadu</th>
+        <th>Tanggal Tanggapan</th>
+        <th>Email Pengaduan</th>
         <th>Laporan Tanggapan</th>
         <th>Status</th>
     </tr>

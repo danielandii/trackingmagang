@@ -27,7 +27,7 @@ Pengaduan anda akan segera kami proses atas perhatiannya kami ucapkan terima kas
         </center>
     </h1>
     <center><b>
-            <img src="">
+            <img src="tracking/public/assets/image/Pusat-Pelayanan-Pengaduan-Masyarakat-e1522591013592.png">
             <center>
                     <hr>
                     <h4>Hallo, {{ $email }}</h4>
@@ -40,3 +40,4 @@ Pengaduan anda akan segera kami proses atas perhatiannya kami ucapkan terima kas
 </body>
 
 </html>
+
