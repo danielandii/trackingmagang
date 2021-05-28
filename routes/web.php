@@ -84,6 +84,8 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('/laporan-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('home-pengaduan.destroy');
 
 		Route::get('/cetak','PengaduanController@cetak_pdf')->name('cetak');
+		Route::get('/cetak-PDFpengaduan','PengaduanController@cetak_pdf')->name('cetak-PDFpengaduan');
+
 		Route::get('/history-cetak','TanggapanController@historycetak_pdf')->name('historycetak');
 		Route::get('/cetak-pertanggal','Tanggapan@cetakpertanggal_pdf')->name('cetak-pertanggal');
 
@@ -113,6 +115,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('/admin/home-pengaduan/destroy/{id}','PengaduanController@destroyPengaduan')->name('admin.home-pengaduan.destroy');
 
 		Route::get('/admin/cetak','PengaduanController@cetak_pdf')->name('admin.cetak');
+		Route::get('/admin/cetak-PDFpengaduan','PengaduanController@cetak_pdf')->name('admin.cetak-PDFpengaduan');
 		Route::get('/admin/history-cetak','TanggapanController@historycetak_pdf')->name('admin.historycetak');
 		Route::get('/admin/cetak','TanggapanController@halamanCetak')->name('cetak');
 		Route::get('/admin/pertanggal/{tglawal}/{tglakhir}','TanggapanController@halamanTanggalCetak')->name('tanggal-cetak');
