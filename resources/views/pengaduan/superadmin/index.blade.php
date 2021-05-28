@@ -17,7 +17,7 @@
 				<br/>
 		
 				<div class="card-header">
-				<a href="cetak" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
+				<a href="/cetak-PDFpengaduan" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
 				</i> <a href="/pengaduan/export" class="btn btn-outline bg-green text-green border-green">Eksport Excel<i class="icon-file-excel icon-2x bg-white text-green border-green"></i></a>
 				</div>
 					<table class="table datatable-basic table-hover border">

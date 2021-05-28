@@ -15,7 +15,7 @@
 			<div class="card">
 				<div class="col">
 				<br/>
-		<a href="cetak" class="btn btn-primary">CETAK PDF</a>
+		<a href="/admin/cetak-PDFpengaduan" class="btn btn-primary">CETAK PDF</a>
 				<div class="right">
 					<a href="/pengaduan/export" class="btn btn-primary">Eksport</a>
 				</div>

@@ -221,10 +221,11 @@ class TanggapanController extends Controller
         if (\Auth::user()->role == 1) {
         $dataTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir])->with('Pengaduan')->wherehas('Pengaduan')->get();
         $pdf = PDF::loadview('cetak.superadmin.pertanggal',['dataTanggapan'=>$dataTanggapan]);
-        return $pdf->download('pertanggal.pdf');
+        // return $pdf->download('pertanggal.pdf');
         }elseif(\Auth::user()->role == 10) {
         $dataTanggapan = Tanggapan::whereBetween('created_at',[$tglawal, $tglakhir])->with('Pengaduan')->wherehas('Pengaduan')->get();
         $pdf = PDF::loadview('cetak.admin.pertanggal',['dataTanggapan'=>$dataTanggapan]);
+        return $pdf->download('pertanggal.pdf');
         }
     }
 
