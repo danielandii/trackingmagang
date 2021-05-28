@@ -15,9 +15,10 @@
 			<div class="card">
 				<div class="col">
 				<br/>
-		<a href="/admin/cetak-PDFpengaduan" class="btn btn-primary">CETAK PDF</a>
-				<div class="right">
-					<a href="/pengaduan/export" class="btn btn-primary">Eksport</a>
+		
+				<div class="card-header">
+				<a href="/admin/cetak-PDFpengaduan" class="btn btn-outline bg-danger text-danger border-danger">CETAK PDF <i class="icon-file-pdf icon-2x bg-white text-danger border-danger"></i></a>
+				</i> <a href="/pengaduan/export" class="btn btn-outline bg-green text-green border-green">Eksport Excel<i class="icon-file-excel icon-2x bg-white text-green border-green"></i></a>
 				</div>
 					<table class="table datatable-basic table-hover border">
 							<thead>
@@ -48,8 +49,8 @@
 													</a>
 
 													<div class="dropdown-menu dropdown-menu-right">
-														<a href="{{ route('admin.home-pengaduan.detail', $pengaduan->id)}}" class="dropdown-item"><i class="fas fa-clipboard text-blue-300"></i> tanggapi</a>
-														<a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri="{{ route('admin.home-pengaduan.destroy',$pengaduan->id ) }}"><i class="icon-x badge-danger"></i> Delete</a>
+														<a href="{{ route('home-pengaduan.detail', $pengaduan->id)}}" class="dropdown-item"><i class="fas fa-clipboard text-blue-300"></i> tanggapi</a>
+														<a class="dropdown-item delbutton" data-toggle="modal" data-target="#modal_theme_danger" data-uri="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}"><i class="icon-x badge-danger"></i> Delete</a>
 													</div>
 												</div>
 											</div>
@@ -73,7 +74,7 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 
-							<form action="{{ route('admin.home-pengaduan.destroy',$pengaduan->id ) }}" method="post" id="delform">
+							<form action="{{ route('home-pengaduan.destroy',$pengaduan->id ) }}" method="post" id="delform">
 							@csrf
 							@method('DELETE')
 								<div class="modal-body" align="center">

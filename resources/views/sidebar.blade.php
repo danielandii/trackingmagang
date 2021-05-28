@@ -112,7 +112,7 @@
 
 
 				<li class="nav-item">
-					<a href="{{ url('/admin/home-pengaduan') }}" class="nav-link {{ (request()->is('home-pengaduan*')) ? 'active' : '' }}">
+					<a href="{{ url('/admin/pengaduan') }}" class="nav-link {{ (request()->is('admin/pengaduan')) ? 'active' : '' }}">
 						<i class="icon-pencil3"></i>
 						<span>
 							Laporan Pengaduan
@@ -130,7 +130,7 @@
 				</li> -->
 				
 				<li class="nav-item">
-					<a href="{{ url('/admin/home-history') }}" class="nav-link {{ (request()->is('home-historySS*')) ? 'active' : '' }}">
+					<a href="{{ url('/admin/history') }}" class="nav-link {{ (request()->is('admin/history*')) ? 'active' : '' }}">
 						<i class="icon-history"></i>
 						<span>
 							History Tanggapan
